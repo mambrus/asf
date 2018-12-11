@@ -4,6 +4,7 @@
 		<build type="include-path" value="."/>
 		<build type="header-file" value="conf_board.h"/>
 		<build type="header-file" value="conf_clock.h"/>
+		<build type="header-file" value="conf_sd_mmc.h"/>        
 		<build type="header-file" value="conf_tinyservices.h"/>
 		<build type="header-file" value="conf_uart_serial.h"/>
 		<build type="header-file" value="conf_wilc.h"/>
@@ -16,6 +17,7 @@
 		<!-- Required modules -->
 		<require idref="common.components.wifi.wilc1000.weather_concurrent_demo"/>
 		<require idref="board.sam4s_xplained_pro"/>
+		<require idref="common.components.memory.sd_mmc"/>
 
 		<!-- Generators -->
 		<generator value="armgcc"/>
@@ -23,5 +25,6 @@
 		<generator value="doxygen"/>
 		<config name="config.compiler.armgcc.create_aux" value="no"/>
 		<config name="config.compiler.as5_arm.create_aux" value="no"/>
+		<config name="config.common.components.memory.sd_mmc" value="mci"/>
 	</project>
 </asf>

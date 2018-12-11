@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<select-by-config id="common.components.wifi.wilc1000" name="config.common.components.wifi.wilc1000" caption="WILC1000 (Wi-Fi) RTOS Host Driver v3.6" default="spi">
+	<select-by-config id="common.components.wifi.wilc1000" name="config.common.components.wifi.wilc1000" caption="WILC1000 (Wi-Fi) RTOS Host Driver v4.1" default="spi">
 		<info type="description" value="summary">
 			The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SPI or SDIO interface.
 		</info>
@@ -7,7 +7,7 @@
 			<keyword value="Wireless"/>
 		</info>
 		
-		<module type="service" id="common.components.wifi.wilc1000#spi" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v3.6">
+		<module type="service" id="common.components.wifi.wilc1000#spi" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v4.1">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SPI interface.
 			</info>
@@ -21,7 +21,7 @@
 			<device-support value="samg55"/>
 			<generator value="doxygen-module" default-mcu="unspecified-sam4s"/>
 		</module>
-		<module type="service" id="common.components.wifi.wilc1000#sdio" caption="WILC1000 (Wi-Fi) SDIO RTOS Host Driver v3.6">
+		<module type="service" id="common.components.wifi.wilc1000#sdio" caption="WILC1000 (Wi-Fi) SDIO RTOS Host Driver v4.1">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SDIO interface.
 			</info>
@@ -35,8 +35,8 @@
 		</module>
 	</select-by-config>
 		
-	<select-by-device id="common.components.wifi.wilc1000.spi" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v3.6">
-		<module type="service" id="common.components.wifi.wilc1000.spi#0" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v3.6 - SAM4S implementation">
+	<select-by-device id="common.components.wifi.wilc1000.spi" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v4.1">
+		<module type="service" id="common.components.wifi.wilc1000.spi#0" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v4.1 - SAM4S implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SPI interface.
 			</info>
@@ -54,6 +54,9 @@
 			<build type="header-file" value="bus_wrapper/include/nm_bus_wrapper.h"/>
 			<build type="c-source" value="bus_wrapper/source/nm_bus_wrapper_sam4s.c"/>
 
+			<build type="header-file" value="bus_wrapper/include/sdio_sam4s.h"/>
+			<build type="c-source" value="bus_wrapper/source/sdio_sam4s.c"/>    
+            
 			<build type="header-file" value="common/include/nm_common.h"/>
 			<build type="c-source" value="common/source/nm_common.c"/>
 
@@ -95,6 +98,7 @@
 			<build type="header-file" value="netif/include/wilc_netif.h"/>
 
 			<build type="module-config" subtype="required-header-file" value="conf_wilc.h"/>
+			<build type="module-config" subtype="required-header-file" value="conf_sd_mmc.h"/>
 			<build type="module-config" subtype="path" value="wilc1000_module_config/sam4s/spi"/>
 			<build type="doxygen-entry-point" value="wilc1000_group"/>
 			<build type="doxygen-quick-start" value="wilc1000_quickstart"/>
@@ -103,6 +107,10 @@
 			<require idref="sam.drivers.pio"/>
 			<require idref="sam.drivers.pdc"/>
 			<require idref="sam.drivers.spi"/>
+			<require idref="sam.drivers.hsmci"/>          
+			<require idref="common.components.memory.sd_mmc.ctrl_access"/>
+			<require idref="common.components.memory.sd_mmc.protocol"/>
+			<require idref="common.components.memory.sd_mmc.mci"/>
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
 			<require idref="common.utils.osprintf"/>
@@ -113,7 +121,7 @@
 
 			<generator value="doxygen-module" default-mcu="unspecified-sam4s"/>
 		</module>
-		<module type="service" id="common.components.wifi.wilc1000.spi#1" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v3.6 - SAMV71 implementation">
+		<module type="service" id="common.components.wifi.wilc1000.spi#1" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v4.1 - SAMV71 implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SPI interface.
 			</info>
@@ -129,9 +137,11 @@
 			<build type="c-source" value="bsp/source/nm_bsp_samv71.c"/>
 
 			<build type="header-file" value="bus_wrapper/include/nm_bus_wrapper.h"/>
-            <build type="header-file" value="bus_wrapper/include/sdio_samv7.h"/>
 			<build type="c-source" value="bus_wrapper/source/nm_bus_wrapper_samv71.c"/>
 
+            <build type="header-file" value="bus_wrapper/include/sdio_samv71.h"/>            
+			<build type="c-source" value="bus_wrapper/source/sdio_samv71.c"/>            
+            
 			<build type="header-file" value="common/include/nm_common.h"/>
 			<build type="c-source" value="common/source/nm_common.c"/>
 
@@ -173,6 +183,7 @@
 			<build type="header-file" value="netif/include/wilc_netif.h"/>
 
 			<build type="module-config" subtype="required-header-file" value="conf_wilc.h"/>
+			<build type="module-config" subtype="required-header-file" value="conf_sd_mmc.h"/>
 			<build type="module-config" subtype="path" value="wilc1000_module_config/samv71/spi"/>
 			<build type="doxygen-entry-point" value="wilc1000_group"/>
 			<build type="doxygen-quick-start" value="wilc1000_quickstart"/>
@@ -181,6 +192,10 @@
 			<require idref="sam.drivers.pio"/>
 			<require idref="sam.drivers.xdmac"/>
 			<require idref="sam.drivers.spi"/>
+			<require idref="sam.drivers.hsmci"/>
+			<require idref="common.components.memory.sd_mmc.ctrl_access"/>
+			<require idref="common.components.memory.sd_mmc.protocol"/>
+			<require idref="common.components.memory.sd_mmc.mci"/>			
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
 			<require idref="common.utils.osprintf"/>
@@ -191,7 +206,7 @@
 
 			<generator value="doxygen-module" default-mcu="unspecified-samv71"/>
 		</module>
-		<module type="service" id="common.components.wifi.wilc1000.spi#2" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v3.6 - SAMG53 implementation">
+		<module type="service" id="common.components.wifi.wilc1000.spi#2" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v4.1 - SAMG53 implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SPI interface.
 			</info>
@@ -268,7 +283,7 @@
 
 			<generator value="doxygen-module" default-mcu="unspecified-samg53"/>
 		</module>
-		<module type="service" id="common.components.wifi.wilc1000.spi#3" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v3.6 - SAMG55 implementation">
+		<module type="service" id="common.components.wifi.wilc1000.spi#3" caption="WILC1000 (Wi-Fi) SPI RTOS Host Driver v4.1 - SAMG55 implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SPI interface.
 			</info>
@@ -347,8 +362,8 @@
 		</module>
 	</select-by-device>
 
-	<select-by-device id="common.components.wifi.wilc1000.sdio" caption="WILC1000 (Wi-Fi) SDIO RTOS Host Driver v3.6">
-		<module type="service" id="common.components.wifi.wilc1000.sdio#0" caption="WILC1000 (Wi-Fi) SDIO RTOS Host Driver v3.6 - SAM4S implementation">
+	<select-by-device id="common.components.wifi.wilc1000.sdio" caption="WILC1000 (Wi-Fi) SDIO RTOS Host Driver v4.1">
+		<module type="service" id="common.components.wifi.wilc1000.sdio#0" caption="WILC1000 (Wi-Fi) SDIO RTOS Host Driver v4.1 - SAM4S implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SDIO interface.
 			</info>
@@ -365,6 +380,9 @@
 
 			<build type="header-file" value="bus_wrapper/include/nm_bus_wrapper.h"/>
 			<build type="c-source" value="bus_wrapper/source/nm_bus_wrapper_sam4s.c"/>
+
+			<build type="header-file" value="bus_wrapper/include/sdio_sam4s.h"/>
+			<build type="c-source" value="bus_wrapper/source/sdio_sam4s.c"/>            
             
 			<build type="header-file" value="common/include/nm_common.h"/>
 			<build type="c-source" value="common/source/nm_common.c"/>
@@ -407,6 +425,7 @@
 			<build type="header-file" value="netif/include/wilc_netif.h"/>
 
 			<build type="module-config" subtype="required-header-file" value="conf_wilc.h"/>
+			<build type="module-config" subtype="required-header-file" value="conf_sd_mmc.h"/>
 			<build type="module-config" subtype="path" value="wilc1000_module_config/sam4s/sdio"/>
 			<build type="doxygen-entry-point" value="wilc1000_group"/>
 			<build type="doxygen-quick-start" value="wilc1000_quickstart"/>
@@ -415,10 +434,12 @@
 			<require idref="sam.drivers.pio"/>
 			<require idref="sam.drivers.pdc"/>
 			<require idref="sam.drivers.spi"/>
-            <require idref="sam.drivers.hsmci"/>            
+			<require idref="sam.drivers.hsmci"/>            
+			<require idref="common.components.memory.sd_mmc.ctrl_access"/>
+			<require idref="common.components.memory.sd_mmc.protocol"/>
+			<require idref="common.components.memory.sd_mmc.mci"/>
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
-			<require idref="common.components.memory.sd_mmc"/>            
 			<require idref="common.utils.osprintf"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
@@ -427,7 +448,7 @@
 
 			<generator value="doxygen-module" default-mcu="unspecified-sam4s"/>
 		</module>
-		<module type="service" id="common.components.wifi.wilc1000.sdio#1" caption="WILC1000 (Wi-Fi) SDIO RTOS Host Driver v3.6 - SAMV71 implementation">
+		<module type="service" id="common.components.wifi.wilc1000.sdio#1" caption="WILC1000 (Wi-Fi) SDIO RTOS Host Driver v4.1 - SAMV71 implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC1000 is an IEEE 802.11 b/g/n IoT link controller SoC. It is the ideal add-on to existing MCU solutions bringing WiFi through SDIO interface.
 			</info>
@@ -443,9 +464,11 @@
 			<build type="c-source" value="bsp/source/nm_bsp_samv71.c"/>
 
 			<build type="header-file" value="bus_wrapper/include/nm_bus_wrapper.h"/>
-            <build type="header-file" value="bus_wrapper/include/sdio_samv7.h"/>
 			<build type="c-source" value="bus_wrapper/source/nm_bus_wrapper_samv71.c"/>
 
+            <build type="header-file" value="bus_wrapper/include/sdio_samv71.h"/>            
+			<build type="c-source" value="bus_wrapper/source/sdio_samv71.c"/> 
+            
 			<build type="header-file" value="common/include/nm_common.h"/>
 			<build type="c-source" value="common/source/nm_common.c"/>
 
@@ -487,6 +510,7 @@
 			<build type="header-file" value="netif/include/wilc_netif.h"/>
 
 			<build type="module-config" subtype="required-header-file" value="conf_wilc.h"/>
+			<build type="module-config" subtype="required-header-file" value="conf_sd_mmc.h"/>
 			<build type="module-config" subtype="path" value="wilc1000_module_config/samv71/sdio"/>
 			<build type="doxygen-entry-point" value="wilc1000_group"/>
 			<build type="doxygen-quick-start" value="wilc1000_quickstart"/>
@@ -497,7 +521,10 @@
 			<require idref="sam.drivers.spi"/>
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
-			<require idref="common.components.memory.sd_mmc"/>            
+			<require idref="sam.drivers.hsmci"/>          
+			<require idref="common.components.memory.sd_mmc.ctrl_access"/>
+			<require idref="common.components.memory.sd_mmc.protocol"/>
+			<require idref="common.components.memory.sd_mmc.mci"/>            
 			<require idref="common.utils.osprintf"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
@@ -510,7 +537,7 @@
 	
 
 
-	<select-by-config id="common.components.wifi.wilc3000" name="config.common.components.wifi.wilc3000" caption="WILC3000 (Wi-Fi and BT4.0) RTOS Host Driver v3.6" default="spi">
+	<select-by-config id="common.components.wifi.wilc3000" name="config.common.components.wifi.wilc3000" caption="WILC3000 (Wi-Fi and BT4.0) RTOS Host Driver v4.1" default="spi">
 		<info type="description" value="summary">
 			The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi (via SPI or SDIO) and Bluetooth (via UART) connectivity.
 		</info>
@@ -518,7 +545,7 @@
 			<keyword value="Wireless"/>
 		</info>
 		
-		<module type="service" id="common.components.wifi.wilc3000#spi" caption="WILC3000 (Wi-Fi and BT4.0) SPI RTOS Host Driver v3.6">
+		<module type="service" id="common.components.wifi.wilc3000#spi" caption="WILC3000 (Wi-Fi and BT4.0) SPI RTOS Host Driver v4.1">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi via SPI and Bluetooth via UART.
 			</info>
@@ -530,7 +557,7 @@
 			<device-support value="samv71"/>
 			<generator value="doxygen-module" default-mcu="unspecified-sam4s"/>
 		</module>
-		<module type="service" id="common.components.wifi.wilc3000#sdio" caption="WILC3000 (Wi-Fi and BT4.0) SDIO RTOS Host Driver v3.6">
+		<module type="service" id="common.components.wifi.wilc3000#sdio" caption="WILC3000 (Wi-Fi and BT4.0) SDIO RTOS Host Driver v4.1">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi via SDIO and Bluetooth via UART.
 			</info>
@@ -544,14 +571,14 @@
 		</module>
 	</select-by-config>
 
-	<select-by-device id="common.components.wifi.wilc3000.spi" caption="WILC3000 (Wi-Fi and BT4.0) SPI RTOS Host Driver v3.6">
+	<select-by-device id="common.components.wifi.wilc3000.spi" caption="WILC3000 (Wi-Fi and BT4.0) SPI RTOS Host Driver v4.1">
 		<info type="description" value="summary">
 			The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi via SPI and Bluetooth via UART.
 		</info>
 		<info type="keyword" value="technology">
 			<keyword value="Wireless"/>
 		</info>
-		<module type="service" id="common.components.wifi.wilc3000.spi#0" caption="WILC3000 (Wi-Fi and BT4.0) SPI RTOS Host Driver v3.6 - SAM4S implementation">
+		<module type="service" id="common.components.wifi.wilc3000.spi#0" caption="WILC3000 (Wi-Fi and BT4.0) SPI RTOS Host Driver v4.1 - SAM4S implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi via SPI and Bluetooth via UART.
 			</info>
@@ -568,6 +595,8 @@
 
 			<build type="header-file" value="bus_wrapper/include/nm_bus_wrapper.h"/>
 			<build type="c-source" value="bus_wrapper/source/nm_bus_wrapper_sam4s.c"/>
+			<build type="header-file" value="bus_wrapper/include/sdio_sam4s.h"/>
+			<build type="c-source" value="bus_wrapper/source/sdio_sam4s.c"/>    
 
 			<build type="header-file" value="common/include/nm_common.h"/>
 			<build type="c-source" value="common/source/nm_common.c"/>
@@ -575,16 +604,16 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
-			<build type="header-file" value="driver/include/bt_firmware_3000.h"/>
+			<!--build type="header-file" value="driver/include/bt_firmware_3000.h"/-->
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
-			<build type="c-source" value="driver/source/m2m_coex.c"/>
-			<build type="header-file" value="driver/include/m2m_coex.h"/>
+			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
+			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
+			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
 			<build type="c-source" value="driver/source/m2m_periph.c"/>
 			<build type="c-source" value="driver/source/m2m_wifi.c"/>
-
 
 			<build type="c-source" value="driver/source/nmasic.c"/>
 			<build type="header-file" value="driver/source/nmasic.h"/>
@@ -616,6 +645,7 @@
 			<build type="header-file" value="netif/include/wilc_netif.h"/>
 
 			<build type="module-config" subtype="required-header-file" value="conf_wilc.h"/>
+			<build type="module-config" subtype="required-header-file" value="conf_sd_mmc.h"/>
 			<build type="module-config" subtype="path" value="wilc3000_module_config/sam4s/spi"/>
 			<build type="doxygen-entry-point" value="wilc3000_group"/>
 			<build type="doxygen-quick-start" value="wilc3000_quickstart"/>
@@ -634,7 +664,7 @@
 
 			<generator value="doxygen-module" default-mcu="unspecified-sam4s"/>
 		</module>
-		<module type="service" id="common.components.wifi.wilc3000.spi#1" caption="WILC3000 (Wi-Fi and BT4.0) SPI RTOS Host Driver v3.6 - SAMV71 implementation">
+		<module type="service" id="common.components.wifi.wilc3000.spi#1" caption="WILC3000 (Wi-Fi and BT4.0) SPI RTOS Host Driver v4.1 - SAMV71 implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi via SPI and Bluetooth via UART.
 			</info>
@@ -650,25 +680,28 @@
 			<build type="c-source" value="bsp/source/nm_bsp_samv71.c"/>
 
 			<build type="header-file" value="bus_wrapper/include/nm_bus_wrapper.h"/>
-            <build type="header-file" value="bus_wrapper/include/sdio_samv7.h"/>
 			<build type="c-source" value="bus_wrapper/source/nm_bus_wrapper_samv71.c"/>
 
+            <build type="header-file" value="bus_wrapper/include/sdio_samv71.h"/>            
+			<build type="c-source" value="bus_wrapper/source/sdio_samv71.c"/>            
+            
 			<build type="header-file" value="common/include/nm_common.h"/>
 			<build type="c-source" value="common/source/nm_common.c"/>
 
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
-			<build type="header-file" value="driver/include/bt_firmware_3000.h"/>
+			<!--build type="header-file" value="driver/include/bt_firmware_3000.h"/-->
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
-			<build type="c-source" value="driver/source/m2m_coex.c"/>
-			<build type="header-file" value="driver/include/m2m_coex.h"/>
+			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
+			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
+			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
 			<build type="c-source" value="driver/source/m2m_periph.c"/>
 			<build type="c-source" value="driver/source/m2m_wifi.c"/>
-            
+
 			<build type="c-source" value="driver/source/nmasic.c"/>
 			<build type="header-file" value="driver/source/nmasic.h"/>
 			<build type="c-source" value="driver/source/nmbus.c"/>
@@ -699,6 +732,7 @@
 			<build type="header-file" value="netif/include/wilc_netif.h"/>
 
 			<build type="module-config" subtype="required-header-file" value="conf_wilc.h"/>
+			<build type="module-config" subtype="required-header-file" value="conf_sd_mmc.h"/>
 			<build type="module-config" subtype="path" value="wilc3000_module_config/samv71/spi"/>
 			<build type="doxygen-entry-point" value="wilc3000_group"/>
 			<build type="doxygen-quick-start" value="wilc3000_quickstart"/>
@@ -719,14 +753,14 @@
 		</module>
 	</select-by-device>
 
-	<select-by-device id="common.components.wifi.wilc3000.sdio" caption="WILC3000 (Wi-Fi and BT4.0) SDIO RTOS Host Driver v3.6">
+	<select-by-device id="common.components.wifi.wilc3000.sdio" caption="WILC3000 (Wi-Fi and BT4.0) SDIO RTOS Host Driver v4.1">
 		<info type="description" value="summary">
 			The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi via SDIO and Bluetooth via UART.
 		</info>
 		<info type="keyword" value="technology">
 			<keyword value="Wireless"/>
 		</info>
-		<module type="service" id="common.components.wifi.wilc3000.sdio#0" caption="WILC3000 (Wi-Fi and BT4.0) SDIO RTOS Host Driver v3.6 - SAM4S implementation">
+		<module type="service" id="common.components.wifi.wilc3000.sdio#0" caption="WILC3000 (Wi-Fi and BT4.0) SDIO RTOS Host Driver v4.1 - SAM4S implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi via SDIO and Bluetooth via UART.
 			</info>
@@ -743,6 +777,9 @@
 
 			<build type="header-file" value="bus_wrapper/include/nm_bus_wrapper.h"/>
 			<build type="c-source" value="bus_wrapper/source/nm_bus_wrapper_sam4s.c"/>
+
+			<build type="header-file" value="bus_wrapper/include/sdio_sam4s.h"/>
+			<build type="c-source" value="bus_wrapper/source/sdio_sam4s.c"/>            
             
 			<build type="header-file" value="common/include/nm_common.h"/>
 			<build type="c-source" value="common/source/nm_common.c"/>
@@ -750,16 +787,17 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
-			<build type="header-file" value="driver/include/bt_firmware_3000.h"/>
+			<!--build type="header-file" value="driver/include/bt_firmware_3000.h"/-->
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
-			<build type="c-source" value="driver/source/m2m_coex.c"/>
-			<build type="header-file" value="driver/include/m2m_coex.h"/>
+			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
+			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
+			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
 			<build type="c-source" value="driver/source/m2m_periph.c"/>
 			<build type="c-source" value="driver/source/m2m_wifi.c"/>
-            
+
 			<build type="c-source" value="driver/source/nmasic.c"/>
 			<build type="header-file" value="driver/source/nmasic.h"/>
 			<build type="c-source" value="driver/source/nmbus.c"/>
@@ -790,6 +828,7 @@
 			<build type="header-file" value="netif/include/wilc_netif.h"/>
 
 			<build type="module-config" subtype="required-header-file" value="conf_wilc.h"/>
+			<build type="module-config" subtype="required-header-file" value="conf_sd_mmc.h"/>
 			<build type="module-config" subtype="path" value="wilc3000_module_config/sam4s/sdio"/>
 			<build type="doxygen-entry-point" value="wilc3000_group"/>
 			<build type="doxygen-quick-start" value="wilc3000_quickstart"/>
@@ -798,10 +837,12 @@
 			<require idref="sam.drivers.pio"/>
 			<require idref="sam.drivers.pdc"/>
 			<require idref="sam.drivers.spi"/>
-            <require idref="sam.drivers.hsmci"/>            
+			<require idref="sam.drivers.hsmci"/>          
+			<require idref="common.components.memory.sd_mmc.ctrl_access"/>
+			<require idref="common.components.memory.sd_mmc.protocol"/>
+			<require idref="common.components.memory.sd_mmc.mci"/>                     
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
-			<require idref="common.components.memory.sd_mmc"/>            
 			<require idref="common.utils.osprintf"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
@@ -810,7 +851,7 @@
 
 			<generator value="doxygen-module" default-mcu="unspecified-sam4s"/>
 		</module>
-		<module type="service" id="common.components.wifi.wilc3000.sdio#1" caption="WILC3000 (Wi-Fi and BT4.0) SDIO RTOS Host Driver v3.6 - SAMV71 implementation">
+		<module type="service" id="common.components.wifi.wilc3000.sdio#1" caption="WILC3000 (Wi-Fi and BT4.0) SDIO RTOS Host Driver v4.1 - SAMV71 implementation">
 			<info type="description" value="summary">
 				The Atmel SmartConnect WILC3000 is a single chip IEEE 802.11 b/g/n RF/Baseband/MAC link controller and Bluetooth 4.0. It is the ideal add-on to existing MCU solutions bringing WiFi via SDIO and Bluetooth via UART.
 			</info>
@@ -826,25 +867,28 @@
 			<build type="c-source" value="bsp/source/nm_bsp_samv71.c"/>
 
 			<build type="header-file" value="bus_wrapper/include/nm_bus_wrapper.h"/>
-            <build type="header-file" value="bus_wrapper/include/sdio_samv7.h"/>
 			<build type="c-source" value="bus_wrapper/source/nm_bus_wrapper_samv71.c"/>
 
+            <build type="header-file" value="bus_wrapper/include/sdio_samv71.h"/>            
+			<build type="c-source" value="bus_wrapper/source/sdio_samv71.c"/>            
+            
 			<build type="header-file" value="common/include/nm_common.h"/>
 			<build type="c-source" value="common/source/nm_common.c"/>
 
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
-			<build type="header-file" value="driver/include/bt_firmware_3000.h"/>
+			<!--build type="header-file" value="driver/include/bt_firmware_3000.h"/-->
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
-			<build type="c-source" value="driver/source/m2m_coex.c"/>
-			<build type="header-file" value="driver/include/m2m_coex.h"/>
+			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
+			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
+			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
 			<build type="c-source" value="driver/source/m2m_periph.c"/>
 			<build type="c-source" value="driver/source/m2m_wifi.c"/>
-            
+
 			<build type="c-source" value="driver/source/nmasic.c"/>
 			<build type="header-file" value="driver/source/nmasic.h"/>
 			<build type="c-source" value="driver/source/nmbus.c"/>
@@ -875,6 +919,7 @@
 			<build type="header-file" value="netif/include/wilc_netif.h"/>
 
 			<build type="module-config" subtype="required-header-file" value="conf_wilc.h"/>
+			<build type="module-config" subtype="required-header-file" value="conf_sd_mmc.h"/>
 			<build type="module-config" subtype="path" value="wilc3000_module_config/samv71/sdio"/>
 			<build type="doxygen-entry-point" value="wilc3000_group"/>
 			<build type="doxygen-quick-start" value="wilc3000_quickstart"/>
@@ -885,7 +930,10 @@
 			<require idref="sam.drivers.spi"/>
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
-			<require idref="common.components.memory.sd_mmc"/>            
+			<require idref="sam.drivers.hsmci"/>          
+			<require idref="common.components.memory.sd_mmc.ctrl_access"/>
+			<require idref="common.components.memory.sd_mmc.protocol"/>
+			<require idref="common.components.memory.sd_mmc.mci"/>                       
 			<require idref="common.utils.osprintf"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>

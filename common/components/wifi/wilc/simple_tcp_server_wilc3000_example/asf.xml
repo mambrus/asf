@@ -1,0 +1,28 @@
+<asf xmlversion="1.0">
+	<select-by-device id="common.components.wifi.wilc3000.simple_tcp_server_example">
+		<module type="application" id="common.components.wifi.wilc3000.simple_tcp_server_example#1" caption="WILC3000 TCP Server Example">
+			<!-- Summary Description -->
+			<info type="description" value="summary">
+				This example implements an Simple TCP Server.
+			</info>
+
+			<!-- Source -->
+			<build type="include-path" value="."/>
+			<build type="c-source" value="tcp_server.c"/>
+			<build type="header-file" value="tcp_server.h"/>
+			<build type="c-source" value="main.c"/>
+			<build type="include-path" value="script"/>
+			<build type="distribute" subtype="file" value="script/tcpclient.py"/>
+			
+			<!-- Device support -->
+			<device-support value="sam4s"/>
+			<device-support value="samv71"/>
+			
+			<!-- Required modules -->
+			<require idref="common.components.wifi.wilc3000"/>
+			<require idref="common.services.basic.clock"/>
+			<require idref="common.utils.osprintf"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+	</select-by-device>
+</asf>

@@ -1,0 +1,32 @@
+<asf xmlversion="1.0">
+
+	<!-- **************************************************************************************************** -->
+	<module type="application" id="thirdparty.wireless.miwi.apps.simple_example_p2p" caption="Simple Example P2P">
+		<info type="description" value="summary">
+		Simple Example P2P application implements a typical Peer to Peer demo application with configuration to send broadcast/unicast data to nodes.
+		</info>
+
+		<build type="c-source" value="main.c"/>
+		<build type="c-source" value="demo_output.c"/>
+		<build type="c-source" value="p2p_demo.c"/>
+		<build type="c-source" value="task.c"/>
+		<build type="header-file"   value="miwi_config.h"/>
+		<build type="header-file"   value="miwi_config_p2p.h"/>
+		<build type="header-file"   value="demo_output.h"/>
+		<build type="header-file"   value="p2p_demo.h"/>
+		<build type="header-file"   value="task.h"/>
+		<build type="include-path" value="."/>
+		<require idref="thirdparty.wireless.addons.sio2host"/>
+		<require idref="thirdparty.wireless.miwi"/>
+		<require idref="thirdparty.wireless.miwi.include"/>
+		
+		<device-support-alias value="miwi_support"/>
+		<!-- .................................................................................................... -->
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+		</info>
+		<!-- **************************************************************************************************** -->
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

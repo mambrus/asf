@@ -1,6 +1,7 @@
 <asf xmlversion="1.0">
 	<module type="component" id="common.components.wifi.winc3400.ble.ble_profiles.pxp_reporter" caption="BLE-Proximity Reporter Profile">
 		<info type="description" value="summary">
+			Proximity Reporter profile for WINC3400. This Profile verifies the proximity and report over BLE.
 		</info>
 		<build type="include-path"  value="./"/>
   		<build type="header-file"   value="pxp_reporter.h"/>
@@ -16,6 +17,9 @@
 		<require idref="common.components.wifi.winc3400.ble.ble_services.tx_power"/>
 
 		<device-support value="samd21"/>
+		<device-support value="sam4s"/>
+		<device-support value="samg55"/>		
+		<device-support value="same70"/>
 		
 	</module>
  

@@ -1,0 +1,12 @@
+<asf xmlversion="1.0">
+	<module type="meta" id="thirdparty.wireless.miwi.include" caption="MIWI INCLUDE">
+		<info type="description" value="summary">
+		Provides Miwi Common header files
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="header-file"   value="miwi_api.h"/>
+		<build type="include-path"  value="."/>
+		<device-support-alias value="miwi_support"/>
+	</module>
+</asf>
+

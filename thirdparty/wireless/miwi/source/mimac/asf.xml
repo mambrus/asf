@@ -1,0 +1,14 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.miwi.source.mimac" caption="PHY(Radio Physical Layer)">
+		<info type="description" value="summary">
+        Radio physical layer (PHY) provides functions for radio transceiver access. Some of them are accessible only by the network layer (request to send data, data indication); some of them can be used from the application (channel selection, random number generation, energy detection, etc.)
+        </info>
+		<info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="mimac_at86rf.c"/>
+		<build type="header-file"   value="mimac_at86rf.h"/>
+		<build type="include-path"  value="."/>
+		<require idref="thirdparty.wireless.miwi.source.mimac.phy"/>
+		<build type="doxygen-entry-point" value="group_mimac"/>
+		<device-support-alias value="miwi_support"/>
+	</module>
+</asf>

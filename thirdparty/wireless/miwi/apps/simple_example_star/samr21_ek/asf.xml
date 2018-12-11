@@ -1,0 +1,43 @@
+<asf xmlversion="1.0">
+	<project caption="MiWi Star Simple Example Application - SAMR21 ZLL-EK" id="thirdparty.wireless.miwi.apps.simple_example_star.samr21_ek" force-caption="true" force-description="true">
+		<info type="description" value="summary">
+		Simple Example Star application implements a typical Star network with first node to start being PAN Coordinator and the other devices joins to this device to form Star network, with configuration to send broadcast/unicast data to nodes.
+		</info>
+		<build type="include-path" value="."/>
+
+		<build type="header-file" value="conf_board.h"/>
+		<build type="header-file" value="conf_clocks.h"/>
+		<build type="header-file" value="conf_extint.h"/>
+		<build type="header-file" value="conf_hw_timer.h"/>
+		<build type="header-file" value="conf_sio2host.h"/>
+		<build type="header-file" value="conf_trx_access.h"/>
+		<build type="header-file" value="conf_spi.h"/>
+		<build type="header-file" value="conf_ssd1306.h"/>
+		<build type="header-file" value="conf_spinctrl.h"/>
+		<build type="header-file" value="conf_sysfont.h"/>
+		<build type="header-file" value="conf_nvm.h"/>
+
+		<config name="config.thirdparty.wireless.miwi.source" value="miwi_star"/>
+		<config name="config.thirdparty.wireless.miwi.source.mimac.phy.ext" value="at86rf233"/>
+		<config name="config.sam0.drivers.sercom.spi" value="polled"/>
+		<config name="config.sam0.drivers.sercom.usart" value="callback"/>
+		<config name="config.sam0.drivers.adc" value="polled"/>
+		<require idref="sam0.drivers.adc"/>
+		<config name="common2.services.gfx_mono.display" value="ug_2832hsweg04"/>
+		<require idref="common2.services.gfx_mono.display"/>
+		<require idref="common2.services.gfx_mono.font"/>
+		<require idref="common2.services.gfx_mono.spinctrl"/>
+		<require idref="board.samr21zll_ek"/>
+
+		<require idref="thirdparty.wireless.miwi.services.lcd"/>
+		<require idref="thirdparty.wireless.miwi.apps.simple_example_star"/>
+
+		<config name="config.compiler.armgcc.optimization" value="high" />
+
+		<generator value="iarewarm"/>
+		<generator value="armgcc" />
+		<generator value="as5_arm" />
+		<generator value="doxygen"/>
+		<device-support value="atsamr21g18a"/>
+	</project>
+</asf>

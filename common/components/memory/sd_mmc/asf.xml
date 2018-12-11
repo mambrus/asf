@@ -104,6 +104,8 @@
 			<device-support value="samv71"/>
 			<device-support value="same70"/>
 			<device-support value="sams70"/>
+			<device-support value="samg53"/>
+			<device-support value="samg55"/>
 			<generator value="doxygen-module" default-mcu="unspecified-sam3s"/>
 		</module>
 	</select-by-device>

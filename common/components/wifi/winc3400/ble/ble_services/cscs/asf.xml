@@ -8,6 +8,9 @@
   		<require idref="common.components.wifi.winc3400.ble"/>
 
 	    <device-support value="samd21"/>
+		<device-support value="sam4s"/>
+		<device-support value="samg55"/>			
+		<device-support value="same70"/>
 
 	</module>
 </asf>

@@ -1,0 +1,25 @@
+<asf xmlversion="1.0">
+
+	<!-- **************************************************************************************************** -->
+	<module type="application" id="thirdparty.wireless.miwi.apps.chat_demo" caption="Chat Demo">
+		<info type="description" value="summary">
+		The Chat Demo application provides chat between two nodes through the serial interface on Terminal application.
+		</info>
+
+		<build type="c-source" value="main.c"/>
+		<build type="header-file"   value="miwi_config.h"/>
+		<build type="header-file"   value="miwi_config_p2p.h"/>
+		<build type="include-path" value="."/>
+		<require idref="thirdparty.wireless.addons.sio2host"/>
+		<require idref="thirdparty.wireless.miwi"/>
+		
+		<device-support-alias value="miwi_support"/>
+		<!-- .................................................................................................... -->
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+		</info>
+		<!-- **************************************************************************************************** -->
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

@@ -1,0 +1,11 @@
+<asf xmlversion="1.0">
+	<module type="meta" caption="LCD" id="thirdparty.wireless.miwi.services.lcd">
+		<info type="description" value="summary">
+		LCD Service
+		</info>
+		<build type="include-path" value="."/>
+		<build type="header-file" value="lcd.h"/>
+		<build type="c-source" value="lcd.c"/>
+		<device-support-alias value="miwi_support"/>
+	</module>
+</asf>

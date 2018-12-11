@@ -1,0 +1,26 @@
+<asf xmlversion="1.0">
+	<select-by-device id="common.components.wifi.wilc.mode_sta_wilc3000_example">
+		<module type="application" id="common.components.wifi.wilc.mode_sta_wilc3000_example#1" caption="WILC3000 Mode STA Example">
+			<!-- Summary Description -->
+			<info type="description" value="summary">
+				This example demonstrates how to enable Station (STA) mode using the WILC3000 Wi-Fi module.
+			</info>
+
+			<!-- Source -->
+			<build type="include-path" value="."/>
+			<build type="c-source" value="main.c"/>
+			<build type="c-source" value="sta.c"/>
+			<build type="header-file" value="sta.h"/>
+
+			<!-- Device support -->
+			<device-support value="samv71"/>
+			<device-support value="sam4s"/>
+
+			<!-- Required modules -->
+			<require idref="common.components.wifi.wilc3000"/>
+			<require idref="common.services.basic.clock"/>
+			<require idref="common.utils.osprintf"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+	</select-by-device>
+</asf>

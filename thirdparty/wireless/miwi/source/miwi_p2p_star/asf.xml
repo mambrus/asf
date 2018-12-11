@@ -1,0 +1,15 @@
+<asf xmlversion="1.0">
+	<module type="meta" id="thirdparty.wireless.miwi.source.miwi_p2p_star" caption="MiWi P2P and Star">
+		<info type="description" value="summary">
+		Source files of MiWi P2P and Star stack.
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="miwi_p2p.c"/>
+		<build type="header-file"   value="miwi_p2p.h"/>
+		<build type="header-file"   value="miwi_nvm.h"/>
+		<build type="include-path"  value="."/>
+		<build type="doxygen-entry-point" value="group_miwi_p2p_star"/>
+		<device-support-alias value="miwi_support"/>
+	</module>
+</asf>
+
