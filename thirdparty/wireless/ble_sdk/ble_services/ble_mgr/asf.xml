@@ -1,0 +1,26 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.ble_sdk.ble_services.ble_manager" caption="BLE-Event Manager">
+		<info type="description" value="summary">
+		</info>
+		<build type="include-path"  value="./"/>
+
+		<build type="define" name="HOST_UART_BAUDRATE_CONFIG_VALUE" value="921600"/>
+		<build type="define" name="HOST_SLEEP_ENABLE" value="true"/>
+		<build type="define" name="SLEEP_WALKING_ENABLED" value="false"/>
+		<build type="define" name="BLE_MODULE" value="BTLC1000_MR" />
+
+  		<build type="header-file"   value="ble_manager.h"/>
+  		<build type="c-source"      value="ble_manager.c"/>				
+		
+  		<require idref="thirdparty.wireless.ble_sdk.lib"/>
+		<require idref="thirdparty.wireless.ble_sdk.inc"/>
+		<require idref="thirdparty.wireless.ble_sdk.src"/>
+		<require idref="thirdparty.wireless.ble_sdk.services.console"/>
+		<require idref="thirdparty.wireless.ble_sdk.services.timer"/>
+
+		<build type="doxygen-entry-point" value="ble_stack_group"/>
+		<device-support-alias value="ble_stack_lib_support"/>
+		
+	</module>
+ 
+</asf>

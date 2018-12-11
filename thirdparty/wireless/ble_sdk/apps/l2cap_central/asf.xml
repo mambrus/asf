@@ -1,0 +1,23 @@
+<asf xmlversion="1.0">
+	<module type="application" caption="L2cap Central Application" id="thirdparty.wireless.ble_sdk.apps.l2cap_central">
+		<info type="description" value="summary">
+		L2cap Central Application for BLE stack
+		</info>
+		<build type="define" name="L2CAP_CENTRAL" value=""/>
+		<build type="define" name="BLE_DEVICE_ROLE" value="BLE_ROLE_CENTRAL"/>
+		<build type="define" name="ATT_DB_MEMORY" value=""/>
+		<build type="define" name="NENABLE_PTS" value=""/>
+		<build type="define" name="TIME_INTERVAL" value="5"/>
+		<build type="include-path" value="."/>
+		<build type="c-source" value="main.c"/>
+		<require idref="thirdparty.wireless.ble_sdk.ble_services.ble_manager"/>
+		<require idref="thirdparty.wireless.ble_sdk.lib"/>
+		<require idref="thirdparty.wireless.ble_sdk.inc"/>
+		<require idref="thirdparty.wireless.ble_sdk.src"/>
+		<require idref="thirdparty.wireless.ble_sdk.services.timer"/>
+		<require idref="thirdparty.wireless.ble_sdk.services.console"/>
+		<build type="distribute" subtype="user-file" value="../../doc/ATBTLC1000-BluSDK-Example-Profiles-Application-User's-Guide.pdf"/>
+		<device-support-alias value="ble_stack_lib_support"/>
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

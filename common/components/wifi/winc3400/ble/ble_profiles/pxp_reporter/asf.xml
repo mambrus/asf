@@ -1,0 +1,22 @@
+<asf xmlversion="1.0">
+	<module type="component" id="common.components.wifi.winc3400.ble.ble_profiles.pxp_reporter" caption="BLE-Proximity Reporter Profile">
+		<info type="description" value="summary">
+		</info>
+		<build type="include-path"  value="./"/>
+  		<build type="header-file"   value="pxp_reporter.h"/>
+  		<build type="c-source"      value="pxp_reporter.c"/>
+		
+  		<build type="define" name="PROXIMITY_REPORTER" value=""/>
+  		<build type="define" name="IAS_GATT_SERVER" value=""/>
+  		<build type="define" name="TXPS_GATT_SERVER" value=""/>
+  		<build type="define" name="LLS_GATT_SERVER" value=""/>
+		
+		<require idref="common.components.wifi.winc3400.ble.ble_services.immediate_alert"/>
+		<require idref="common.components.wifi.winc3400.ble.ble_services.link_loss"/>
+		<require idref="common.components.wifi.winc3400.ble.ble_services.tx_power"/>
+
+		<device-support value="samd21"/>
+		
+	</module>
+ 
+</asf>

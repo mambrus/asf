@@ -1,0 +1,26 @@
+<asf xmlversion="1.0">
+	<project caption="Performance Analyzer Application - ATmega256RFR2 Zigbit(ATZB-256RFR2-XPRO)" id="thirdparty.wireless.avr2025_mac.apps.tal.performance_analyzer.atmega256rfr2_zigbit" force-caption="true" force-description="true">
+		<info type="description" value="summary">
+			A Serial interface based application,which communicates with Wireless Analyzer to demonstrate
+			various features and capabilities of the of Atmel Transceivers.
+		</info>
+		<build type="include-path" value="."/>
+		<build type="header-file" value="conf_board.h"/>
+		<build type="header-file" value="conf_clock.h"/>
+		<build type="header-file" value="conf_sio2host.h"/>
+		<build type="header-file" value="conf_usart_serial.h"/>
+		<build type="header-file" value="conf_hw_timer.h"/>
+        <build type="header-file" value="conf_perf_analyzer.h"/>
+		<config name="config.thirdparty.wireless.addons.sio2host" value="uart"/>
+		
+		<require idref="thirdparty.wireless.avr2025_mac.apps.tal.performance_analyzer"/>
+		<require idref="board.atmega256rfr2_zigbit"/>
+    	
+		<build type="define"   name="HIGH_DATA_RATE_SUPPORT"              value=""/>		
+		<generator value="avrgcc" />
+		<generator value="iarew"/>
+		<generator value="as5_8" />
+		<generator value="doxygen"/>  
+		<device-support value="atmega256rfr2"/>
+	</project>
+</asf>

@@ -1,0 +1,66 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.aws_sdk" caption="AWS SDK">
+			<info type="description" value="summary">
+				AWS SDK v1.1.0 
+			</info>
+			<info type="keyword" value="technology">
+				<keyword value="Wireless"/>
+			</info>
+			<build type="distribute" subtype="license" value="AWS_SDK\LICENSE.txt"/>
+			<build type="include-path" value="."/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\protocol\mqtt\aws_iot_embedded_client_wrapper\network_interface.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\protocol\mqtt\aws_iot_embedded_client_wrapper\platform\common\timer_platform.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\protocol\mqtt\aws_iot_embedded_client_wrapper\timer_interface.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\protocol\mqtt\aws_iot_mqtt_interface.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_actions.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_interface.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_json.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_json_data.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_key.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_records.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\utils\aws_iot_error.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\utils\aws_iot_json_utils.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\utils\aws_iot_log.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\utils\aws_iot_version.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_iot_src\utils\jsmn.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTClient-C\src\MQTTClient.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTConnect.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTMessage.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTPacket.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTPublish.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTReturnCodes.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTSubscribe.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTUnsubscribe.h"/>
+			<build type="header-file"  value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\StackTrace.h"/>
+
+			<build type="c-source" value="AWS_SDK\aws_iot_src\protocol\mqtt\aws_iot_embedded_client_wrapper\aws_iot_mqtt_embedded_client_wrapper.c"/>
+			<build type="c-source" value="AWS_SDK\aws_iot_src\protocol\mqtt\aws_iot_embedded_client_wrapper\platform\common\timer.c"/>
+			<build type="c-source" value="AWS_SDK\aws_iot_src\protocol\mqtt\aws_iot_embedded_client_wrapper\platform\network_winc1500tls_wrapper.c"/>
+			<build type="c-source" value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow.c"/>
+			<build type="c-source" value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_actions.c"/>
+			<build type="c-source" value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_json.c"/>
+			<build type="c-source" value="AWS_SDK\aws_iot_src\shadow\aws_iot_shadow_records.c"/>
+			<build type="c-source" value="AWS_SDK\aws_iot_src\utils\aws_iot_json_utils.c"/>
+			<build type="c-source" value="AWS_SDK\aws_iot_src\utils\jsmn.c"/>
+			<build type="c-source" value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTClient-C\src\MQTTClient.c"/>
+			<build type="c-source" value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTConnectClient.c"/>
+			<build type="c-source" value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTDeserializePublish.c"/>
+			<build type="c-source" value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTPacket.c"/>
+			<build type="c-source" value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTSerializePublish.c"/>
+			<build type="c-source" value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTSubscribeClient.c"/>
+			<build type="c-source" value="AWS_SDK\aws_mqtt_embedded_client_lib\MQTTPacket\src\MQTTUnsubscribeClient.c"/>
+
+			<build type="module-config" subtype="required-header-file" value="aws_iot_config.h"/>
+			<build type="module-config" subtype="path" value="AWS_SDK\module-config\"/>
+			<generator value="doxygen-module" default-mcu="unspecified-samg55"/>
+			<require idref="thirdparty.aws_sdk.license"/>
+			<info type="gui-flag" value="hidden"/>
+			
+			<device-support value="samd21"/>
+			<device-support value="samg55"/>
+			
+	</module>
+	<module type="meta" id="thirdparty.aws_sdk.license" caption="AWS SDK license">
+		<build type="distribute" subtype="file" value="AWS_SDK\LICENSE.txt"/>
+	</module>
+</asf>

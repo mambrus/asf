@@ -1,0 +1,13 @@
+<asf xmlversion="1.0">
+	<project id="common.applications.user_application.xplained_pro2.samha1g16a_xplained_pro" caption="SAM HA1G16A Xplained Pro template project" type="template">
+		<device-support value="atsamha1g16a"/>
+		<require idref="common.applications.user_application.xplained_pro2"/>
+		<require idref="board.samha1g16a_xplained_pro"/>
+		<info type="gui-flag" value="move-to-root"/>
+		<build type="include-path" value="config"/>
+		<build type="header-file" value="config/conf_board.h"/>
+		<build type="header-file" value="config/conf_clocks.h"/>
+		<generator value="as5_arm_template"/>
+		<generator value="doxygen-v2"/>
+	</project>
+</asf>

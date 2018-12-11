@@ -1,0 +1,22 @@
+<asf xmlversion="1.0">
+	<project caption="BLE OTAU Example Application - SAM B11 ZR Xplained Pro" id="thirdparty.wireless.ble_smart_sdk.apps.otau_app.samb11zr_xplained_pro" force-caption="true" force-description="true" workspace-name="otau_app_samb11zr_xplained_pro">
+		<info type="description" value="summary">
+		BLE OTAU Example Application for SAMB11 ZR.
+		</info>	
+		<require idref="thirdparty.wireless.ble_smart_sdk.apps.otau_app"/>
+		<build type="include-path" value="../../config/samb11/"/>
+		<build type="header-file" value="../../config/samb11/conf_board.h"/>
+		<build type="header-file" value="../../config/samb11/conf_dualtimer.h"/>
+		<build type="header-file" value="../../config/samb11/conf_aon_sleep_timer.h"/>
+		<build type="header-file" value="../../config/samb11/conf_console_serial.h"/>
+		<build type="define" name="BLE_MODULE" value="SAMB11_ZR" />
+
+		<require idref="board.samb11zr_xplained_pro"/>
+		<require idref="thirdparty.wireless.ble_smart_sdk.services.aon_sleep_timer"/>
+		
+		<generator value="armgcc" />
+		<generator value="as5_arm" />
+		<generator value="doxygen"/>
+		<device-support value="atsamb11zr"/>
+	</project>
+</asf>

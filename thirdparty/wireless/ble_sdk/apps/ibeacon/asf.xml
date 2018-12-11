@@ -1,0 +1,31 @@
+<asf xmlversion="1.0">
+	<module type="application" caption="IBEACON APPLICATION" id="thirdparty.wireless.ble_sdk.apps.ibeacon">
+		<info type="description" value="summary">
+		ibeacon application for BLE stack
+		</info>
+		<build type="include-path" value="."/>
+		<build type="define" name="HOST_SLEEP_ENABLE" value="true"/>
+		<build type="define" name="SLEEP_WALKING_ENABLED" value="false"/>
+		<build type="define" name="BLE_MODULE" value="BTLC1000_MR" />
+		<build type="define" name="HOST_UART_BAUDRATE_CONFIG_VALUE" value="921600"/>
+		<build type="header-file" value="ibeacon.h"/>
+		<build type="c-source" value="ibeacon.c"/>
+		<require idref="thirdparty.wireless.ble_sdk.lib"/>
+		<require idref="thirdparty.wireless.ble_sdk.inc"/>
+		<require idref="thirdparty.wireless.ble_sdk.src"/>
+		<require idref="thirdparty.wireless.ble_sdk.services.console"/>
+		<require idref="thirdparty.wireless.ble_sdk.services.timer"/>
+		<require idref="thirdparty.wireless.ble_sdk.utils"/>
+		<build type="distribute" subtype="user-file" value="../../doc/ATBTLC1000-BluSDK-Example-Profiles-Application-User's-Guide.pdf"/>
+		<device-support-alias value="ble_stack_lib_support"/>
+				
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+			<keyword value="BLE"/>
+			<keyword value="Bluetooth"/>
+		</info>
+
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

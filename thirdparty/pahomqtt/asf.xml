@@ -1,0 +1,56 @@
+<asf xmlversion="1.0">
+	<select-by-device id="thirdparty.pahomqtt" caption="Paho MQTT embedded-c client">
+		<info type="description" value="summary">
+			Paho MQTT embedded-c client
+		</info>
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+		</info>
+		
+		<module type="service" id="thirdparty.pahomqtt#0" caption="Paho MQTT embedded-c client">
+			<info type="description" value="summary">
+				Paho MQTT embedded-c client
+			</info>
+			<info type="keyword" value="technology">
+				<keyword value="Wireless"/>
+			</info>
+			<!--build type="distribute" subtype="license" value="edl-v10"/>
+			<build type="distribute" subtype="license" value="epl-v10"/-->
+			<build type="include-path" value="."/>
+			<build type="header-file"  value="MQTTClient\MQTTClient.h"/>
+			<build type="header-file"  value="MQTTClient\Platforms\MCHP_ATWx.h"/>
+			<build type="header-file"  value="MQTTClient\Platforms\mqtt_platform.h"/>
+			<build type="header-file" value="MQTTClient\Wrapper\mqtt.h"/>			
+			<build type="header-file"  value="MQTTPacket\MQTTConnect.h"/>
+			<build type="header-file"  value="MQTTPacket\MQTTFormat.h"/>
+			<build type="header-file"  value="MQTTPacket\MQTTPacket.h"/>
+			<build type="header-file"  value="MQTTPacket\MQTTPublish.h"/>
+			<build type="header-file"  value="MQTTPacket\MQTTSubscribe.h"/>
+			<build type="header-file"  value="MQTTPacket\MQTTUnsubscribe.h"/>
+			<build type="header-file"  value="MQTTPacket\StackTrace.h"/>
+			
+			<build type="c-source" value="MQTTClient\MQTTClient.c"/>
+			<build type="c-source" value="MQTTClient\Platforms\MCHP_ATWx.c"/>
+			<build type="c-source" value="MQTTClient\Wrapper\mqtt.c"/>			
+			<build type="c-source" value="MQTTPacket\MQTTConnectClient.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTConnectServer.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTDeserializePublish.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTFormat.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTPacket.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTSerializePublish.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTSubscribeClient.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTSubscribeServer.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTUnsubscribeClient.c"/>
+			<build type="c-source" value="MQTTPacket\MQTTUnsubscribeServer.c"/>
+			
+			<build type="doxygen-entry-point" value="winc1500_group"/>
+			<device-support value="saml21"/>
+			<device-support value="samd21"/>
+			<generator value="doxygen-module" default-mcu="unspecified-samd21"/>
+			<info type="gui-flag" value="hidden"/>
+		</module>
+	</select-by-device>
+	<module type="meta" id="thirdparty.pahomqtt.license" caption="Paho MQTT License">
+		<build type="distribute" subtype="file" value="epl-v10"/>
+	</module>
+</asf>

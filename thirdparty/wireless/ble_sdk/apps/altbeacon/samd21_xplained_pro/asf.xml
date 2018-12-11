@@ -1,0 +1,25 @@
+<asf xmlversion="1.0">
+	<project caption="altbeacon - SAM D21 Xplained Pro" id="thirdparty.wireless.ble_sdk.apps.altbeacon.samd21_xplained_pro" force-caption="true" force-description="true" workspace-name="altbeacon_samd21_xplained_pro">
+		<info type="description" value="summary">
+		altbeacon for BLE Stack.
+		</info>	
+		<require idref="thirdparty.wireless.ble_sdk.apps.altbeacon"/>
+		<require idref="thirdparty.wireless.ble_sdk.apps.config.samd21"/>
+		<build type="include-path" value="../../config/samd21/"/>
+		<build type="header-file" value="../../config/samd21/conf_board.h"/>
+		<build type="header-file" value="../../config/samd21/conf_clocks.h"/>
+		<build type="header-file" value="../../config/samd21/conf_extint.h"/>
+		<build type="header-file" value="../../config/samd21/conf_serialdrv.h"/>
+		<build type="header-file" value="../../config/samd21/conf_timer.h"/>
+		<build type="header-file" value="../../config/samd21/conf_console.h"/>
+  
+		<require idref="board.samd21_xplained_pro"/>
+		<config name="config.sam0.drivers.tc" value="callback"/>
+		
+		<generator value="iarewarm"/>
+		<generator value="armgcc" />
+		<generator value="as5_arm" />
+		<generator value="doxygen"/>
+		<device-support value="atsamd21j18a"/>
+	</project>
+</asf>

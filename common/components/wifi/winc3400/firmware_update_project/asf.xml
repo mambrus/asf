@@ -1,0 +1,94 @@
+<asf xmlversion="1.0">
+	<select-by-device id="common.components.wifi.winc3400.firmware_update_project">
+		<module type="application" id="common.components.wifi.winc3400.firmware_update_project#0" caption="WINC3400 Firmware Update Project (v1.2.2)">
+			<!-- Summary Description -->
+			<info type="description" value="summary">
+				This project includes tools and documentation to update the WINC3400 Wi-Fi module firmware, root certificates and gain values.
+			</info>
+
+			<!-- Source -->
+			<build type="include-path" value="."/>
+			<build type="c-source" value="main.c"/>
+			<build type="distribute" subtype="file" value="samd21_xplained_pro_firmware_update.bat"/>
+			<build type="include-path" value="doc"/>
+			<build type="distribute" subtype="file" value="doc/WINC_Devices_Integrated_Serial_Flash_Download_Procedure.pdf"/>
+			<build type="distribute" subtype="file" value="doc/WINC3400_V1_2_2_Firmware_Release_Notes.pdf"/>
+
+			<build type="distribute" subtype="file" value="firmware/download_all.bat"/>
+			<build type="distribute" subtype="file" value="firmware/download_all_sb.bat"/>
+			<build type="distribute" subtype="file" value="firmware/modify_provisioning_webpage.bat"/>
+			<build type="distribute" subtype="file" value="firmware/modify_provisioning_webpage_ota.bat"/>
+
+			<build type="distribute" subtype="file" value="firmware/ble/bt_firmware/fw.bin"/>
+			<build type="distribute" subtype="file" value="firmware/boot_firmware/release3400/boot_firmware.bin"/>
+			<build type="distribute" subtype="file" value="firmware/downloader_firmware/release3400/downloader_firmware.bin"/>
+			
+			<build type="distribute" subtype="file" value="firmware/firmware/m2m_aio_3400.bin"/>
+			<build type="distribute" subtype="file" value="firmware/firmware/wifi_v111/ASIC_3400/wifi_firmware.bin"/>
+
+			<build type="distribute" subtype="file" value="firmware/ota_firmware/m2m_ota_3400.bin"/>
+			
+			<build type="distribute" subtype="file" value="firmware/programmer_firmware/release3400/programmer_firmware.bin"/>
+			
+			<build type="distribute" subtype="file" value="firmware/provisioning_webpage/default.html"/>
+			<build type="distribute" subtype="file" value="firmware/provisioning_webpage/favicon.ico"/>
+			<build type="distribute" subtype="file" value="firmware/provisioning_webpage/logo.png"/>
+			<build type="distribute" subtype="file" value="firmware/provisioning_webpage/style.css"/>
+			<build type="distribute" subtype="file" value="firmware/provisioning_webpage/style-full.css"/>
+			
+			<build type="include-path" value="firmware/tls_cert_store"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/winc_ecdsa.cer"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/winc_rsa.cer"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/winc_rsa.key"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/winc_rsa_2.cer"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/winc_rsa_2.key"/>
+
+			<build type="include-path" value="firmware/tls_cert_store/CA"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/CA/AtmelEccCA.cer"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/CA/atmelEccCA.key"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/CA/WINCIntermediateCA.cer"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/CA/WincRootCA.cer"/>
+			<build type="distribute" subtype="file" value="firmware/tls_cert_store/CA/WINCRootCA.crt"/>
+			
+			<build type="distribute" subtype="file" value="firmware/Tools/gain_builder/debug_i2c/aardvark.dll"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/gain_builder/debug_i2c/gain_builder.exe"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/gain_builder/debug_uart/gain_builder.exe"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/gain_builder/gain_sheets/samd21_gain_setting_hp.csv"/>
+
+			<build type="distribute" subtype="file" value="firmware/Tools/image_builder/debug/image_builder.exe"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/image_builder/debug/generate_ate_image.bat"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/image_builder/debug/generate_normal_image.bat"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/image_builder/debug/generate_ota_image.bat"/>
+
+			<build type="distribute" subtype="file" value="firmware/Tools/image_downloader/debug_i2c/aardvark.dll"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/image_downloader/debug_i2c/image_downloader.exe"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/image_downloader/debug_uart/image_downloader.exe"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/image_downloader/debug_uart/run_image_downloader.bat"/>
+
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/binary/BaltimoreCyberTrustRoot.cer"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/binary/DigiCert.cer"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/binary/GlobalSignRoot.cer"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/binary/MatrixSSL_CA.cer"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/binary/NMA_Root.cer"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/binary/PROWL_Root.cer"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/binary/Radius_Root.cer"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/binary/VeriSign.cer"/>			
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/debug_i2c/aardvark.dll"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/debug_i2c/root_certificate_downloader.exe"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/debug_uart/RootCertDownload.bat"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/root_certificate_downloader/debug_uart/root_certificate_downloader.exe"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/tls_cert_flash_tool/debug_i2c/aardvark.dll"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/tls_cert_flash_tool/debug_i2c/tls_cert_flash_tool.exe"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/tls_cert_flash_tool/debug_uart/tls_cert_flash_tool.exe"/>
+			
+			<build type="include-path" value="firmware/Tools/serial_bridge"/>
+			<build type="distribute" subtype="file" value="firmware/Tools/serial_bridge/samd21_xplained_pro_serial_bridge.elf"/>
+
+			<!-- Device support -->
+			<device-support value="samd21"/>
+
+			<!-- Required modules -->
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+	</select-by-device>
+</asf>

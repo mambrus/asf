@@ -1,0 +1,22 @@
+<asf xmlversion="1.0">
+	<module type="application" id="sam0.applications.asf_programmers_manual" caption="ASF Manual">
+		<info type="description" value="summary">
+		Complete driver API reference manual.
+		</info>
+
+		<build type="include-path" value="."/>
+		<build type="header-file" value="preface.h"/>
+
+		<build type="doxygen-image-path" value="docimg"/>
+
+		<device-support value="samd20"/>
+		<device-support value="samd21"/>
+		<device-support value="samr21"/>
+		<device-support value="samd10"/>
+		<device-support value="samd11"/>
+		<device-support value="saml21"/>
+		<device-support value="samda1"/>
+		<device-support value="samc21"/>
+		<device-support value="saml22"/>
+	</module>
+</asf>

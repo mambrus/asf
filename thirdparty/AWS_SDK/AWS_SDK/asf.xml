@@ -1,0 +1,97 @@
+<asf xmlversion="1.0">
+	<select-by-device id="thirdparty.aws_sdk.aws_sdk_winc1500" caption="AWS SDK v1.1.0">
+		<info type="description" value="summary">
+			AWS SDK v1.1.0 support addition for the Projects
+		</info>
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+		</info>
+		
+		<module type="service" id="thirdparty.aws_sdk.aws_sdk_winc1500#1" caption="AWS SDK - SAMG55 implementation">
+			<info type="description" value="summary">
+				AWS SDK v1.1.0 support addition for the SAMG55 Projects
+			</info>
+			<info type="keyword" value="technology">
+				<keyword value="Wireless"/>
+			</info>
+			<build type="doxygen-entry-point" value="winc1500_group"/>
+			<device-support value="samg55"/>
+			<require idref="sam.drivers.pmc"/>
+			<require idref="sam.drivers.pio"/>
+			<require idref="sam.drivers.pdc"/>
+			<require idref="sam.drivers.spi"/>
+			<require idref="common.services.ioport"/>
+			<require idref="common.services.delay"/>
+			<require idref="thirdparty.aws_sdk"/>
+			<require idref="common.components.wifi.winc1500"/>
+			<generator value="doxygen-module" default-mcu="unspecified-samg55"/>
+			<info type="gui-flag" value="hidden"/>
+		</module>
+		<module type="service" id="thirdparty.aws_sdk.aws_sdk_winc1500#2" caption="AWS SDK - SAMD21/SAMW25 implementation">
+			<info type="description" value="summary">
+				AWS SDK v1.1.0 support addition for the SAMD21/W25 Projects
+			</info>
+			<info type="keyword" value="technology">
+				<keyword value="Wireless"/>
+			</info>
+			<build type="doxygen-entry-point" value="winc1500_group"/>
+			<device-support value="samd21"/>
+			<require idref="sam0.drivers.port"/>
+			<require idref="sam0.drivers.sercom.spi"/>
+			<require idref="common2.services.delay"/>
+			<require idref="sam0.drivers.extint"/>
+			<require idref="sam0.drivers.system"/>
+			<require idref="thirdparty.aws_sdk"/>
+			<require idref="common.components.wifi.winc1500"/>
+			<generator value="doxygen-module" default-mcu="unspecified-samd21"/>
+		</module>
+	</select-by-device>
+	<select-by-device id="thirdparty.aws_sdk.aws_sdk_winc3400" caption="AWS SDK v1.1.0">
+		<info type="description" value="summary">
+			AWS SDK v1.1.0 support addition for the Projects
+		</info>
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+		</info>
+		
+		<!-- <module type="service" id="thirdparty.aws_sdk_winc3400#2" caption="AWS SDK - SAMG55 implementation">
+			<info type="description" value="summary">
+				AWS SDK v1.1.0 support addition for the SAMG55 Projects
+			</info>
+			<info type="keyword" value="technology">
+				<keyword value="Wireless"/>
+			</info>
+			<build type="doxygen-entry-point" value="winc3400_group"/>
+			<device-support value="samg55"/>
+			<require idref="sam.drivers.pmc"/>
+			<require idref="sam.drivers.pio"/>
+			<require idref="sam.drivers.pdc"/>
+			<require idref="sam.drivers.spi"/>
+			<require idref="common.services.ioport"/>
+			<require idref="common.services.delay"/>
+			<require idref="thirdparty.aws_sdk"/>
+			<require idref="common.components.wifi.winc3400"/>
+			<generator value="doxygen-module" default-mcu="unspecified-samg55"/>
+			<require idref="thirdparty.aws_sdk.license"/>
+			<info type="gui-flag" value="hidden"/>
+		</module> -->
+		<module type="service" id="thirdparty.aws_sdk.aws_sdk_winc3400#1" caption="AWS SDK - SAMD21/SAMW25 implementation">
+			<info type="description" value="summary">
+				AWS SDK v1.1.0 support addition for the SAMD21/W25 Projects
+			</info>
+			<info type="keyword" value="technology">
+				<keyword value="Wireless"/>
+			</info>
+			<build type="doxygen-entry-point" value="winc3400_group"/>
+			<device-support value="samd21"/>
+			<require idref="sam0.drivers.port"/>
+			<require idref="sam0.drivers.sercom.spi"/>
+			<require idref="common2.services.delay"/>
+			<require idref="sam0.drivers.extint"/>
+			<require idref="sam0.drivers.system"/>
+			<require idref="thirdparty.aws_sdk"/>
+			<require idref="common.components.wifi.winc3400"/>
+			<generator value="doxygen-module" default-mcu="unspecified-samd21"/>
+		</module>
+	</select-by-device>	
+</asf>
