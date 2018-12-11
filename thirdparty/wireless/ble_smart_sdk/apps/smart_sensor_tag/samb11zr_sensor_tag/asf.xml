@@ -1,0 +1,23 @@
+<asf xmlversion="1.0">
+	<project caption="Smart Sensor Tag Application - SAMB11ZR_SENSOR_TAG" id="thirdparty.wireless.ble_smart_sdk.apps.smart_sensor_tag.samb11zr_sensor_tag" force-caption="true" force-description="true" workspace-name="smart_sensor_tag_samb11zr_sensor_tag">
+		<info type="description" value="summary">
+		Smart Sensor Tag Application.
+		</info>	
+		<require idref="thirdparty.wireless.ble_smart_sdk.apps.smart_sensor_tag"/>
+				
+	    
+		<build type="include-path" value="../../config/samb11/"/>
+		<build type="header-file" value="../../config/samb11/conf_board.h"/>
+		<build type="header-file" value="../../config/samb11/conf_dualtimer.h"/>
+		<build type="header-file" value="../../config/samb11/conf_console_serial.h"/>
+		<build type="define" name="BLE_MODULE" value="SAMB11_ZR"/>
+		<require idref="board.samb11zr_sensor_tag"/>
+		<config name="config.sam0.drivers.i2c.master" value="polled"/>
+		
+		<generator value="armgcc" />
+		<generator value="as5_arm" />
+		<generator value="doxygen"/>
+		<device-support value="atsamb11zr"/>
+	</project>
+</asf>
+

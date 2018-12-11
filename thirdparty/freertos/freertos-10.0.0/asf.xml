@@ -63,6 +63,19 @@
 			<device-support value="sam0"/>
 			<require idref="thirdparty.os.freertos-10_0_0.portable.common"/>
 		</module>
+		<module type="driver" id="thirdparty.os.freertos-10_0_0.portable#cm3" caption="Cortex M3/M4 port of FreeRTOS core">
+			<info type="gui-flag" value="hidden"/>
+			<build type="asm-source" value="Source/portable/IAR/ARM_CM3/portasm.s" toolchain="iarewarm"/>
+			<build type="c-source" value="Source/portable/GCC/ARM_CM3/port.c" toolchain="armgcc"/>
+			<build type="c-source" value="Source/portable/IAR/ARM_CM3/port.c" toolchain="iarewarm"/>
+			<build type="header-file" value="Source/portable/GCC/ARM_CM3/portmacro.h" toolchain="armgcc"/>
+			<build type="header-file" value="Source/portable/IAR/ARM_CM3/portmacro.h" toolchain="iarewarm"/>
+			<build type="include-path" value="Source/portable/GCC/ARM_CM3/" toolchain="armgcc"/>
+			<build type="include-path" value="Source/portable/IAR/ARM_CM3/" toolchain="iarewarm"/>
+			<device-support value="sam3"/>
+			<device-support value="sam4"/>
+			<require idref="thirdparty.os.freertos-10_0_0.portable.common"/>
+		</module>
 		<module type="driver" id="thirdparty.os.freertos-10_0_0.portable#cm4f" caption="Cortex M4f port of FreeRTOS core">
 			<info type="gui-flag" value="hidden"/>
 			<build type="asm-source" value="Source/portable/IAR/ARM_CM4F/portasm.s" toolchain="iarewarm"/>
@@ -73,8 +86,6 @@
 			<build type="include-path" value="Source/portable/GCC/ARM_CM4F/" toolchain="armgcc"/>
 			<build type="include-path" value="Source/portable/IAR/ARM_CM4F/" toolchain="iarewarm"/>
 			<device-support value="sam4e"/>
-			<device-support value="atsam4c16c:1"/>
-			<device-support value="atsam4cp16b:1"/>
 			<device-support value="samg"/>
 			<require idref="thirdparty.os.freertos-10_0_0.portable.common"/>
 		</module>

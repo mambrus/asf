@@ -1477,6 +1477,36 @@
 			<build type="linker-config" subtype="aux-script" value="samha1/iar/samha1g16ab_sram.icf" toolchain="iarewarm"/>
 			<device-support value="atsamha1g16ab"/>
 		</module>
+		<module type="build-specific" caption="Linker script for SAMHA0G14AB" id="sam0.utils.linker_scripts#atsamha0g14ab">
+			<info type="description" value="summary">
+			Linker script for the SAMHA0G14AB device.
+			</info>
+			<build type="linker-config" subtype="script" value="samha0/gcc/samha0g14ab_flash.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/gcc/samha0g14ab_sram.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="script" value="samha0/iar/samha0g14ab_flash.icf" toolchain="iarewarm"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/iar/samha0g14ab_sram.icf" toolchain="iarewarm"/>
+			<device-support value="atsamha0g14ab"/>
+		</module>
+		<module type="build-specific" caption="Linker script for SAMHA0G15AB" id="sam0.utils.linker_scripts#atsamha0g15ab">
+			<info type="description" value="summary">
+			Linker script for the SAMHA0G15AB device.
+			</info>
+			<build type="linker-config" subtype="script" value="samha0/gcc/samha0g15ab_flash.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/gcc/samha0g15ab_sram.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="script" value="samha0/iar/samha0g15ab_flash.icf" toolchain="iarewarm"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/iar/samha0g15ab_sram.icf" toolchain="iarewarm"/>
+			<device-support value="atsamha0g15ab"/>
+		</module>
+		<module type="build-specific" caption="Linker script for SAMHA0G16AB" id="sam0.utils.linker_scripts#atsamha0g16ab">
+			<info type="description" value="summary">
+			Linker script for the SAMHA0G16AB device.
+			</info>
+			<build type="linker-config" subtype="script" value="samha0/gcc/samha0g16ab_flash.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/gcc/samha0g16ab_sram.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="script" value="samha0/iar/samha0g16ab_flash.icf" toolchain="iarewarm"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/iar/samha0g16ab_sram.icf" toolchain="iarewarm"/>
+			<device-support value="atsamha0g16ab"/>
+		</module>
 		<module type="build-specific" caption="Linker script for SAMHA1E14A" id="sam0.utils.linker_scripts#atsamha1e14a">
 			<info type="description" value="summary">
 			Linker script for the SAMHA1E14A device.
@@ -1536,6 +1566,36 @@
 			<build type="linker-config" subtype="script" value="samha1/iar/samha1e16ab_flash.icf" toolchain="iarewarm"/>
 			<build type="linker-config" subtype="aux-script" value="samha1/iar/samha1e16ab_sram.icf" toolchain="iarewarm"/>
 			<device-support value="atsamha1e16ab"/>
+		</module>
+		<module type="build-specific" caption="Linker script for SAMHA0E14AB" id="sam0.utils.linker_scripts#atsamha0e14ab">
+			<info type="description" value="summary">
+			Linker script for the SAMHA0E14AB device.
+			</info>
+			<build type="linker-config" subtype="script" value="samha0/gcc/samha0e14ab_flash.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/gcc/samha0e14ab_sram.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="script" value="samha0/iar/samha0e14ab_flash.icf" toolchain="iarewarm"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/iar/samha0e14ab_sram.icf" toolchain="iarewarm"/>
+			<device-support value="atsamha0e14ab"/>
+		</module>
+		<module type="build-specific" caption="Linker script for SAMHA0E15AB" id="sam0.utils.linker_scripts#atsamha0e15ab">
+			<info type="description" value="summary">
+			Linker script for the SAMHA0E15AB device.
+			</info>
+			<build type="linker-config" subtype="script" value="samha0/gcc/samha0e15ab_flash.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/gcc/samha0e15ab_sram.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="script" value="samha0/iar/samha0e15ab_flash.icf" toolchain="iarewarm"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/iar/samha0e15ab_sram.icf" toolchain="iarewarm"/>
+			<device-support value="atsamha0e15ab"/>
+		</module>
+		<module type="build-specific" caption="Linker script for SAMHA0E16AB" id="sam0.utils.linker_scripts#atsamha0e16ab">
+			<info type="description" value="summary">
+			Linker script for the SAMHA0E16AB device.
+			</info>
+			<build type="linker-config" subtype="script" value="samha0/gcc/samha0e16ab_flash.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/gcc/samha0e16ab_sram.ld" toolchain="armgcc"/>
+			<build type="linker-config" subtype="script" value="samha0/iar/samha0e16ab_flash.icf" toolchain="iarewarm"/>
+			<build type="linker-config" subtype="aux-script" value="samha0/iar/samha0e16ab_sram.icf" toolchain="iarewarm"/>
+			<device-support value="atsamha0e16ab"/>
 		</module>
 	</select-by-device>
 	<select-by-device id="samb.utils.linker_scripts" caption="Linker scripts for IAR and GCC toolchain">

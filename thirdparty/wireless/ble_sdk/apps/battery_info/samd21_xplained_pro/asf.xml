@@ -12,6 +12,9 @@
 		<build type="header-file" value="../../config/samd21/conf_serialdrv.h"/>
 		<build type="header-file" value="../../config/samd21/conf_timer.h"/>
 		<build type="header-file" value="../../config/samd21/conf_console.h"/>
+		<build type="header-file" value="../../config/samd21/conf_nvm.h"/>
+		
+		<require idref="thirdparty.wireless.ble_sdk.services.pds"/>
 
 		<require idref="board.samd21_xplained_pro"/>
 		<config name="config.sam0.drivers.tc" value="callback"/>  

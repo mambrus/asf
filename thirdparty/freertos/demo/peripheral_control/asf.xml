@@ -52,7 +52,10 @@
 		<build type="c-source" value="run-time-stats-utils.c"/>
 		<build type="include-path" value="."/>
 		<build type="include-path" value="./demo-tasks/"/>
+		<build type="include-path" value="./FreeRTOS-Plus-CLI/"/>
 		<build type="c-source" value="./demo-tasks/CLI-commands.c"/>
+		<build type="c-source" value="./FreeRTOS-Plus-CLI/FreeRTOS_CLI.c"/>
+		<build type="header-file" value="./FreeRTOS-Plus-CLI/FreeRTOS_CLI.h"/>
 		<device-support value="sam"/>
 		<require idref="sam.drivers.pmc"/>
 		<require idref="common.utils.stdio.stdio_serial"/>

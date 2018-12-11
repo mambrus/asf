@@ -60,6 +60,7 @@
 			<device-support value="samd11"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 		</module>
 		<module type="meta" id="sam0.drivers.tc.common#sam_l" caption="TC - Time Counter">
 			<build type="include-path" value="." />

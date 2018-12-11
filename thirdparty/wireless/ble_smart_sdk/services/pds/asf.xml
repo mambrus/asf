@@ -1,0 +1,24 @@
+<asf xmlversion="1.0">
+		<select-by-device id="thirdparty.wireless.ble_smart_sdk.services.pds">
+			<module type="service" id="thirdparty.wireless.ble_smart_sdk.services.pds#0"    caption="pds">
+				<info type="description" value="summary">
+				PDS Service
+				</info>
+				<info type="gui-flag" value="hidden" />
+				<build type="c-source"      value="pds.c"/>
+				<build type="header-file"   value="pds.h"/>
+				<build type="header-file"   value="pds_nvm.h"/>
+				<build type="c-source"      value="samb11/pds_nvm.c"/>
+				<build type="include-path"  value="."/>
+				<build type="define" name="PDS_SERVICE" value=""/>
+
+				<build type="module-config" subtype="required-header-file" value="pds_nvm.h"/>
+				<build type="module-config" subtype="path" value="samb11/module_config"/>
+
+				<require idref="sam0.drivers.spi_flash"/>
+								
+				<device-support value="atsamb11g18a"/>
+				<device-support value="atsamb11zr"/>
+			</module>
+		</select-by-device>
+</asf>

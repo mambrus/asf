@@ -216,6 +216,21 @@
 			<device-support value="samha1"/>
 		</module>
 
+		<!-- SAMHA0 //-->
+		<module type="driver" id="sam0.utils#17" caption="SAM HA0 compiler driver">
+			<info type="description" value="summary">
+			Compiler abstraction layer and code utilities for SAMHA0 devices. This module provides various abstraction layers and utilities to make code compatible between different compilers. It also contains utilities typically used while pre-processing code.
+			</info>
+			<require idref="sam0.utils.common"/>
+			<require idref="sam0.utils.cmsis.samha0.include"/>
+			<require idref="sam0.utils.cmsis.samha0.include.component"/>
+			<require idref="sam0.utils.cmsis.samha0.include.instance"/>
+			<require idref="sam0.utils.cmsis.samha0.include.pio"/>
+			<require idref="sam0.utils.cmsis.samha0.source.template"/>
+			<info type="gui-flag" value="hidden"/>
+			<device-support value="samha0"/>
+		</module>
+
 		<!-- SAMB11 //-->
 		<module type="driver" id="sam0.utils#15" caption="SAM B11 compiler driver">
 			<info type="description" value="summary">
@@ -230,7 +245,7 @@
 			<info type="gui-flag" value="hidden"/>
 			<device-support value="samb11"/>
 		</module>
-		
+
 		<!-- SAMR30 //-->
 		<module type="driver" id="sam0.utils#16" caption="SAM R30 compiler driver">
 			<info type="description" value="summary">

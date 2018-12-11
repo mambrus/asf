@@ -320,6 +320,7 @@
 			<device-support value="samr21"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 		</module>
 
 		<module type="driver" id="sam0.drivers.system.clock#samd09_d10" caption="SYSTEM - Clock Management for SAMD09/D10">

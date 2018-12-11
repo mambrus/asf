@@ -1,0 +1,66 @@
+<asf xmlversion="1.0">
+	<module type="application" caption="Smart Sensor Tag Application" id="thirdparty.wireless.ble_smart_sdk.apps.smart_sensor_tag">
+		<info type="description" value="summary">
+		Smart Sensor Tag Application
+		</info>
+		<build type="include-path" value="."/>
+		
+		<build type="include-path" value="bhi160/bhi160_api"/>
+		<build type="include-path" value="bhi160"/>
+		<build type="include-path" value="sensor_tag"/>
+		<build type="include-path" value="bme280"/>
+	
+		<build type="c-source" value="main.c"/>
+   
+		
+		<build type="c-source" value="sensor_tag/sensor_tag.c"/>
+		<build type="header-file" value="sensor_tag/sensor_tag.h"/>
+		
+		<build type="header-file" value="bhi160/bhi160_api/BHIfw.h"/>
+		<build type="c-source" value="bhi160/bhi160_api/bhy.c"/>
+		<build type="header-file" value="bhi160/bhi160_api/bhy.h"/>
+		<build type="c-source" value="bhi160/bhi160_api/BHy_support.c"/>
+		<build type="header-file" value="bhi160/bhi160_api/BHy_support.h"/>
+		
+		<build type="c-source" value="bhi160/bhi160.c"/>
+		<build type="header-file" value="bhi160/bhi160.h"/>
+		<build type="c-source" value="bhi160/bhy_uc_driver.c"/>
+		<build type="header-file" value="bhi160/bhy_uc_driver.h"/>
+        <build type="header-file" value="bhi160/bhy_uc_driver_config.h"/>
+		<build type="header-file" value="bhi160/bhy_uc_driver_constants.h"/>
+		<build type="header-file" value="bhi160/bhy_uc_driver_types.h"/>
+		
+		<build type="c-source" value="bme280/bme280.c"/>
+		<build type="header-file" value="bme280/bme280.h"/>
+		<build type="c-source" value="bme280/bme280_support.c"/>
+		<build type="header-file" value="bme280/bme280_support.h"/>
+		
+		
+		<build type="define" name="BLE_DEVICE_ROLE" value="BLE_ROLE_ALL"/>
+		
+		<build type="define" name="BLE_MITM_REQ" value="false"/>
+		<build type="define" name="BLE_BOND_REQ" value="false"/>
+		<build type="define" name="BLE_PAIR_ENABLE" value="false"/>
+		<build type="define" name="BLE_AUTHENTICATION_LEVEL" value="AT_BLE_NO_SEC"/>
+		<build type="define" name="BLE_IO_CAPABALITIES" value="AT_BLE_IO_CAP_NO_INPUT_NO_OUTPUT"/>
+		<build type="define" name="BLE_ATT_DB_MEMORY_SIZE" value="1024"/>
+		<build type="define" name="DEBUG_LOG_DISABLED" value=""/>
+		<build type="define" name="BLE_MAX_DEVICE_CONNECTION" value="1"/>
+		<build type="define" name="OTAU_FEATURE" value="false"/>
+		
+		<require idref="thirdparty.wireless.ble_smart_sdk.lib"/>
+  		<require idref="thirdparty.wireless.ble_smart_sdk.inc"/>
+		<require idref="thirdparty.wireless.ble_smart_sdk.src"/>
+		
+		<require idref="sam0.drivers.i2c.master"/>
+		
+		<require idref="thirdparty.wireless.ble_smart_sdk.ble_services.ble_manager"/>
+		
+		<require idref="thirdparty.wireless.ble_smart_sdk.services.delay"/>
+		<require idref="thirdparty.wireless.ble_smart_sdk.services.uart"/>
+		<require idref="thirdparty.wireless.ble_smart_sdk.services.dualtimer"/>
+		
+		<device-support-alias value="ble_smart_stack_lib_support"/>
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

@@ -1,7 +1,7 @@
 <asf xmlversion="1.0">
 	<project caption="USB Device Mass Storage for SAM4S-EK with FreeRTOS" id="common.services.usb.class.msc.device.example.freertos.sam4s_ek">
 		<build type="define" name="FREERTOS_USED" value=""/>
-		<require idref="common.services.os.freertos"/>
+		<require idref="thirdparty.os.freertos.version"/>
 		<build type="header-file" value="FreeRTOSConfig.h"/>
 		<build type="header-file" value="conf_access.h"/>
 		<build type="header-file" value="conf_nf.h"/>
@@ -19,6 +19,7 @@
 		<require idref="common.services.usb.class.msc.device.example.freertos"/>
 		<require idref="board.sam4s_ek"/>
 		<config name="config.board.sam4s_ek.led" value="yes"/>
+		<config name="config.thirdparty.os.freertos.version" value="10.0.0"/>
 		<generator value="iarewarm"/>
 		<generator value="armgcc"/>
 		<generator value="doxygen"/>

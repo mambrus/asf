@@ -392,6 +392,7 @@
 				<build type="header-file" value="system_interrupt_samha/system_interrupt_features.h"/>
 
 				<device-support value="samha1"/>
+				<device-support value="samha0"/>
 
 				<require idref="sam0.utils"/>
 				<require idref="thirdparty.cmsis"/>

@@ -43,8 +43,9 @@
 			<device-support value="samc20"/>
 			<device-support value="samc21"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 			<device-support value="samr30"/>
-			
+
 			<require idref="sam0.utils"/>
 			<require idref="sam0.drivers.system"/>
 

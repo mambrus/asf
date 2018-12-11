@@ -30,7 +30,7 @@
 			<require idref="sam.utils.syscalls"/>
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.basic.clock"/>
-			<require idref="common.services.os.freertos"/>
+			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.version"/>
 			<require idref="common.utils.stdio.stdio_serial"/>
 		</module>

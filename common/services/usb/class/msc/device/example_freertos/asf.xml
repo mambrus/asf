@@ -28,8 +28,8 @@
 			<build type="header-file" value="ui.h"/>
 			<build type="header-file" value="main.h"/>
 			<build type="c-source" value="main.c"/>
-			<build type="c-source" value="memories_initialization_sam.c"/>
 			<build type="c-source" value="exceptions_sam.c"/>
+			<build type="c-source" value="memories_initialization_sam.c"/>
 			<build type="include-path" value="."/>
 			<require idref="common.services.basic.clock"/>
 			<require idref="common.services.basic.sleepmgr"/>

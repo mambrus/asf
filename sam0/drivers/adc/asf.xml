@@ -94,6 +94,7 @@
 			<device-support value="samd11"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 		</module>
 		<module type="meta" id="sam0.drivers.adc.polled#sam_l_c" caption="ADC - Analog-to-Digital Converter">
 			<build type="include-path" value="." />
@@ -102,7 +103,7 @@
 			<build type="header-file" value="adc_sam_l_c/adc_feature.h"/>
 
 			<device-support value="saml21"/>
-			<device-support value="samr30"/>			
+			<device-support value="samr30"/>
 			<device-support value="saml22"/>
 			<device-support value="samc20"/>
 			<device-support value="samc21"/>
@@ -125,6 +126,7 @@
 			<device-support value="samd11"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 		</module>
 		<module type="meta" id="sam0.drivers.adc.callback#sam_l_c" caption="ADC - Analog-to-Digital Converter">
 			<build type="include-path" value="." />
@@ -134,7 +136,7 @@
 			<build type="header-file" value="adc_sam_l_c/adc_feature.h"/>
 
 			<device-support value="saml21"/>
-			<device-support value="samr30"/>			
+			<device-support value="samr30"/>
 			<device-support value="saml22"/>
 			<device-support value="samc20"/>
 			<device-support value="samc21"/>
@@ -200,6 +202,7 @@
 			<device-support value="samd11"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 
 			<require idref="sam0.utils"/>
 			<require idref="sam0.drivers.system"/>

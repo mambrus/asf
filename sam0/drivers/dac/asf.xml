@@ -23,6 +23,7 @@
 			<device-support value="saml21"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 			<device-support value="samc21"/>
 
 			<require idref="sam0.utils"/>
@@ -49,6 +50,7 @@
 			<device-support value="saml21"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 			<device-support value="samc21"/>
 
 			<require idref="sam0.utils"/>
@@ -69,6 +71,7 @@
 			<device-support value="samd11"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 			<device-support value="samc21"/>
 		</module>
 		<module type="meta" id="sam0.drivers.dac.polled#sam_l" caption="DAC - Digital-to-Analog Converter">
@@ -94,6 +97,7 @@
 			<device-support value="samd11"/>
 			<device-support value="samda1"/>
 			<device-support value="samha1"/>
+			<device-support value="samha0"/>
 			<device-support value="samc21"/>
 		</module>
 		<module type="meta" id="sam0.drivers.dac.callback#sam_l" caption="DAC - Digital-to-Analog Converter">
@@ -149,6 +153,7 @@
 		<device-support value="samd11"/>
 		<device-support value="samda1"/>
 		<device-support value="samha1"/>
+		<device-support value="samha0"/>
 		<device-support value="samc21"/>
 		<generator value="doxygen-module-v2" default-mcu="unspecified-samd20"/>
 	</module>

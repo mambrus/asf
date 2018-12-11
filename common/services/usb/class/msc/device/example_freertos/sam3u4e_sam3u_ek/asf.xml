@@ -1,7 +1,7 @@
 <asf xmlversion="1.0">
 	<project caption="USB Device Mass Storage for SAM3U-EK with FreeRTOS" id="common.services.usb.class.msc.device.example.freertos.sam3u_ek">
 		<build type="define" name="FREERTOS_USED" value=""/>
-		<require idref="common.services.os.freertos"/>
+		<require idref="thirdparty.os.freertos.version"/>
 		<build type="header-file" value="FreeRTOSConfig.h"/>
 		<build type="header-file" value="conf_access.h"/>
 		<build type="header-file" value="conf_virtual_mem.h"/>
@@ -18,6 +18,7 @@
 		<config name="config.common.services.usb.class.device" value="mass_storage"/>
 		<require idref="common.services.usb.class.msc.device.example.freertos"/>
 		<require idref="board.sam3u_ek"/>
+		<config name="config.thirdparty.os.freertos.version" value="10.0.0"/>
 		<config name="config.board.sam3u_ek.led" value="yes"/>
 		<require idref="sam.drivers.smc"/>
 		<generator value="iarewarm"/>
