@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<board id="board.samr30_module_xplained_pro" vendor="Atmel" caption="SAM R30 module Xplained Pro (ATSAMR30E18A)">
+	<board id="board.samr30_module_xplained_pro" vendor="Atmel" caption="SAM R30 module Xplained Pro">
 		<build type="define" name="BOARD" value="SAMR30_MODULE_XPLAINED_PRO"/>
 		<build type="define" name="__SAMR30E18A__" value=""/>
 		<build type="include-path" value="."/>
