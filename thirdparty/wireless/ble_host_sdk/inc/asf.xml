@@ -1,0 +1,24 @@
+<asf xmlversion="1.0">
+	<module type="meta" id="thirdparty.wireless.ble_host_sdk.inc" caption="BLE_HOST_SDK API">
+		<info type="description" value="summary">
+		</info>
+		<build type="include-path"  value="./"/>
+  		<build type="header-file"   value="ble_api.h"/>
+		<build type="header-file"   value="bm_application_mode.h"/>
+		<build type="header-file"   value="bm_mode.h"/>
+		<build type="header-file"   value="bm_program_mode.h"/>
+  		<build type="header-file"   value="config.h"/>
+  		<build type="header-file"   value="dfu_api.h"/>
+		<build type="header-file"   value="event_mem.h"/>
+		<build type="header-file"   value="fifo.h"/>
+		<build type="header-file"   value="interface.h"/>
+		<build type="header-file"   value="memory.h"/>
+  		<build type="header-file"   value="platform.h"/>
+		<build type="header-file"   value="platform_files.h"/>
+  		<build type="define" name="HOST_MCU_DEVICE" value="HOST_MCU_SAML21"/>
+
+		<build type="doxygen-entry-point" value="ble_host_sdk_group"/>
+		<device-support-alias value="ble_host_sdk_support"/>
+	</module>
+ 
+</asf>

@@ -1,0 +1,49 @@
+<asf xmlversion="1.0">
+
+	<module type="application" id="thirdparty.wireless.lorawan.apps.enddevice_demo" caption="EndDevice Demo Application for Band">
+		<info type="description" value="summary">
+		EndDevice Demo Application
+		</info>
+
+	    <require idref="thirdparty.wireless.lorawan.apps.enddevice_demo_module"/>
+		<build type="c-source" value="main.c"/>
+		
+		<device-support-alias value="lorawan_support"/>
+		<!-- .................................................................................................... -->
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+		</info>
+		<!-- **************************************************************************************************** -->
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+	
+	<!-- **************************************************************************************************** -->
+	<module type="component" id="thirdparty.wireless.lorawan.apps.enddevice_demo_module" caption="EndDevice Demo Application">
+		<info type="description" value="summary">
+		EndDevice Demo Application
+		</info>
+		
+		<build type="c-source" value="enddevice_demo.c"/>
+		<build type="include-path" value="."/>
+		<build type="header-file" value="enddevice_demo.h"/>
+		<build subtype="required-header-file" type="module-config" value="conf_app.h" />
+		<build subtype="required-header-file" type="module-config" value="conf_sw_timer.h" />
+		<build subtype="required-header-file" type="module-config" value="conf_resource.h" />
+        <build type="module-config" subtype="path" value="module_config"/>
+		<require idref="thirdparty.wireless.addons.sio2host"/>		
+		<require idref="thirdparty.wireless.lorawan"/>
+		<require idref="thirdparty.wireless.lorawan.pmm"/>
+        <require idref="thirdparty.wireless.lorawan.services.pds"/>
+		<require idref="thirdparty.wireless.lorawan.services.resources"/>
+		<require idref="thirdparty.wireless.lorawan.tal.sx1276"/>
+		<device-support-alias value="lorawan_support"/>
+		<!-- .................................................................................................... -->
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+		</info>
+		<!-- **************************************************************************************************** -->
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

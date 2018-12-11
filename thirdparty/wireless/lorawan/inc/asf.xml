@@ -1,0 +1,13 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.inc" caption="LoRaWAN COMMON CONFIG ">
+		<info type="description" value="summary">
+		This module includes the common configuration files
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="include-path"  value="."/>
+		<build type="header-file"   value="conf_stack.h"/>
+		<build type="header-file"   value="stack_common.h"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+	
+</asf>

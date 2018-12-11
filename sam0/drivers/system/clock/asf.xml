@@ -437,7 +437,65 @@
 
 			<device-support value="samr30"/>
 		</module>
+		
+		<module type="driver" id="sam0.drivers.system.clock#samr34" caption="SYSTEM - Clock Management for SAMR34">
+			<info type="description" value="summary">
+				Driver for the SAM R34 Clock management units. Provides a unified
+				interface for the configuration and management of the various clocks
+				in the device, including the bus and generic peripheral clocks.
+			</info>
+			<info type="keyword" value="technology">
+				<keyword value="Clocks" />
+			</info>
 
+			<build type="include-path" value="."/>
+			<build type="include-path" value="clock_samr34/"/>
+
+			<build type="header-file" subtype="api" value="clock.h"/>
+			<build type="header-file" subtype="api" value="gclk.h"/>
+			<build type="header-file" value="clock_samr34/clock_feature.h" />
+			<build type="header-file" value="clock_samr34/clock_config_check.h" />
+			<build type="c-source" value="clock_samr34/clock.c"/>
+			<build type="c-source" value="clock_samr34/gclk.c"/>
+			<build type="doxygen-entry-point" value="asfdoc_sam0_system_clock_group"/>
+
+			<build type="module-config" subtype="path" value="clock_samr34/module_config"/>
+			<build type="module-config" subtype="required-header-file" value="conf_clocks.h"/>
+			<require idref="sam0.drivers.system.interrupt"/>
+			<require idref="sam0.utils"/>
+
+			<device-support value="samr34"/>
+		</module>
+
+		<module type="driver" id="sam0.drivers.system.clock#samr35" caption="SYSTEM - Clock Management for SAMR35">
+			<info type="description" value="summary">
+				Driver for the SAM R35 Clock management units. Provides a unified
+				interface for the configuration and management of the various clocks
+				in the device, including the bus and generic peripheral clocks.
+			</info>
+			<info type="keyword" value="technology">
+				<keyword value="Clocks" />
+			</info>
+
+			<build type="include-path" value="."/>
+			<build type="include-path" value="clock_samr35/"/>
+
+			<build type="header-file" subtype="api" value="clock.h"/>
+			<build type="header-file" subtype="api" value="gclk.h"/>
+			<build type="header-file" value="clock_samr35/clock_feature.h" />
+			<build type="header-file" value="clock_samr35/clock_config_check.h" />
+			<build type="c-source" value="clock_samr35/clock.c"/>
+			<build type="c-source" value="clock_samr35/gclk.c"/>
+			<build type="doxygen-entry-point" value="asfdoc_sam0_system_clock_group"/>
+
+			<build type="module-config" subtype="path" value="clock_samr35/module_config"/>
+			<build type="module-config" subtype="required-header-file" value="conf_clocks.h"/>
+			<require idref="sam0.drivers.system.interrupt"/>
+			<require idref="sam0.utils"/>
+
+			<device-support value="samr35"/>
+		</module>
+		
 		<module type="driver" id="sam0.drivers.system.clock#saml22" caption="SYSTEM - Clock Management for SAML22">
 			<info type="description" value="summary">
 				Driver for the SAM L22 Clock management units. Provides a unified

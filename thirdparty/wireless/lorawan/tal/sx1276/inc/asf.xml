@@ -1,0 +1,12 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.tal.sx1276.inc" caption="SX1276 TAL Layer ">
+		<info type="description" value="summary">
+		LoRaWAN Stack Transceiver Abstraction Layer
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="include-path"  value="."/>
+        <build type="header-file"   value="radio_driver_SX1276.h"/>
+		<build type="header-file"   value="radio_registers_SX1276.h"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+</asf>

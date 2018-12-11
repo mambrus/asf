@@ -1,0 +1,26 @@
+<asf xmlversion="1.0">
+		<select-by-device id="thirdparty.wireless.ble_host_sdk.services.serial">
+			<module type="service" id="thirdparty.wireless.ble_host_sdk.services.serial#1"     caption="uart">
+				<info type="description" value="summary">
+				UART Driver
+				</info>
+				<info type="gui-flag" value="hidden" />
+				<build type="c-source"      value="uart/sam0/serial_drv.c"/>
+				<build type="header-file"   value="uart/serial_drv.h"/>
+				<build type="include-path"  value="uart/"/>
+
+				<require idref="sam0.drivers.sercom.usart"/>
+				<require idref="sam0.utils"/>
+				<require idref="common2.services.delay"/>
+				<require idref="sam0.drivers.extint"/>
+				<require idref="thirdparty.wireless.ble_host_sdk.services.serial_fifo"/>
+
+				<build type="module-config" subtype="required-header-file" value="conf_serialdrv.h"/>
+				<build type="module-config" subtype="required-header-file" value="conf_extint.h"/>
+				<build type="module-config" subtype="required-header-file" value="conf_gpio.h"/>
+				<build type="module-config" subtype="path" value="uart/sam0/module_config/saml21"/>
+
+				<device-support value="saml21"/>
+			</module>
+		</select-by-device>
+</asf>

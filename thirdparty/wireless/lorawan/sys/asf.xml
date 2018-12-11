@@ -1,0 +1,15 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.sys" caption="LoRaWAN System layer">
+		<info type="description" value="summary">
+		LoRaWAN Stack system layer
+		</info>
+		<info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="src/system_low_power.c"/>
+		<build type="c-source"      value="src/system_task_manager.c"/>
+		<build type="c-source"      value="src/system_init.c"/>
+		<build type="c-source"      value="src/system_assert.c"/>
+		<build type="define" name="_DEBUG_" value="0"/>
+		<require idref="thirdparty.wireless.lorawan.sys.inc"/>
+		<device-support-alias value="lorawan_support"/>
+	</module>
+</asf>

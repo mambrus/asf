@@ -1,0 +1,12 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.services.aes.inc" caption="AES - Advanced Encryption Standard Module">
+		<info type="keyword" value="technology">
+			<keyword value="Cryptography"/>
+		</info>
+		<info type="gui-flag" value="hidden"/>
+		<build type="include-path"  value="."/>
+		<build type="header-file"   value="aes_engine.h"/>
+		<build type="header-file"   value="aes_def.h"/>
+		<device-support-alias value="lorawan_support"/>	
+	</module>
+</asf>

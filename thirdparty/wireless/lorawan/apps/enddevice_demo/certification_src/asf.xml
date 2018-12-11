@@ -1,0 +1,28 @@
+<asf xmlversion="1.0">
+
+	<!-- **************************************************************************************************** -->
+	<module type="component" id="thirdparty.wireless.lorawan.apps.enddevice_certification_src" caption="EndDevice Certification Application">
+		<info type="description" value="summary">
+		EndDevice Certification Application
+		</info>
+		<build type="c-source" value="enddevice_cert.c"/>
+		<build type="include-path" value="."/>
+		<build type="header-file" value="enddevice_cert.h"/>
+		<build type="header-file" value="conf_certification.h"/>	
+		<build subtype="required-header-file" type="module-config" value="conf_certification.h" />
+		<build type="module-config" subtype="path" value="."/>
+		<build type="define" name="CERT_APP" value="1"/>
+		<require idref="thirdparty.wireless.addons.sio2host"/>		
+		<require idref="thirdparty.wireless.lorawan"/>
+        <require idref="thirdparty.wireless.lorawan.services.pds"/>
+		<require idref="thirdparty.wireless.lorawan.tal.sx1276"/>
+		<device-support-alias value="lorawan_support"/>
+		<!-- .................................................................................................... -->
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+		</info>
+		<!-- **************************************************************************************************** -->
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

@@ -1,0 +1,19 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.pmm" caption="LoRaWAN Power Management Module">
+		<info type="description" value="summary">
+		LoRaWAN Power Management module
+		</info>
+		<info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="src/pmm.c"/>
+		<build type="header-file"   value="inc/pmm.h"/>
+		<build type="include-path"  value="inc/"/>
+		<build type="module-config" subtype="required-header-file" value="conf_pmm.h"/>
+		<build type="module-config" subtype="path" value="module_config"/>
+		<require idref="sam0.drivers.extint"/>
+		<require idref="thirdparty.wireless.lorawan.hal.sam0.sleep"/>
+		<require idref="thirdparty.wireless.lorawan.hal.sam0.sleep_timer"/>
+		<require idref="sam0.utils"/>
+		<build type="define" name="CONF_PMM_ENABLE" value=""/>
+		<device-support-alias value="lorawan_support"/>
+	</module>
+</asf>

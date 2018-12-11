@@ -1,0 +1,14 @@
+<asf xmlversion="1.0">
+	<module type="meta" id="thirdparty.wireless.ble_host_sdk.utils" caption="COMPONENT - BM Utils">
+		<info type="description" value="summary">
+		</info>
+		<build type="include-path"  value="."/>
+		<build type="header-file"   value="ble_utils.h"/>
+  		<build type="header-file"   value="bm_utils.h"/>
+		<build type="c-source"      value="bm_utils.c"/>
+
+		<build type="doxygen-entry-point" value="ble_host_sdk_group"/>
+		<device-support-alias value="ble_host_sdk_support"/>		
+	</module>
+ 
+</asf>

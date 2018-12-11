@@ -1,0 +1,105 @@
+<asf xmlversion="1.0">
+	<select-by-config id="thirdparty.wireless.ble_host_sdk.apps.config.saml21" name="config.ble_host_sdk.apps.config.saml21" caption="SAML21 Application Configuration" default="default">
+		<module type="meta" id="thirdparty.wireless.ble_host_sdk.apps.config.saml21#default" caption="SAML21 Application Configuration" >
+			<info type="description" value="summary">
+			SAML21 Application Configuration for BLE stack
+			</info>
+			<build type="include-path" value="."/>
+			<device-support-alias value="ble_host_sdk_support"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+		<module type="meta" id="thirdparty.wireless.ble_host_sdk.apps.config.saml21#gap_peripheral" caption="SAML21 Application Configuration" >
+			<info type="description" value="summary">
+			SAML21 Application Configuration for BLE stack
+			</info>
+			<build type="include-path" value="."/>
+			<build type="header-file" value="conf_board.h"/>
+			<build type="header-file" value="conf_clocks.h"/>
+			<build type="header-file" value="conf_extint.h"/>
+			<build type="header-file" value="conf_serialdrv.h"/>
+			<build type="header-file" value="conf_timer.h"/>
+			<build type="header-file" value="conf_gpio.h"/>
+			<build type="header-file" value="conf_console.h"/>
+			<build type="header-file" value="conf_bno055.h"/>
+			<device-support-alias value="ble_host_sdk_support"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+		<module type="meta" id="thirdparty.wireless.ble_host_sdk.apps.config.saml21#gap_central" caption="SAML21 Application Configuration" >
+			<info type="description" value="summary">
+			SAML21 Application Configuration for BLE stack
+			</info>
+			<build type="include-path" value="."/>
+			<build type="header-file" value="conf_board.h"/>
+			<build type="header-file" value="conf_clocks.h"/>
+			<build type="header-file" value="conf_extint.h"/>
+			<build type="header-file" value="conf_serialdrv.h"/>
+			<build type="header-file" value="conf_timer.h"/>
+			<build type="header-file" value="conf_gpio.h"/>
+			<build type="header-file" value="conf_console.h"/>
+			<device-support-alias value="ble_host_sdk_support"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+		<module type="meta" id="thirdparty.wireless.ble_host_sdk.apps.config.saml21#ibeacon" caption="SAML21 Application Configuration" >
+			<info type="description" value="summary">
+			SAML21 Application Configuration for BLE stack
+			</info>
+			<build type="include-path" value="."/>
+			<build type="header-file" value="conf_board.h"/>
+			<build type="header-file" value="conf_clocks.h"/>
+			<build type="header-file" value="conf_extint.h"/>
+			<build type="header-file" value="conf_serialdrv.h"/>
+			<build type="header-file" value="conf_timer.h"/>
+			<build type="header-file" value="conf_gpio.h"/>
+			<build type="header-file" value="conf_console.h"/>
+			<device-support-alias value="ble_host_sdk_support"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+		<module type="meta" id="thirdparty.wireless.ble_host_sdk.apps.config.saml21#transparent_uart" caption="SAML21 Application Configuration" >
+			<info type="description" value="summary">
+			SAML21 Application Configuration for BLE stack
+			</info>
+			<build type="include-path" value="."/>
+			<build type="header-file" value="conf_board.h"/>
+			<build type="header-file" value="conf_clocks.h"/>
+			<build type="header-file" value="conf_extint.h"/>
+			<build type="header-file" value="conf_serialdrv.h"/>
+			<build type="header-file" value="conf_timer.h"/>
+			<build type="header-file" value="conf_gpio.h"/>
+			<build type="header-file" value="conf_console.h"/>
+			<build type="header-file" value="conf_sio2host.h"/>
+			<device-support-alias value="ble_host_sdk_support"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+		<module type="meta" id="thirdparty.wireless.ble_host_sdk.apps.config.saml21#multilink_central" caption="SAML21 Application Configuration" >
+			<info type="description" value="summary">
+			SAML21 Application Configuration for BLE stack
+			</info>
+			<build type="include-path" value="."/>
+			<build type="header-file" value="conf_board.h"/>
+			<build type="header-file" value="conf_clocks.h"/>
+			<build type="header-file" value="conf_extint.h"/>
+			<build type="header-file" value="conf_serialdrv.h"/>
+			<build type="header-file" value="conf_timer.h"/>
+			<build type="header-file" value="conf_gpio.h"/>
+			<build type="header-file" value="conf_console.h"/>
+			<device-support-alias value="ble_host_sdk_support"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+		<module type="meta" id="thirdparty.wireless.ble_host_sdk.apps.config.saml21#multilink_multirole" caption="SAML21 Application Configuration" >
+			<info type="description" value="summary">
+			SAML21 Application Configuration for BLE stack
+			</info>
+			<build type="include-path" value="."/>
+			<build type="header-file" value="conf_board.h"/>
+			<build type="header-file" value="conf_clocks.h"/>
+			<build type="header-file" value="conf_extint.h"/>
+			<build type="header-file" value="conf_serialdrv.h"/>
+			<build type="header-file" value="conf_timer.h"/>
+			<build type="header-file" value="conf_gpio.h"/>
+			<build type="header-file" value="conf_console.h"/>
+			<build type="header-file" value="conf_bno055.h"/>
+			<device-support-alias value="ble_host_sdk_support"/>
+			<info type="gui-flag" value="move-to-root"/>
+		</module>
+	</select-by-config>
+</asf>

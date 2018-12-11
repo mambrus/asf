@@ -1,0 +1,86 @@
+<asf xmlversion="1.0">
+	<select-by-config id="thirdparty.wireless.ble_host_sdk.services.timer" name="config.thirdparty.wireless.ble_host_sdk.services.timer" caption="Timer Driver" default="timer">
+	<info type="description" value="summary">
+		timer
+		</info>
+		<select-by-device id="thirdparty.wireless.ble_host_sdk.services.timer#timer">
+			<module type="service" id="thirdparty.wireless.ble_host_sdk.services.timer#timer#0"     caption="Timer">
+				<info type="description" value="summary">
+				Timer Driver
+				</info>
+				<info type="gui-flag" value="hidden" />
+				<build type="c-source"      value="sam0/timer_hw.c"/>
+				<build type="header-file"   value="timer_hw.h"/>
+				<build type="include-path"  value="."/>
+    
+				<build type="module-config" subtype="required-header-file" value="conf_timer.h"/>
+				<build type="module-config" subtype="path" value="sam0/module_config/samd21"/> 
+				
+				<require idref="sam0.drivers.tc"/>
+  
+				<device-support value="samd21"/>
+			</module>
+			<module type="service" id="thirdparty.wireless.ble_host_sdk.services.timer#timer#1"     caption="Timer">
+				<info type="description" value="summary">
+				Timer Driver
+				</info>
+				<info type="gui-flag" value="hidden" />
+				<build type="c-source"      value="sam0/timer_hw.c"/>
+				<build type="header-file"   value="timer_hw.h"/>
+				<build type="include-path"  value="."/>
+    
+				<build type="module-config" subtype="required-header-file" value="conf_timer.h"/>
+				<build type="module-config" subtype="path" value="sam0/module_config/saml21"/> 
+				
+				<require idref="sam0.drivers.tc"/>
+
+				<device-support value="saml21"/>
+			</module>
+			<module type="service" id="thirdparty.wireless.ble_host_sdk.services.timer#timer#2"     caption="Timer">
+				<info type="description" value="summary">
+				Timer Driver
+				</info>
+				<info type="gui-flag" value="hidden" />
+				<build type="c-source"      value="sam0/timer_hw.c"/>
+				<build type="header-file"   value="timer_hw.h"/>
+				<build type="include-path"  value="."/>
+    
+				<build type="module-config" subtype="required-header-file" value="conf_timer.h"/>
+				<build type="module-config" subtype="path" value="sam0/module_config/saml22"/> 
+				
+				<require idref="sam0.drivers.tc"/>
+				<device-support value="saml22"/>
+			</module>
+			<module type="service" id="thirdparty.wireless.ble_host_sdk.services.timer#timer#3"     caption="Timer">
+				<info type="description" value="summary">
+				Timer Driver
+				</info>
+				<info type="gui-flag" value="hidden" />
+				<build type="c-source"      value="sam/timer_hw.c"/>
+				<build type="header-file"   value="timer_hw.h"/>
+				<build type="include-path"  value="."/>
+
+				<require idref="sam.drivers.tc"/>
+    
+				<build type="module-config" subtype="required-header-file" value="conf_timer.h"/>
+				<build type="module-config" subtype="path" value="sam/module_config/samg55"/>
+				<device-support value="samg55"/>
+			</module>
+			<module type="service" id="thirdparty.wireless.ble_host_sdk.services.timer#timer#4"     caption="Timer">
+				<info type="description" value="summary">
+				Timer Driver
+				</info>
+				<info type="gui-flag" value="hidden" />
+				<build type="c-source"      value="sam/timer_hw.c"/>
+				<build type="header-file"   value="timer_hw.h"/>
+				<build type="include-path"  value="."/>
+
+				<require idref="sam.drivers.tc"/>
+    
+				<build type="module-config" subtype="required-header-file" value="conf_timer.h"/>
+				<build type="module-config" subtype="path" value="sam/module_config/sam4s"/>
+				<device-support value="sam4sd32"/>
+			</module>
+		</select-by-device>
+	</select-by-config>
+</asf>

@@ -1,0 +1,31 @@
+<asf xmlversion="1.0">
+	<module type="application" caption="GAP-CENTRAL SENSOR APPLICATION" id="thirdparty.wireless.ble_host_sdk.apps.gap_central">
+		<info type="description" value="summary">
+		GAP-Central application for BLE stack
+		</info>
+		<build type="include-path" value="."/>
+		<build type="header-file" value="central_app.h"/>
+		<build type="c-source" value="central_app.c"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.inc"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.src"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.ble_services.ble_manager"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.services.console"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.services.timer"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.utils"/>
+		
+		<build type="module-config" subtype="required-header-file" value="conf_gpio.h"/>
+		<build type="module-config" subtype="path" value="..\config\saml21"/>
+		
+		<build type="distribute" subtype="user-file" value="../../doc/GAP_Central_Demo_Getting_Started_Guide.pdf"/>
+		<device-support-alias value="ble_host_sdk_support"/>
+		
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+			<keyword value="BLE"/>
+			<keyword value="Bluetooth"/>
+		</info>
+
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

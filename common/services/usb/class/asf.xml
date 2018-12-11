@@ -47,6 +47,7 @@
 			<device-support value="sams70"/>
 			<device-support value="same70"/>
 			<device-support value="samr30"/>
+			<device-support value="samr34"/>
 			<generator value="doxygen-module" default-mcu="unspecified-uc3a"/>
 		</module>
 		<module type="service" id="common.services.usb.class.device#cdc_stdio" caption="USB Device CDC Standard I/O (stdio)">

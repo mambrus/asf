@@ -310,6 +310,57 @@
 				<require idref="sam0.utils"/>
 				<require idref="thirdparty.cmsis"/>
 			</module>
+			
+			<module type="driver" id="sam0.drivers.system.interrupt#samr34" caption="SYSTEM - Interrupt Driver For SAMR34">
+				<info type="description" value="summary">
+					Driver for the SAM R34 Interrupt System. Provides a unified
+					interface for the configuration and management interrupts within
+					the device, including the enabling, disabling and entering, leaving
+					of critical sections.
+				</info>
+
+				<info type="keyword" value="technology">
+					<keyword value="Interrupt" />
+				</info>
+				<build type="include-path" value="." />
+				<build type="include-path" value="system_interrupt_samr34"/>
+
+				<build type="c-source" value="system_interrupt.c"/>
+
+				<build type="header-file" subtype="api" value="system_interrupt.h"/>
+				<build type="header-file" value="system_interrupt_samr34/system_interrupt_features.h"/>
+
+				<device-support value="samr34"/>
+
+				<require idref="sam0.utils"/>
+				<require idref="thirdparty.cmsis"/>
+			</module>
+			
+			<module type="driver" id="sam0.drivers.system.interrupt#samr35" caption="SYSTEM - Interrupt Driver For SAMR35">
+				<info type="description" value="summary">
+					Driver for the SAM R35 Interrupt System. Provides a unified
+					interface for the configuration and management interrupts within
+					the device, including the enabling, disabling and entering, leaving
+					of critical sections.
+				</info>
+
+				<info type="keyword" value="technology">
+					<keyword value="Interrupt" />
+				</info>
+				<build type="include-path" value="." />
+				<build type="include-path" value="system_interrupt_samr35"/>
+
+				<build type="c-source" value="system_interrupt.c"/>
+
+				<build type="header-file" subtype="api" value="system_interrupt.h"/>
+				<build type="header-file" value="system_interrupt_samr35/system_interrupt_features.h"/>
+
+				<device-support value="samr35"/>
+
+				<require idref="sam0.utils"/>
+				<require idref="thirdparty.cmsis"/>
+			</module>
+			
 			<module type="driver" id="sam0.drivers.system.interrupt#saml22" caption="SYSTEM - Interrupt Driver For SAML22">
 				<info type="description" value="summary">
 					Driver for the SAM L22 Interrupt System. Provides a unified

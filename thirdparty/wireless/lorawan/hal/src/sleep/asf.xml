@@ -1,0 +1,14 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.hal.sam0.sleep" caption="LoRaWAN sleep">
+		<info type="description" value="summary">
+		Hardware Sleep
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<require idref="sam0.drivers.system.power"/>
+		<build type="include-path"  value="../../inc"/>
+		<build type="header-file"   value="../../inc/sleep.h"/>
+		<build type="c-source"      value="sam0/sleep.c"/>
+		<device-support value="sam0"/>
+	</module>
+
+</asf>

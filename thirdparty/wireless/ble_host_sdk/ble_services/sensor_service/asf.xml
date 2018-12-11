@@ -1,0 +1,17 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.ble_host_sdk.ble_services.bno055_sensor_service" caption="BLE-Sensor Services">
+		<info type="description" value="summary">
+		</info>
+		<build type="include-path"  value="./"/>
+  		<build type="header-file"   value="acc_gyro_sensor_service.h"/>
+  		<build type="c-source"      value="acc_gyro_sensor_service.c"/>
+  		<require idref="thirdparty.wireless.ble_host_sdk.ble_services.ble_manager"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.services.sensor"/>
+  		<build type="define" name="BNO_SENSOR_SERVICE" value=""/>
+
+	<!-- 	<build type="doxygen-entry-point" value="ble_host_sdk_group"/>		 -->
+		<device-support-alias value="ble_host_sdk_support"/>
+		
+	</module>
+ 
+</asf>

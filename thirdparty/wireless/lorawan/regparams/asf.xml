@@ -1,0 +1,34 @@
+<asf xmlversion="1.0">
+    <select-by-config id="config.thirdparty.wireless.lorawan.reg.band" name="config.thirdparty.wireless.lorawan.reg.band" caption="Reg Parameters Configuration" default="multi_band">
+		<module type="component" id="config.thirdparty.wireless.lorawan.reg.band#multi_band"     caption="lorawan for MULTIBAND band">
+            <info type="description" value="summary">
+            This module include files related to multi Band
+            </info>
+            <info type="gui-flag" value="hidden"/>
+            <require idref="thirdparty.wireless.lorawan.regparams.multiband"/>
+			<device-support-alias value="lorawan_support"/>
+        </module>
+	</select-by-config>
+    
+	<module type="component" id="thirdparty.wireless.lorawan.regparams.inc" caption="LoRaWAN Reg Parameters layer">
+        <info type="description" value="summary">
+		This module includes the Regional related files
+		</info>
+        <info type="gui-flag" value="hidden"/>	
+		<build type="header-file"   value="inc/lorawan_reg_params.h"/>
+		<build type="include-path"  value="inc/"/>
+		<build type="module-config" subtype="required-header-file" value="conf_regparams.h"/>
+		<build type="module-config" subtype="path" value="module_config"/>		
+		<device-support-alias value="lorawan_support"/>				
+	</module>
+	
+	<module type="component" id="thirdparty.wireless.lorawan.reg" caption="LoRaWAN Reg Parameters layer">
+		<info type="description" value="summary">
+		LoRaWAN Reg Parameters Layer
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<require idref="thirdparty.wireless.lorawan.regparams.inc"/>
+		<require idref="config.thirdparty.wireless.lorawan.reg.band"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+</asf>

@@ -36,6 +36,7 @@
 #include <stdint.h>
 
 #include "tc45.h"
+#include <parts.h>
 
 #if defined(TCC4) || defined(__DOXYGEN__)
 /* ! \internal Local storage of Timer Counter tcc4 interrupt callback function */
@@ -58,6 +59,9 @@ ISR(TCC4_OVF_vect)
 	if (tc45_tcc4_ovf_callback) {
 		tc45_tcc4_ovf_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_overflow(&TCC4);
+#endif
 }
 
 /**
@@ -72,6 +76,9 @@ ISR(TCC4_ERR_vect)
 	if (tc45_tcc4_err_callback) {
 		tc45_tcc4_err_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_error(&TCC4);
+#endif
 }
 
 /**
@@ -86,6 +93,9 @@ ISR(TCC4_CCA_vect)
 	if (tc45_tcc4_cca_callback) {
 		tc45_tcc4_cca_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_cc_interrupt(&TCC4, TC45_CCA);
+#endif
 }
 
 /**
@@ -100,6 +110,9 @@ ISR(TCC4_CCB_vect)
 	if (tc45_tcc4_ccb_callback) {
 		tc45_tcc4_ccb_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_cc_interrupt(&TCC4, TC45_CCB);
+#endif
 }
 
 /**
@@ -114,6 +127,9 @@ ISR(TCC4_CCC_vect)
 	if (tc45_tcc4_ccc_callback) {
 		tc45_tcc4_ccc_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_cc_interrupt(&TCC4, TC45_CCC);
+#endif
 }
 
 /**
@@ -128,6 +144,9 @@ ISR(TCC4_CCD_vect)
 	if (tc45_tcc4_ccd_callback) {
 		tc45_tcc4_ccd_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_cc_interrupt(&TCC4, TC45_CCD);
+#endif
 }
 
 #endif
@@ -151,6 +170,9 @@ ISR(TCC5_OVF_vect)
 	if (tc45_tcc5_ovf_callback) {
 		tc45_tcc5_ovf_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_overflow(&TCC5);
+#endif
 }
 
 /**
@@ -165,6 +187,9 @@ ISR(TCC5_ERR_vect)
 	if (tc45_tcc5_err_callback) {
 		tc45_tcc5_err_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_error(&TCC5);
+#endif
 }
 
 /**
@@ -179,6 +204,9 @@ ISR(TCC5_CCA_vect)
 	if (tc45_tcc5_cca_callback) {
 		tc45_tcc5_cca_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_cc_interrupt(&TCC5, TC45_CCA);
+#endif
 }
 
 /**
@@ -193,6 +221,9 @@ ISR(TCC5_CCB_vect)
 	if (tc45_tcc5_ccb_callback) {
 		tc45_tcc5_ccb_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_cc_interrupt(&TCC5, TC45_CCB);
+#endif
 }
 
 #endif
@@ -216,6 +247,9 @@ ISR(TCD5_OVF_vect)
 	if (tc45_tcd5_ovf_callback) {
 		tc45_tcd5_ovf_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_overflow(&TCC5);
+#endif
 }
 
 /**
@@ -230,6 +264,9 @@ ISR(TCD5_ERR_vect)
 	if (tc45_tcd5_err_callback) {
 		tc45_tcd5_err_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_error(&TCC5);
+#endif
 }
 
 /**
@@ -244,6 +281,9 @@ ISR(TCD5_CCA_vect)
 	if (tc45_tcd5_cca_callback) {
 		tc45_tcd5_cca_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_cc_interrupt(&TCC5, TC45_CCA);
+#endif
 }
 
 /**
@@ -258,6 +298,9 @@ ISR(TCD5_CCB_vect)
 	if (tc45_tcd5_ccb_callback) {
 		tc45_tcd5_ccb_callback();
 	}
+#ifdef XMEGA_E
+		tc45_clear_cc_interrupt(&TCC5, TC45_CCB);
+#endif
 }
 #endif
 

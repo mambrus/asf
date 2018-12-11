@@ -1,0 +1,24 @@
+<asf xmlversion="1.0">
+    <module type="component" caption="resources" id="thirdparty.wireless.lorawan.services.resources">
+        <info type="description" value="summary">
+        resources Service
+        </info>
+        <info type="gui-flag" value="hidden"/>
+        <build type="c-source" value="src/temp_sensor.c" />
+        <build type="c-source" value="src/resources.c" />
+        <build type="c-source" value="src/LED.c" />
+        <build type="header-file" value="inc/temp_sensor.h" />
+        <build type="header-file" value="inc/resources.h" />
+        <build type="header-file" value="inc/LED.h" />
+        <build type="include-path" value="inc/" />
+        <require idref="sam0.drivers.adc"/>
+        <build type="doxygen-entry-point" value="group_lorawan" />
+        <device-support-alias value="lorawan_support"/>
+        <info type="keyword" value="technology">
+            <keyword value="Wireless" />
+            <keyword value="Communication" />
+        </info>
+    </module>
+</asf>
+
+

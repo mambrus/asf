@@ -1,0 +1,25 @@
+<asf xmlversion="1.0">
+	<module type="service" id="thirdparty.wireless.ble_host_sdk.src" caption="BLE_HOST_SDK APIs">
+		<info type="description" value="summary">
+		</info>
+		<info type="gui-flag" value="hidden" />
+		<build type="c-source" value="ble_api.c"/>
+		<build type="c-source" value="bm_application_mode.c"/>
+		<build type="c-source" value="bm_program_mode.c"/>
+		<build type="c-source" value="dfu_api.c"/>
+		<build type="c-source" value="event_mem.c"/>
+		<build type="c-source" value="fifo.c"/>
+		<build type="c-source" value="interface.c"/>
+		<build type="c-source" value="memory.c"/>
+		<build type="c-source" value="platform.c"/>
+  		<require idref="thirdparty.wireless.ble_host_sdk.services.serial"/>
+  		<require idref="thirdparty.wireless.ble_host_sdk.utils"/>
+  		
+		<build type="doxygen-entry-point" value="ble_host_sdk_group"/>
+		<device-support-alias value="ble_host_sdk_support"/>		
+	</module>
+ 
+ 	<device-alias-map name="ble_host_sdk_support">
+ 		<device-support value="saml21"/>
+	</device-alias-map>
+</asf>

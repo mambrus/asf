@@ -1,0 +1,21 @@
+<asf xmlversion="1.0">
+	<module type="meta" id="thirdparty.wireless.lorawan.utils.bootloader"   caption="Bootloader Tools">
+		<info type="description" value="summary">
+		</info>
+		<info type="gui-flag" value="move-to-root"/>
+		<build type="distribute" subtype="user-file" value="SerialBootloader_SAMR34J18B_XPRO_BAUDRATE_115200.elf"/>
+		<build type="distribute" subtype="user-file" value="Bootloader_PC_Tool_Setup_1.2.2.233.exe"/>
+		<require idref="thirdparty.wireless.lorawan.utils.bootloader.linkerscript"/>
+		<device-support value="atsamr34j18b"/>
+	</module>
+	
+	<module type="meta" id="thirdparty.wireless.lorawan.utils.bootloader.linkerscript"   caption="Bootloader Tools">
+		<info type="description" value="summary">
+		</info>
+		<build type="include-path" value="."/>
+		<build type="linker-config" subtype="script" value="samr34j18b_flash.ld" toolchain="armgcc"/>
+		<device-support value="atsamr34j18b"/>
+	</module>
+	
+</asf>
+

@@ -1,0 +1,11 @@
+<asf xmlversion="1.0">	
+	<module type="component" id="thirdparty.wireless.lorawan.mac.lib_inc" caption="LoRaWAN MAC include files for library">
+		<info type="description" value="summary">
+		This module includes the LoRaWAN MAC Layer files for library
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="include-path"  value="."/>
+		<build type="header-file"   value="lorawan.h"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+</asf>

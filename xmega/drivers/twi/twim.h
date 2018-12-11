@@ -70,7 +70,7 @@ extern "C" {
 
 
 /*! Baud register setting calculation. Formula described in datasheet. */
-#define TWI_BAUD(F_SYS, F_TWI) ((F_SYS / (2 * F_TWI)) - 5)
+#define TWI_BAUD(F_SYS, F_TWI) (((F_SYS / (2 * F_TWI)) - 5)+1)
 
 
 /*! \brief Initialize the twi master module

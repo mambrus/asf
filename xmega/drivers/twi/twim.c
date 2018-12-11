@@ -150,15 +150,21 @@ static inline status_code_t twim_acquire(bool no_wait)
  */
 static inline status_code_t twim_release(void)
 {
+	/* timeout is used to get out of twim_release, when there is no device connected to the bus*/
+	uint16_t timeout = 100;
+
 	/* First wait for the driver event handler to indicate something
 	 * other than a transfer in-progress, then test the bus interface
 	 * for an Idle bus state.
 	 */
 	while (OPERATION_IN_PROGRESS == transfer.status);
 
-	while (! twim_idle(transfer.bus)) { barrier(); }
+	while ((! twim_idle(transfer.bus)) && --timeout) { barrier(); }
 
-	status_code_t const status = transfer.status;
+	status_code_t status = transfer.status;
+
+	if(!timeout)
+		status = ERR_TIMEOUT;
 
 	transfer.locked = false;
 

@@ -39,6 +39,7 @@
 			<device-support value="same70"/>
 			<device-support value="sams70"/>
 			<device-support value="samr30"/>
+			<device-support value="samr34"/>
 			<generator value="doxygen-module" default-mcu="unspecified-uc3a"/>
 		</module>
 		<module type="service" id="common.services.usb.class.cdc.device.composite#disable" caption="USB Device CDC disabled">
@@ -94,6 +95,7 @@
 		<device-support value="same70"/>
 		<device-support value="sams70"/>
 		<device-support value="samr30"/>
+		<device-support value="samr34"/>
 		<generator value="doxygen-module" default-mcu="unspecified-uc3a"/>
 	</module>
 
@@ -153,6 +155,7 @@
 		<device-support value="same70"/>
 		<device-support value="sams70"/>
 		<device-support value="samr30"/>
+		<device-support value="samr34"/>
 		<generator value="doxygen-module" default-mcu="unspecified-uc3a"/>
 	</module>
 

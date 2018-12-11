@@ -1,0 +1,11 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.regparams.multiband.inc" caption="LoRaWAN FOR MULTIBAND">
+		<info type="description" value="summary">
+		This module includes the multi band related files
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="include-path"  value="."/>
+		<build type="header-file"   value="lorawan_multiband.h"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+</asf>

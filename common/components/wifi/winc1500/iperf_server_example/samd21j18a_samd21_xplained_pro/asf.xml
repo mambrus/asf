@@ -12,14 +12,14 @@
 		<build type="header-file" value="conf_extint.h"/>
 		<build type="header-file" value="conf_spi.h"/>
 		<build type="header-file" value="conf_winc.h"/>
-
+        <build type="header-file" value="conf_dma.h"/>
 		<!-- Device support -->
 		<device-support value="atsamd21j18a"/>
 
 		<!-- Required modules -->
 		<require idref="common.components.wifi.winc1500.iperf_server_example"/>
 		<require idref="board.samd21_xplained_pro"/>
-
+		
 		<!-- Generators -->
 		<generator value="armgcc"/>
 		<generator value="as5_arm"/>

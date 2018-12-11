@@ -1,0 +1,45 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan" caption="LoRaWAN Stack">
+			<info type="description" value="summary">
+		     LoRaWAN Stack
+			</info>
+			<require idref="thirdparty.wireless.lorawan.inc"/>
+			<require idref="thirdparty.wireless.lorawan.hal"/>
+			<require idref="thirdparty.wireless.lorawan.sys"/>
+			<require idref="thirdparty.wireless.lorawan.reg"/>
+			<require idref="thirdparty.wireless.lorawan.tal.sx1276"/>
+			<require idref="thirdparty.wireless.lorawan.services.pds"/>
+			<require idref="thirdparty.wireless.lorawan.pmm"/>
+			<require idref="thirdparty.wireless.lorawan.services.sw_timer"/>
+			<require idref="config.thirdparty.wireless.lorawan.services.aes"/>
+			<require idref="config.thirdparty.wireless.lorawan"/>
+
+			<device-support-alias value="lorawan_support"/>
+
+            <info type="keyword" value="technology">
+                <keyword value="Wireless"/>
+                <keyword value="Communication"/>
+            </info>
+            <build type="distribute" subtype="license" value="../EULA.txt"/>
+    </module>
+	
+    <select-by-config id="config.thirdparty.wireless.lorawan" name="config.thirdparty.wireless.lorawan" caption="LoRaWAN Stack Configuration" default="lib">
+		<module type="meta" id="config.thirdparty.wireless.lorawan#lib" caption="LoRaWAN Stack">
+			<info type="description" value="summary">
+		     LoRaWAN Stack
+			</info>
+			
+			<build subtype="user" toolchain="armgcc" type="library" value="libgen/sam0/gcc/libLORAWAN_LIBGEN.a" />
+			<require idref="thirdparty.wireless.lorawan.mac.lib_inc"/>
+		    <require idref="thirdparty.wireless.lorawan.tal.inc"/>
+			
+			<device-support-alias value="lorawan_support"/>
+			
+            <info type="keyword" value="technology">
+                <keyword value="Wireless"/>
+                <keyword value="Communication"/>
+            </info>
+            <build type="distribute" subtype="license" value="../EULA.txt"/>
+        </module>
+	</select-by-config>
+</asf>

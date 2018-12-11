@@ -1,0 +1,12 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.hal.sam0.hw_timer" caption="LoRaWAN HW Timer">
+		<info type="description" value="summary">
+		LoRaWAN Stack Hardware Timer
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<require idref="sam0.drivers.rtc"/>
+		<build type="c-source"      value="sam0/hw_timer.c"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+
+</asf>

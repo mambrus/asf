@@ -1,0 +1,26 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.hal" caption="LoRaWAN HW Abstraction Layer">
+		<info type="description" value="summary">
+		LoRaWAN Stack Hardware Abstraction layer
+		</info>
+		
+        <info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="src/radio_driver_hal.c"/>
+		<build type="c-source"      value="src/sys.c"/>
+
+		<require idref="thirdparty.wireless.lorawan.hal.inc"/>
+		<require idref="common2.services.delay"/>
+		<require idref="sam0.drivers.sercom.spi"/>
+		<require idref="sam0.drivers.extint"/>
+		<require idref="sam0.drivers.tc"/>
+		<require idref="sam0.drivers.port"/>
+		<require idref="sam0.utils"/>		
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+	
+	<device-alias-map name="lorawan_support">
+		<device-support value="saml21xxxb"/>		
+		<device-support value="samr34jxxb"/>
+		<device-support value="samr35jxxb"/>
+	</device-alias-map>
+</asf>

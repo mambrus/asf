@@ -1,0 +1,24 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.services.pds.inc.common" caption="MLS PDS Inlcude Common Module">
+		<info type="description" value="summary">
+		MLS PDS Inlcude Common Module
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="header-file"   value="pds_interface.h"/>
+		<build type="include-path"  value="."/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+	<module type="component" id="thirdparty.wireless.lorawan.services.pds.inc" caption="MLS PDS Include Module">
+		<info type="description" value="summary">
+		MLS PDS Include Module
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="header-file"   value="pds_nvm.h"/>
+		<build type="header-file"   value="pds_task_handler.h"/>
+		<build type="header-file"   value="pds_wl.h"/>
+		<build type="header-file"   value="pds_common.h"/>		
+		<build type="include-path"  value="."/>
+		<require idref="thirdparty.wireless.lorawan.services.pds.inc.common"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>	
+</asf>

@@ -117,6 +117,18 @@
 		<device-support value="samr30"/>
 	</board>
 
+	<board id="board.user_board.samr34" caption="User Board template">
+		<require idref="common2.boards.user_board.common"/>
+		<require idref="sam0.utils.linker_scripts"/>
+		<device-support value="samr34"/>
+	</board>
+
+	<board id="board.user_board.samr35" caption="User Board template">
+		<require idref="common2.boards.user_board.common"/>
+		<require idref="sam0.utils.linker_scripts"/>
+		<device-support value="samr35"/>
+	</board>
+
 	<board id="board.user_board.saml22n" caption="User Board template">
 		<require idref="common2.boards.user_board.common"/>
 		<require idref="sam0.utils.linker_scripts"/>

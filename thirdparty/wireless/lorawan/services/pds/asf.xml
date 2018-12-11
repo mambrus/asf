@@ -1,0 +1,17 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.services.pds" caption="MLS PDS Module">
+		<info type="description" value="summary">
+		MLS PDS Service module
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="src/pds_nvm.c"/>
+		<build type="c-source"      value="src/pds_task_handler.c"/>
+		<build type="c-source"      value="src/pds_interface.c"/>
+		<build type="c-source"      value="src/pds_wl.c"/>
+		<build type="define" name="ENABLE_PDS" value="1"/>
+		<require idref="thirdparty.wireless.lorawan.services.pds.inc"/>
+		<require idref="thirdparty.wireless.services.nvm"/>
+		<require idref="sam0.drivers.nvm"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+</asf>

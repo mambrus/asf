@@ -1,0 +1,26 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.regparams.multiband" caption="LoRaWAN FOR supporting multiple bands">
+		<info type="description" value="summary">
+		This module includes the files related to supporting multiple bands.
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="src/lorawan_multiband.c"/>
+		<build type="c-source"      value="src/lorawan_mband_na.c"/>
+		<build type="c-source"      value="src/lorawan_mband_eu.c"/>
+		<build type="c-source"      value="src/lorawan_mband_as.c"/>
+		<build type="c-source"      value="src/lorawan_mband_au.c"/>
+		<build type="c-source"      value="src/lorawan_mband_in.c"/>
+		<build type="c-source"      value="src/lorawan_mband_jp.c"/>
+		<build type="c-source"      value="src/lorawan_mband_kr.c"/>
+		<require idref="thirdparty.wireless.lorawan.regparams.multiband.inc"/>				
+		<build type="define" name="EU_BAND" value="1"/>
+		<build type="define" name="NA_BAND" value="1"/>
+		<build type="define" name="AU_BAND" value="1"/>
+		<build type="define" name="KR_BAND" value="1"/>
+		<build type="define" name="JPN_BAND" value="1"/>
+		<build type="define" name="AS_BAND" value="1"/>
+		<build type="define" name="IND_BAND" value="1"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+	
+</asf>

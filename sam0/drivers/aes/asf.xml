@@ -16,6 +16,8 @@
 			<require idref="sam0.drivers.system" />
 			<device-support value="saml21"/>
 			<device-support value="saml22"/>
+			<device-support value="samr34"/>
+			<device-support value="samr35"/>
 		</module>
 		<module type="driver" id="sam0.drivers.aes#callback" caption="AES - Advanced Encryption Standard Module">
 			<info type="keyword" value="technology">
@@ -31,6 +33,8 @@
 			<require idref="sam0.drivers.system" />
 			<device-support value="saml21"/>
 			<device-support value="saml22"/>
+			<device-support value="samr34"/>
+			<device-support value="samr35"/>
 		</module>
 	</select-by-config>
 	<module type="meta" id="sam0.drivers.aes.appnote" caption="AES - Advanced Encryption Standard Module">

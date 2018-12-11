@@ -1,0 +1,11 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.services.sw_timer.inc" caption="LoRaWAN SW Timer">
+		<info type="description" value="summary">
+		LoRaWAN Stack Software services module
+		</info>
+		<info type="gui-flag" value="hidden"/>
+		<build type="include-path"  value="."/>
+		<build type="header-file"   value="sw_timer.h"/>
+		<device-support-alias value="lorawan_support"/>	
+	</module>
+</asf>

@@ -1,0 +1,15 @@
+<asf xmlversion="1.0">
+	<module type="component" id="thirdparty.wireless.lorawan.services.edbg_eui" caption="EDBG EUI Read">
+		<info type="description" value="summary">
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		
+		<build type="c-source"      value="edbg_eui.c"/>
+		<build type="include-path"  value="."/>
+        <build type="header-file"   value="edbg_eui.h"/>
+
+		<require idref="sam0.drivers.sercom.i2c.master"/>
+		<build type="define" name="EDBG_EUI_READ" value="1"/>
+		<device-support value="atsamr34j18b"/>		
+	</module>
+</asf>

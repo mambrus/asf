@@ -1,0 +1,15 @@
+<asf xmlversion="1.0">	
+	<module type="component" id="thirdparty.wireless.lorawan.tal.inc" caption="LoRaWAN MAC inc layer">
+		<info type="description" value="summary">
+		This module includes the  TAL Layer files
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="include-path"  value="."/>
+		<build type="header-file"   value="radio_get_set.h"/>
+		<build type="header-file"   value="radio_interface.h"/>
+		<build type="header-file"   value="radio_task_manager.h"/>
+		<build type="header-file"   value="radio_lbt.h"/>
+		<build type="header-file"   value="radio_transaction.h"/>
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+</asf>

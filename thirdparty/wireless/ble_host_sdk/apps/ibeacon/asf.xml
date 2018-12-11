@@ -1,0 +1,31 @@
+<asf xmlversion="1.0">
+	<module type="application" caption="IBEACON APPLICATION" id="thirdparty.wireless.ble_host_sdk.apps.ibeacon">
+		<info type="description" value="summary">
+		ibeacon application for BLE stack
+		</info>
+		<build type="include-path" value="."/>
+		<build type="header-file" value="ibeacon_app.h"/>
+		<build type="c-source" value="ibeacon_app.c"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.inc"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.src"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.ble_services.ble_manager"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.services.console"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.services.timer"/>
+		<require idref="thirdparty.wireless.ble_host_sdk.utils"/>
+		
+		<build type="module-config" subtype="required-header-file" value="conf_gpio.h"/>
+		<build type="module-config" subtype="path" value="..\config\saml21"/>
+		
+		<build type="distribute" subtype="user-file" value="../../doc/iBeacon_Demo_Getting_Started_Guide.pdf"/>
+		<device-support-alias value="ble_host_sdk_support"/>
+		
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+			<keyword value="BLE"/>
+			<keyword value="Bluetooth"/>
+		</info>
+
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

@@ -1,0 +1,19 @@
+<asf xmlversion="1.0">
+
+	<!-- **************************************************************************************************** -->
+	<module type="meta" id="thirdparty.wireless.lorawan.apps.enddevice_demo_bl.multiband" caption="EndDevice Demo Application">
+		<info type="description" value="summary">
+		EndDevice Demo Application
+		</info>
+		
+		<require idref="thirdparty.wireless.lorawan.apps.enddevice_demo"/>		
+		
+		<device-support-alias value="lorawan_support"/>
+		<!-- .................................................................................................... -->
+		<info type="keyword" value="technology">
+			<keyword value="Wireless"/>
+			<keyword value="Communication"/>
+		</info>
+		<!-- **************************************************************************************************** -->
+	</module>
+</asf>

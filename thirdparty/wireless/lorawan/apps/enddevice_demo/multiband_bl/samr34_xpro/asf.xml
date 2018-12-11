@@ -1,0 +1,39 @@
+<asf xmlversion="1.0">
+    <project caption="LoRaWAN Mote Application with Bootloader - SAMR34 Xplained Pro (ATSAMR34J18B)" id="thirdparty.wireless.lorawan.apps.enddevice_demo.enddevice_demo_bl.multiband.samr34_xpro" force-caption="true" force-description="true">
+        <info type="description" value="summary">
+        LoRaWAN Mote Application with Bootloader - SAMR34 Xplained Pro
+        </info>
+        <build type="include-path" value="."/>
+        <build type="header-file" value="conf_board.h"/>
+        <build type="header-file" value="conf_clocks.h"/>
+        <build type="header-file" value="conf_extint.h"/>
+        <build type="header-file" value="conf_sio2host.h"/>
+        <build type="header-file" value="conf_spi.h"/>
+        <build type="header-file" value="conf_app.h"/>
+        <build type="header-file" value="conf_sw_timer.h"/>
+        <build type="header-file" value="conf_rtc.h"/>
+        <build type="header-file" value="conf_pmm.h"/>
+        <build type="header-file" value="conf_hw_timer.h"/>
+        <build type="header-file" value="conf_nvm.h"/>
+        <build type="header-file" value="conf_resource.h"/>
+		<build type="header-file" value="conf_regparams.h"/>
+        <config name="config.sam0.drivers.aes" value="polled"/>
+        <config name="config.sam0.drivers.sercom.spi" value="polled"/>
+        <config name="config.sam0.drivers.sercom.usart" value="callback"/>
+		<config name="config.sam0.drivers.sercom.i2c.master" value="callback"/>
+        <require idref="board.samr34_xplained_pro"/>
+        <require idref="thirdparty.wireless.lorawan.apps.enddevice_demo_bl.multiband"/>
+        <config name="config.thirdparty.wireless.lorawan.reg.band" value="multi_band"/>
+		<require idref="thirdparty.wireless.lorawan.services.edbg_eui"/>
+        <config name="config.sam0.drivers.rtc" value="count_callback"/>
+        <require idref="thirdparty.wireless.lorawan.apps.enddevice_certification_src"/>
+        <require idref="thirdparty.wireless.lorawan.utils.bootloader"/>		
+        <config name="config.compiler.armgcc.optimization" value="size" />
+        <toolchain-config name="armgcc.linker.general.UseNewlibNano" value="false" toolchain="armgcc"/>
+        <generator value="armgcc" />
+        <generator value="as5_arm" />
+        <generator value="doxygen"/>
+        <device-support value="atsamr34j18b"/>
+    </project>
+</asf>
+

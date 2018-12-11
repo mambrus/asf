@@ -135,6 +135,8 @@
 		<device-support value="samr21"/>
 		<device-support value="saml21"/>
 		<device-support value="samr30"/>
+		<device-support value="samr34"/>
+		<device-support value="samr35"/>
 	</device-alias-map>
 	<device-alias-map name="megarfr2_hw_timer_support">
 		<device-support value="atmega256rfr2"/>

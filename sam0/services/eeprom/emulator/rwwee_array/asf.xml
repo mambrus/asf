@@ -40,6 +40,8 @@
 		<device-support value="samha1"/>
 		<device-support value="samha0"/>
 		<device-support value="samr30"/>
+		<device-support value="samr34"/>
+		<device-support value="samr35"/>
 		<require idref="sam0.utils"/>
 		<require idref="sam0.drivers.nvm"/>
 		<generator value="doxygen-module-v2" default-mcu="unspecified-saml21"/>

@@ -1,0 +1,26 @@
+<asf xmlversion="1.0">
+
+<select-by-config id="config.thirdparty.wireless.lorawan.services.aes" name="config.thirdparty.wireless.lorawan.services.aes" caption="AES - Advanced Encryption Standard Module" default="hw">
+	<info type="description" value="summary">
+	</info>
+	<module type="driver" id="config.thirdparty.wireless.lorawan.services.aes#hw" caption="AES - Advanced Encryption Standard Module">
+		<info type="keyword" value="technology">
+			<keyword value="Cryptography"/>
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="src/hw/sam0/aes_engine.c"/>
+		<require idref="thirdparty.wireless.lorawan.services.aes.inc"/>	
+		<require idref="sam0.drivers.aes"/>
+		<device-support-alias value="lorawan_support"/>	
+	</module>
+	<module type="driver" id="config.thirdparty.wireless.lorawan.services.aes#sw" caption="AES - Advanced Encryption Standard Module">
+		<info type="keyword" value="technology">
+			<keyword value="Cryptography"/>
+		</info>
+        <info type="gui-flag" value="hidden"/>
+		<build type="c-source"      value="src/sw/aes_engine.c"/>
+		<require idref="thirdparty.wireless.lorawan.services.aes.inc"/>	
+		<device-support-alias value="lorawan_support"/>		
+	</module>
+</select-by-config>
+</asf>

@@ -1,0 +1,28 @@
+<asf xmlversion="1.0">
+		<select-by-device id="thirdparty.wireless.ble_host_sdk.services.sensor">
+			<module type="service" id="thirdparty.wireless.ble_host_sdk.services.sensor#1"     caption="bno055">
+				<info type="description" value="summary">
+				BNO055 Sensor Driver
+				</info>
+				<info type="gui-flag" value="hidden" />
+				<build type="c-source"      value="bno055/sam0/bno055.c"/>
+				<build type="c-source"      value="bno055/sam0/bno055_port.c"/>
+				<build type="header-file"   value="bno055/bno055.h"/>
+				<build type="header-file"   value="bno055/bno055_port.h"/>
+				<build type="header-file"   value="bno055/bno055_doc.h"/>
+				<build type="include-path"  value="bno055/"/>
+
+				<require idref="sam0.drivers.sercom.i2c.master"/>
+				<require idref="common.services.ioport"/>
+				<require idref="sam0.utils"/>
+				<require idref="common2.services.delay"/>
+
+				<build type="module-config" subtype="required-header-file" value="conf_extint.h"/>
+				<build type="module-config" subtype="required-header-file" value="conf_gpio.h"/>
+				<build type="module-config" subtype="required-header-file" value="conf_board.h"/>
+				<build type="module-config" subtype="path" value="bno055/sam0/module_config/saml21"/>
+
+				<device-support value="saml21"/>
+			</module>
+		</select-by-device>
+</asf>

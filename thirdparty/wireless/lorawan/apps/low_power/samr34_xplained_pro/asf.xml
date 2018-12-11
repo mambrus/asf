@@ -1,0 +1,34 @@
+<asf xmlversion="1.0">
+	<project caption="SAM R34 Low Power Example" id="thirdparty.wireless.lorawan.apps.low_power.samr34_xplained_pro">
+	
+		<info type="gui-flag" value="move-to-root"/>
+		<build type="include-path" value="."/>
+		
+		<build type="header-file" value="conf_app.h"/>
+		<build type="header-file" value="conf_clocks.h"/>
+		<build type="header-file" value="conf_board.h"/>
+		<build type="header-file" value="conf_rtc.h"/>
+		<build type="header-file" value="conf_extint.h"/>
+		<build type="header-file" value="conf_spi.h"/>	
+		<build type="header-file" value="conf_hw_timer.h"/>
+		<build type="header-file" value="conf_dma.h"/>
+
+		<require idref="board.samr34_xplained_pro"/>
+		<require idref="thirdparty.wireless.lorawan.apps.low_power"/>
+		
+		<config name="config.sam0.drivers.adc" value="callback"/>
+		<config name="config.sam0.drivers.sercom.spi" value="polled"/>
+		<config name="config.sam0.drivers.rtc" value="count_callback"/>
+		<config name="config.sam0.drivers.aes" value="polled"/>
+		
+		<build type="define" name="_DEBUG_" value="0"/>
+		
+		<generator value="armgcc"/>
+		<generator value="as5_arm"/>
+		<generator value="doxygen"/>
+		
+		<device-support value="atsamr34j18b"/>
+		
+		<build type="linker-config" subtype="flags" value="-lm" toolchain="armgcc"/>
+	</project>
+</asf>
