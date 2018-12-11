@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<project caption="MiWi Mesh Coordinator - WSN Demo Application - SAM R30 Module Xplained Pro" id="thirdparty.wireless.miwi.apps.wsn_demo.panc_sec.samr30_module_xplained_pro" force-caption="true" force-description="true">
+	<project caption="MiWi Mesh Secured PanCoordinator - WSN Demo Application - SAM R30 Module Xplained Pro" id="thirdparty.wireless.miwi.apps.wsn_demo.panc_sec.samr30_module_xplained_pro" force-caption="true" force-description="true">
 		<info type="description" value="summary">
 		The MiWi based WSNDemo application implements a typical wireless sensor network scenario, in which one central node collects the data from a network of sensors and passes this data over a serial connection for further processing. In the case of the WSNDemo this processing is performed by the WSNMonitor PC application.
 		</info>
@@ -15,6 +15,7 @@
 		<build type="header-file" value="conf_nvm.h"/>
 		<build type="header-file" value="conf_sleepmgr.h"/>
 		<build type="header-file" value="conf_rtc.h"/>
+		<build type="header-file" value="conf_at25dfx.h"/>
 
 		<config name="config.thirdparty.wireless.miwi.source" value="miwi_mesh"/>
 		<config name="config.thirdparty.wireless.miwi.source.miwi_mesh.lib" value="panc_sec"/>
@@ -23,12 +24,13 @@
 		<config name="config.sam0.drivers.sercom.usart" value="callback"/>
 		<require idref="board.samr30_module_xplained_pro"/>
 
+		<require idref="common2.components.memory.serial_flash.at25dfx"/>
 		<require idref="thirdparty.wireless.miwi.apps.wsn_demo"/>
 
-		<config name="config.compiler.armgcc.optimization" value="high" />
+		<config name="config.compiler.armgcc.optimization" value="high"/>
 
-		<generator value="armgcc" />
-		<generator value="as5_arm" />
+		<generator value="armgcc"/>
+		<generator value="as5_arm"/>
 		<generator value="doxygen"/>
 		<device-support value="atsamr30e18a"/>
 	</project>

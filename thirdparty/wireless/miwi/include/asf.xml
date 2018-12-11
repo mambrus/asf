@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<module type="meta" id="thirdparty.wireless.miwi.include" caption="MIWI INCLUDE">
+	<module type="component" id="thirdparty.wireless.miwi.include" caption="MiWi Include">
 		<info type="description" value="summary">
 		Provides Miwi Common header files
 		</info>

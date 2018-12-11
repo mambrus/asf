@@ -1,10 +1,9 @@
 <asf xmlversion="1.0">
-	<module type="component" id="thirdparty.wireless.miwi" caption="MiWi Stack">
+	<module type="component" id="thirdparty.wireless.miwi" caption="MiWi Protocol">
 		<info type="description" value="summary">
-		 MiWi Stack
+		 MiWi Protocol
 		</info>
 		<require idref="config.thirdparty.wireless.miwi.source"/>
-		<require idref="thirdparty.wireless.miwi.docs"/>
 		<build type="module-config" subtype="required-header-file" value="miwi_config.h"/>
 		<build type="module-config" subtype="path" value="module_config"/>
 		<device-support-alias value="miwi_support"/>
@@ -15,27 +14,16 @@
 		</info>
 		<build type="distribute" subtype="license" value="license.txt"/>
 	</module>
-	<module type="meta" id="thirdparty.wireless.miwi.docs" caption="MiWi Stack Documents">
-		<info type="description" value="summary">
-			MiWi Stack Documents
-		</info>
-		<info type="gui-flag" value="move-to-root"/>
-		<device-support-alias value="miwi_support"/>
-		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.1_Developer_Guide.pdf"/>
-		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.1_Migration_Guide.pdf"/>
-		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.1_Quick_Start_Guide.pdf"/>
-		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.1_Release_Notes.pdf"/>
-	</module>
    <select-by-config id="config.thirdparty.wireless.miwi.source" name="config.thirdparty.wireless.miwi.source" caption="Stack Configuration" default="miwi_p2p">
         <module type="component" id="config.thirdparty.wireless.miwi.source#miwi_p2p"     caption="P2P support enable">
             <info type="description" value="summary">
-			 MiWi Stack
+			 MiWi P2P Protocol
             </info>
             <require idref="thirdparty.wireless.miwi.source.miwi_p2p_star"/>
 			<require idref="thirdparty.wireless.miwi.include"/>
 			<require idref="thirdparty.wireless.miwi.source.mimac"/>
 			<require idref="thirdparty.wireless.miwi.source.sys"/>
-			<require idref="thirdparty.wireless.services.nvm" />
+			<require idref="thirdparty.wireless.services.nvm"/>
 			<build type="define" name="PROTOCOL_P2P" value =""/>
 			<build type="module-config" subtype="required-header-file" value="miwi_config_p2p.h"/>
 			<build type="module-config" subtype="path" value="module_config"/>
@@ -43,13 +31,13 @@
         </module>
         <module type="component" id="config.thirdparty.wireless.miwi.source#miwi_star"     caption="Star support enable">
             <info type="description" value="summary">
-
+			MiWi Star Protocol
             </info>
             <require idref="thirdparty.wireless.miwi.source.miwi_p2p_star"/>
 			<require idref="thirdparty.wireless.miwi.include"/>
 			<require idref="thirdparty.wireless.miwi.source.mimac"/>
 			<require idref="thirdparty.wireless.miwi.source.sys"/>
-			<require idref="thirdparty.wireless.services.nvm" />
+			<require idref="thirdparty.wireless.services.nvm"/>
 			<build type="define" name="PROTOCOL_STAR" value =""/>
 			<build type="module-config" subtype="required-header-file" value="miwi_config_p2p.h"/>
 			<build type="module-config" subtype="path" value="module_config"/>
@@ -57,7 +45,7 @@
         </module>
         <module type="component" id="config.thirdparty.wireless.miwi.source#miwi_mesh"     caption="Mesh support enable">
             <info type="description" value="summary">
-
+			MiWi Mesh Protocol
             </info>
             <require idref="thirdparty.wireless.miwi.source.miwi_mesh"/>
 			<require idref="thirdparty.wireless.miwi.include"/>

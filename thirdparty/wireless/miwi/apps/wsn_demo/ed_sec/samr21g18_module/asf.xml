@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<project caption="MiWi Mesh Secured EndDevice- WSN Demo Application - SAMR21G18 MODULE" id="thirdparty.wireless.miwi.apps.wsn_demo.ed_sec.samr21g18_module" force-caption="true" force-description="true">
+	<project caption="MiWi Mesh Secured EndDevice - WSN Demo Application - SAMR21G18 MODULE" id="thirdparty.wireless.miwi.apps.wsn_demo.ed_sec.samr21g18_module" force-caption="true" force-description="true">
 		<info type="description" value="summary">
 		The MiWi based WSNDemo application implements a typical wireless sensor network scenario, in which one central node collects the data from a network of sensors and passes this data over a serial connection for further processing. In the case of the WSNDemo this processing is performed by the WSNMonitor PC application.
 		</info>
@@ -24,11 +24,12 @@
 		<require idref="board.samr21g18_module"/>
 
 		<require idref="thirdparty.wireless.miwi.apps.wsn_demo"/>
-		<require idref="thirdparty.wireless.common_services.sleep_mgr"/>
+		<require idref="thirdparty.wireless.miwi.services.sleep_mgr"/>
 
-		<config name="config.compiler.armgcc.optimization" value="high" />
+		<config name="config.compiler.armgcc.optimization" value="high"/>
 		<generator value="iarewarm"/>
-		<generator value="as5_arm" />
+		<generator value="armgcc"/>
+		<generator value="as5_arm"/>
 		<generator value="doxygen"/>
 		<device-support value="atsamr21g18a"/>
 	</project>

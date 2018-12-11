@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<module type="meta" id="thirdparty.wireless.miwi.source.miwi_p2p_star" caption="MiWi P2P and Star">
+	<module type="component" id="thirdparty.wireless.miwi.source.miwi_p2p_star" caption="MiWi P2P and Star">
 		<info type="description" value="summary">
 		Source files of MiWi P2P and Star stack.
 		</info>

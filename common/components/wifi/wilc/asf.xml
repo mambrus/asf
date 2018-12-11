@@ -113,6 +113,7 @@
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
 			<require idref="common.utils.osprintf"/>
+			<require idref="common.utils.utf8"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 			<require idref="thirdparty.lwip-port.141-dev"/>
@@ -197,6 +198,7 @@
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
 			<require idref="common.utils.osprintf"/>
+			<require idref="common.utils.utf8"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 			<require idref="thirdparty.lwip-port.141-dev"/>
@@ -436,6 +438,7 @@
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
 			<require idref="common.utils.osprintf"/>
+			<require idref="common.utils.utf8"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 			<require idref="thirdparty.lwip-port.141-dev"/>
@@ -520,6 +523,7 @@
 			<require idref="common.components.memory.sd_mmc.protocol"/>
 			<require idref="common.components.memory.sd_mmc.mci"/>            
 			<require idref="common.utils.osprintf"/>
+			<require idref="common.utils.utf8"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 			<require idref="thirdparty.lwip-port.141-dev"/>
@@ -603,8 +607,6 @@
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
-			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware.h"/>
-			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware_no_rtc.h"/>						
 			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
 			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
@@ -652,6 +654,7 @@
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
 			<require idref="common.utils.osprintf"/>
+			<require idref="common.utils.utf8"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 			<require idref="thirdparty.lwip-port.141-dev"/>
@@ -691,8 +694,6 @@
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
-			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware.h"/>
-			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware_no_rtc.h"/>						
 			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
 			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
@@ -740,6 +741,7 @@
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
 			<require idref="common.utils.osprintf"/>
+			<require idref="common.utils.utf8"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 			<require idref="thirdparty.lwip-port.141-dev"/>
@@ -788,8 +790,6 @@
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
-			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware.h"/>
-			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware_no_rtc.h"/>						
 			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
 			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
@@ -841,6 +841,7 @@
 			<require idref="common.services.ioport"/>
 			<require idref="common.services.delay"/>
 			<require idref="common.utils.osprintf"/>
+			<require idref="common.utils.utf8"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 			<require idref="thirdparty.lwip-port.141-dev"/>
@@ -880,15 +881,12 @@
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
-			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware.h"/>
-			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware_no_rtc.h"/>						
 			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
 			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
 			<build type="c-source" value="driver/source/m2m_periph.c"/>
 			<build type="c-source" value="driver/source/m2m_wifi.c"/>
-
 			<build type="c-source" value="driver/source/nmasic.c"/>
 			<build type="header-file" value="driver/source/nmasic.h"/>
 			<build type="c-source" value="driver/source/nmbus.c"/>
@@ -933,6 +931,7 @@
 			<require idref="common.components.memory.sd_mmc.protocol"/>
 			<require idref="common.components.memory.sd_mmc.mci"/>                       
 			<require idref="common.utils.osprintf"/>
+			<require idref="common.utils.utf8"/>
 			<require idref="thirdparty.os.freertos.version"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 			<require idref="thirdparty.lwip-port.141-dev"/>

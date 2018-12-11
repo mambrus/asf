@@ -47,7 +47,6 @@
 		<build type="module-config" subtype="required-header-file" value="conf_nvm.h"/>
         <build type="module-config" subtype="path" value="sam0/module_config"/>
 		<require idref="sam0.drivers.nvm"/>
-       	<device-support value="samr30"/>
        	<device-support value="samr21"/>
         <device-support value="samd21"/>
 		<device-support value="saml21"/>

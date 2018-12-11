@@ -16,7 +16,6 @@
 		<build type="header-file"   value="wsndemo.h"/>
 		<build type="include-path" value="."/>
 		<build type="distribute" subtype="user-file" value="wsnmonitor_setup.exe"/>
-		<device-support-alias value="miwi_support"/>
 		<!-- ++++++++++++++++++++++++++++++++++++++++++++++REQUIRE++++++++++++++++++++++++++++++++++++++++++++++. -->
 		<require idref="thirdparty.wireless.addons.sio2host"/>
 		<require idref="thirdparty.wireless.miwi"/>

@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<module type="meta" id="thirdparty.wireless.miwi.services.otau"   caption="MiWi Over-The-Air Upgrade Module">
+	<module type="component" id="thirdparty.wireless.miwi.services.otau"   caption="MiWi Over-The-Air Upgrade Module">
 		<info type="description" value="summary">
 		</info>
 		<info type="gui-flag" value="hidden"/>
@@ -8,7 +8,7 @@
 		<build type="header-file"   value="otau_parser.h"/>
 		<require idref="thirdparty.wireless.addons.sio2host"/>
 
-		<require idref="thirdparty.wireless.services.nvm" />
+		<require idref="thirdparty.wireless.services.nvm"/>
 		<build type="c-source"      value="otau.c"/>
 		<build type="header-file"   value="otau.h"/>
 		<build type="include-path" value="."/>
@@ -16,6 +16,6 @@
 		<require idref="thirdparty.wireless.miwi.services.otau.notify"/>
 		<require idref="thirdparty.wireless.miwi.services.otau.upgrade"/>
 		<require idref="thirdparty.wireless.miwi.services.otau.tools"/>
-		<device-support value="sam0"/>
+		<device-support-alias value="miwi_support"/>
 	</module>
 </asf>

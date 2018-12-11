@@ -19,7 +19,7 @@
 		<require idref="thirdparty.wireless.addons.sio2host"/>
 		<require idref="thirdparty.wireless.miwi"/>
 		<require idref="thirdparty.wireless.miwi.services.pds"/>
-		<require idref="thirdparty.wireless.common_services.sleep_mgr"/>
+		<require idref="thirdparty.wireless.miwi.services.sleep_mgr"/>
 		<require idref="thirdparty.wireless.miwi.include"/>
 		
 		<device-support-alias value="miwi_support"/>

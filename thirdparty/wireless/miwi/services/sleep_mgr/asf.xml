@@ -1,0 +1,23 @@
+<asf xmlversion="1.0">
+    <select-by-device id="thirdparty.wireless.miwi.services.sleep_mgr" caption="MiWi Sleep Manager">
+		<info type="keyword" value="technology">
+			<keyword value="Communication"/>
+		</info>
+		<info type="description" value="summary">
+		Sleep manager helps the application to put the MCU into sleep mode.
+		</info>
+		<module type="component" id="thirdparty.wireless.miwi.services.sleep_mgr#1" caption="MiWi Sleep Manager - SAM0 ">
+			<info type="gui-flag" value="hidden"/>
+			<build type="header-file"   value="sleep_mgr.h"/>
+            <build type="include-path"  value="."/>			
+			<build type="c-source"      value="sam0/sleep_mgr.c"/>
+			<build type="doxygen-entry-point" value="sleep_mgr_group"/>
+			<require idref="sam0.drivers.rtc"/>
+			<device-support-alias value="miwi_sam0_sleep_mgr_support"/>
+		</module>
+	</select-by-device>
+	<device-alias-map name="miwi_sam0_sleep_mgr_support">
+		<device-support value="samr21"/>
+		<device-support value="samr30"/>
+	</device-alias-map>
+</asf>

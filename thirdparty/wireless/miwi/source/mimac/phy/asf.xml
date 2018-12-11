@@ -18,7 +18,7 @@
             </info>
             <info type="gui-flag" value="hidden"/>
             <require idref="thirdparty.wireless.miwi.source.mimac.phy.ext.at86rf233"/>
-			<device-support-alias value="miwi_support"/>
+			<device-support-alias value="miwi_spi_support"/>
         </module>
 		<module type="driver" id="config.thirdparty.wireless.miwi.source.mimac.phy.ext#at86rf212b"     caption="at86rf233 phy support enabled">
             <info type="description" value="summary">
@@ -26,7 +26,7 @@
             </info>
             <info type="gui-flag" value="hidden"/>
             <require idref="thirdparty.wireless.miwi.source.mimac.phy.ext.at86rf212b"/>
-			<device-support-alias value="miwi_support"/>
+			<device-support-alias value="miwi_spi_support"/>
         </module>		
 	</select-by-config>	
 	<module type="meta" id="thirdparty.wireless.miwi.source.mimac.phy.ext.at86rf233" caption="PHY AT86RF233">
@@ -37,7 +37,7 @@
 		<build type="c-source"      value="at86rf233/phy.c"/>
 		<build type="doxygen-entry-point" value="group_phy_233"/>
 		<build type="define" name="PHY_AT86RF233" value =""/>
-		<device-support-alias value="miwi_support"/>
+			<device-support-alias value="miwi_spi_support"/>
 	</module>
 	<module type="meta" id="thirdparty.wireless.miwi.source.mimac.phy.ext.at86rf212b" caption="PHY AT86RF212b">
 		<info type="description" value="summary">
@@ -48,6 +48,6 @@
 		<build type="header-file"      value="at86rf212b/phy_at86rf212b.h"/>
 		<build type="doxygen-entry-point" value="group_phy_212b"/>
 		<build type="define" name="PHY_AT86RF212B" value =""/>
-		<device-support-alias value="miwi_support"/>
+			<device-support-alias value="miwi_spi_support"/>
 	</module>
 </asf>

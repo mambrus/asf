@@ -1,67 +1,73 @@
 <asf xmlversion="1.0">
-   <select-by-config id="config.thirdparty.wireless.miwi.source.miwi_mesh.lib" name="config.thirdparty.wireless.miwi.source.miwi_mesh.lib" caption="Stack Configuration" default="panc">
+   <select-by-config id="config.thirdparty.wireless.miwi.source.miwi_mesh.lib" name="config.thirdparty.wireless.miwi.source.miwi_mesh.lib" caption="MiWi Mesh Library Configuration" default="panc">
         <module type="component" id="config.thirdparty.wireless.miwi.source.miwi_mesh.lib#panc"     caption="MiWi Mesh PAN Coordinator">
             <info type="description" value="summary">
 			Library of MiWi Mesh PanCoordinator
             </info>
+			<info type="gui-flag" value="hidden"/>
 			<build type="library" subtype="user" value="sam0/iar/sam0_miwi_mesh_panc.a" toolchain="iarewarm"/>
             <build type="library" subtype="user" value="sam0/gcc/libsam0_miwi_mesh_panc.a" toolchain="armgcc"/>
 			<build type="define" name="PAN_COORDINATOR" value =""/>
-			<device-support value="sam0"/>
+			<device-support-alias value="miwi_support"/>
         </module>
         <module type="component" id="config.thirdparty.wireless.miwi.source.miwi_mesh.lib#coord"     caption="MiWi Mesh Coordinator">
             <info type="description" value="summary">
 			Library of MiWi Mesh Coordinator
             </info>
+			<info type="gui-flag" value="hidden"/>
 			<build type="library" subtype="user" value="sam0/iar/sam0_miwi_mesh_coord.a" toolchain="iarewarm"/>
             <build type="library" subtype="user" value="sam0/gcc/libsam0_miwi_mesh_coord.a" toolchain="armgcc"/>
 			<build type="define" name="COORDINATOR" value =""/>
-			<device-support value="sam0"/>
+			<device-support-alias value="miwi_support"/>
         </module>
         <module type="component" id="config.thirdparty.wireless.miwi.source.miwi_mesh.lib#ed"     caption="MiWi Mesh EndDevice">
             <info type="description" value="summary">
 			Library of MiWi Mesh EndDevice
             </info>
+			<info type="gui-flag" value="hidden"/>
 			<build type="library" subtype="user" value="sam0/iar/sam0_miwi_mesh_ed.a" toolchain="iarewarm"/>
             <build type="library" subtype="user" value="sam0/gcc/libsam0_miwi_mesh_ed.a" toolchain="armgcc"/>
 			<build type="define" name="ENDDEVICE" value =""/>
-			<device-support value="sam0"/>
+			<device-support-alias value="miwi_support"/>
         </module>
         <module type="component" id="config.thirdparty.wireless.miwi.source.miwi_mesh.lib#panc_sec"     caption="MiWi Mesh Secured PAN Coordinator">
             <info type="description" value="summary">
 			Library of MiWi Mesh Secured PanCoordinator
             </info>
+			<info type="gui-flag" value="hidden"/>
 			<build type="library" subtype="user" value="sam0/iar/sam0_miwi_mesh_panc_sec.a" toolchain="iarewarm"/>
             <build type="library" subtype="user" value="sam0/gcc/libsam0_miwi_mesh_panc_sec.a" toolchain="armgcc"/>
 			<build type="define" name="PAN_COORDINATOR" value =""/>
 			<build type="define" name="MESH_SECURITY" value =""/>
-			<device-support value="sam0"/>
+			<device-support-alias value="miwi_support"/>
 
         </module>
         <module type="component" id="config.thirdparty.wireless.miwi.source.miwi_mesh.lib#coord_sec"     caption="MiWi Mesh Secured Coordinator">
             <info type="description" value="summary">
 			Library of MiWi Mesh Secured Coordinator
             </info>
+			<info type="gui-flag" value="hidden"/>
 			<build type="library" subtype="user" value="sam0/iar/sam0_miwi_mesh_coord_sec.a" toolchain="iarewarm"/>
             <build type="library" subtype="user" value="sam0/gcc/libsam0_miwi_mesh_coord_sec.a" toolchain="armgcc"/>
 			<build type="define" name="COORDINATOR" value =""/>
 			<build type="define" name="MESH_SECURITY" value =""/>
-			<device-support value="sam0"/>
+			<device-support-alias value="miwi_support"/>
         </module>
         <module type="component" id="config.thirdparty.wireless.miwi.source.miwi_mesh.lib#ed_sec"     caption="MiWi Mesh Secured EndDevice">
             <info type="description" value="summary">
 			Library of MiWi Mesh Secured EndDevice
             </info>
+			<info type="gui-flag" value="hidden"/>
 			<build type="library" subtype="user" value="sam0/iar/sam0_miwi_mesh_ed_sec.a" toolchain="iarewarm"/>
             <build type="library" subtype="user" value="sam0/gcc/libsam0_miwi_mesh_ed_sec.a" toolchain="armgcc"/>
 			<build type="define" name="ENDDEVICE" value =""/>
 			<build type="define" name="MESH_SECURITY" value =""/>
-			<device-support value="sam0"/>
+			<device-support-alias value="miwi_support"/>
         </module>
 	</select-by-config>
-	<module type="component" id="thirdparty.wireless.miwi.source.miwi_mesh" caption="MiWi MESH">
+	<module type="component" id="thirdparty.wireless.miwi.source.miwi_mesh" caption="MiWi Mesh">
 		<info type="description" value="summary">
-		Source files of MiWi MESH stack.
+		Source files of MiWi Mesh stack.
 		</info>
         <info type="gui-flag" value="hidden"/>
 		<build type="c-source"      value="miwi_mesh_app.c"/>

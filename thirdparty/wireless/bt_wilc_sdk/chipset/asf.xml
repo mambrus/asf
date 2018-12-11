@@ -12,6 +12,6 @@
 		<build type="include-path"  value="../../../../common/components/wifi/wilc/driver/include/"/>
 		<build type="header-file"   value="atwilc3000/btstack_chipset_atwilc3000.h"/>
 		<build type="header-file"   value="../../../../common/components/wifi/wilc/driver/include/ble_firmware_3000.h"/>
-		<build type="header-file"   value="../../../../common/components/wifi/wilc/driver/include/ble_firmware_3000_noRTC.h"/>
+		<build type="header-file"   value="../../../../common/components/wifi/wilc/driver/include/ble_firmware_3000_no_rtc.h"/>
 	</module>
 </asf>

@@ -28,13 +28,13 @@
 		<require idref="board.samr21_xplained_pro"/>
 
 		<require idref="thirdparty.wireless.miwi.apps.wsn_demo"/>
-		<require idref="thirdparty.wireless.common_services.sleep_mgr"/>
+		<require idref="thirdparty.wireless.miwi.services.sleep_mgr"/>
 
-		<config name="config.compiler.armgcc.optimization" value="high" />
+		<config name="config.compiler.armgcc.optimization" value="high"/>
 
 		<generator value="iarewarm"/>
-		<generator value="armgcc" />
-		<generator value="as5_arm" />
+		<generator value="armgcc"/>
+		<generator value="as5_arm"/>
 		<generator value="doxygen"/>
 		<device-support value="atsamr21g18a"/>
 	</project>

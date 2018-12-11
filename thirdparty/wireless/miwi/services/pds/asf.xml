@@ -1,7 +1,7 @@
 <asf xmlversion="1.0">
-	<module type="meta" id="thirdparty.wireless.miwi.services.pds" caption="PDS">
+	<module type="component" id="thirdparty.wireless.miwi.services.pds" caption="PDS">
 		<info type="description" value="summary">
-		 PDS for MiWi
+		 Persistent Data Storage for MiWi
 		</info>
 		<info type="gui-flag" value="hidden"/>
 		<require idref="config.thirdparty.wireless.miwi.services.pds"/>
@@ -9,103 +9,101 @@
 		<build type="doxygen-entry-point" value="group_miwi_pds"/>
 	</module>
    <select-by-config id="config.thirdparty.wireless.miwi.services.pds" name="config.thirdparty.wireless.miwi.services.pds" caption="PDS Configuration" default="enable">
-        <module type="meta" id="config.thirdparty.wireless.miwi.services.pds#enable"     caption="PDS support enable">
+        <module type="component" id="config.thirdparty.wireless.miwi.services.pds#enable"     caption="PDS support enable">
             <info type="description" value="summary">
              PDS Support Enabled
             </info>
+			<info type="gui-flag" value="hidden"/>
             <require idref="config.thirdparty.wireless.miwi.services.pds.pdstype"/>
             <build type="define" name="ENABLE_NETWORK_FREEZER" value =""/>
-            <build type="module-config" subtype="path" value="module_config"/>
             <device-support-alias value="miwi_support"/>
         </module>
-        <module type="meta" id="config.thirdparty.wireless.miwi.services.pds#disable"     caption="PDS support disable">
+        <module type="component" id="config.thirdparty.wireless.miwi.services.pds#disable"     caption="PDS support disable">
             <info type="description" value="summary">
              PDS Support Disabled
             </info>
+			<info type="gui-flag" value="hidden"/>
             <require idref="thirdparty.wireless.miwi.services.pds.fakepds"/>
-            <build type="module-config" subtype="path" value="module_config"/>
             <device-support-alias value="miwi_support"/>
         </module>
     </select-by-config>
    <select-by-config id="config.thirdparty.wireless.miwi.services.pds.pdstype" name="config.thirdparty.wireless.miwi.services.pds.pdstype" caption="Type of PDS Configuration" default="wearleveling">
-        <module type="meta" id="config.thirdparty.wireless.miwi.services.pds.pdstype#wearleveling"  caption="wearleveling">
+        <module type="component" id="config.thirdparty.wireless.miwi.services.pds.pdstype#wearleveling"  caption="wearleveling">
             <info type="description" value="summary">
              PDS Support Enabled
             </info>
+			<info type="gui-flag" value="hidden"/>
             <require idref="thirdparty.wireless.miwi.services.pds.wlpds"/>
-            <build type="module-config" subtype="path" value="module_config"/>
             <device-support-alias value="miwi_support"/>
         </module>
     </select-by-config>
-    <module type="meta" caption=" PDS Wear Leveling Services" id="thirdparty.wireless.miwi.services.pds.wlpds">
+    <module type="component" caption=" PDS Wear Leveling Services" id="thirdparty.wireless.miwi.services.pds.wlpds">
         <info type="description" value="summary">
         Persistent Data Server
         </info>
-	<build type="define" name="PDS_ENABLE_WEAR_LEVELING" value =""/>
-    <build type="include-path" value="inc/"/>
-    <build type="include-path" value="inc/wl/"/>
-    <build type="include-path" value="inc/nv/"/>
-    <build type="include-path" value="inc/nv/External/"/>
-    <build type="doxygen-entry-point" value="group_pds"/>
-    <build type="header-file" value="inc/pdsDataServer.h"/>
-    <build type="header-file" value="inc/pdsMemIds.h"/>
-    <build type="header-file" value="inc/nv/S_Nv.h"/>
-    <build type="header-file" value="inc/nv/S_Nv_Init.h"/>
-    <build type="header-file" value="inc/nv/S_Nv_Internal.h"/>
-    <build type="header-file" value="inc/nv/S_Nv_Bindings.h"/>
-    <build type="header-file" value="inc/nv/D_Nv.h"/>
-    <build type="header-file" value="inc/nv/D_Nv_Init.h"/>
-    <build type="header-file" value="inc/nv/D_Nv_Bindings.h"/>
-    <build type="header-file" value="inc/nv/External/S_XNv.h"/>
-    <build type="header-file" value="inc/nv/External/S_XNv_Init.h"/>
-    <build type="header-file" value="inc/nv/External/S_XNv_Bindings.h"/>
-    <build type="header-file" value="inc/nv/External/D_XNv.h"/>
-    <build type="header-file" value="inc/nv/External/D_XNv_Bindings.h"/>
-    <build type="header-file" value="inc/nv/External/D_XNv_Init.h"/>
-    <build type="header-file" value="inc/wl/wlPdsBindings.h"/>
-    <build type="header-file" value="inc/wl/wlPdsMemIds.h"/>
-    <build type="header-file" value="inc/wl/wlPdsTaskManager.h"/>
-    <build type="header-file" value="inc/wl/wlPdsTypes.h"/>
-    <build type="header-file" value="inc/wl/wlPdsTypesConverter.h"/>
-    
-    <build type="c-source" value="src/nv/S_Nv-SamR21.c"/>
-    <build type="c-source" value="src/nv/D_Nv.c"/>
-    <build type="c-source" value="src/nv/External/S_XNv.c"/>
-    <build type="c-source" value="src/nv/External/D_XNv-SamR21.c"/>
-    <build type="c-source" value="src/nv/External/S_Nv-External.c"/>
-    <build type="c-source" value="src/wl/wlPdsDataServer.c"/>
-    <build type="c-source" value="src/wl/wlPdsInit.c"/>
-    <build type="c-source" value="src/wl/wlPdsTaskManager.c"/>
-    <build type="c-source" value="src/wl/wlPdsTypesConverter.c"/>
-   
-    <require idref="thirdparty.wireless.miwi.source.sys"/>
-    <require idref="thirdparty.wireless.miwi.include"/>
-    <require idref="thirdparty.wireless.services.nvm" />
-    <require idref="thirdparty.wireless.miwi.services.pds.linker_scripts"/>
-    <device-support value="samr21"/>
-    <device-support value="samr30"/>
-    
+		<build type="define" name="PDS_ENABLE_WEAR_LEVELING" value =""/>
+		<build type="include-path" value="inc/"/>
+		<build type="include-path" value="inc/wl/"/>
+		<build type="include-path" value="inc/nv/"/>
+		<build type="include-path" value="inc/nv/External/"/>
+		<build type="doxygen-entry-point" value="group_pds"/>
+		<build type="header-file" value="inc/pdsDataServer.h"/>
+		<build type="header-file" value="inc/pdsMemIds.h"/>
+		<build type="header-file" value="inc/nv/S_Nv.h"/>
+		<build type="header-file" value="inc/nv/S_Nv_Init.h"/>
+		<build type="header-file" value="inc/nv/S_Nv_Internal.h"/>
+		<build type="header-file" value="inc/nv/S_Nv_Bindings.h"/>
+		<build type="header-file" value="inc/nv/D_Nv.h"/>
+		<build type="header-file" value="inc/nv/D_Nv_Init.h"/>
+		<build type="header-file" value="inc/nv/D_Nv_Bindings.h"/>
+		<build type="header-file" value="inc/nv/External/S_XNv.h"/>
+		<build type="header-file" value="inc/nv/External/S_XNv_Init.h"/>
+		<build type="header-file" value="inc/nv/External/S_XNv_Bindings.h"/>
+		<build type="header-file" value="inc/nv/External/D_XNv.h"/>
+		<build type="header-file" value="inc/nv/External/D_XNv_Bindings.h"/>
+		<build type="header-file" value="inc/nv/External/D_XNv_Init.h"/>
+		<build type="header-file" value="inc/wl/wlPdsBindings.h"/>
+		<build type="header-file" value="inc/wl/wlPdsMemIds.h"/>
+		<build type="header-file" value="inc/wl/wlPdsTaskManager.h"/>
+		<build type="header-file" value="inc/wl/wlPdsTypes.h"/>
+		<build type="header-file" value="inc/wl/wlPdsTypesConverter.h"/>
+		
+		<build type="c-source" value="src/nv/S_Nv-SamR21.c"/>
+		<build type="c-source" value="src/nv/D_Nv.c"/>
+		<build type="c-source" value="src/nv/External/S_XNv.c"/>
+		<build type="c-source" value="src/nv/External/D_XNv-SamR21.c"/>
+		<build type="c-source" value="src/nv/External/S_Nv-External.c"/>
+		<build type="c-source" value="src/wl/wlPdsDataServer.c"/>
+		<build type="c-source" value="src/wl/wlPdsInit.c"/>
+		<build type="c-source" value="src/wl/wlPdsTaskManager.c"/>
+		<build type="c-source" value="src/wl/wlPdsTypesConverter.c"/>
+		<build type="c-source" value="src/nopds/fakePds.c"/>
+		<info type="gui-flag" value="hidden"/>
+		<require idref="thirdparty.wireless.miwi.source.sys"/>
+		<require idref="thirdparty.wireless.miwi.include"/>
+		<require idref="thirdparty.wireless.services.nvm"/>
+		<require idref="thirdparty.wireless.miwi.services.pds.linker_scripts"/>
+		<device-support-alias value="miwi_support"/>    
     </module>
-    <module type="meta" caption=" No PDS Services" id="thirdparty.wireless.miwi.services.pds.fakepds">
+    <module type="component" caption=" No PDS Services" id="thirdparty.wireless.miwi.services.pds.fakepds">
         <info type="description" value="summary">
         Fake Persistent Data Server
         </info>
-        <build type="include-path" value="inc/"/>
-    <build type="include-path" value="inc/wl/"/>
-    <build type="doxygen-entry-point" value="group_pds"/>
-    <build type="header-file" value="inc/pdsDataServer.h"/>
-    <build type="header-file" value="inc/pdsMemIds.h"/>
-    <build type="header-file" value="inc/wl/wlPdsBindings.h"/>
-    <build type="header-file" value="inc/wl/wlPdsMemIds.h"/>
-    <build type="header-file" value="inc/wl/wlPdsSecurity.h"/>
-    <build type="header-file" value="inc/wl/wlPdsTaskManager.h"/>
-    <build type="header-file" value="inc/wl/wlPdsTypes.h"/>
-    <build type="header-file" value="inc/wl/wlPdsTypesConverter.h"/>
+		<build type="include-path" value="inc/"/>
+		<build type="include-path" value="inc/wl/"/>
+		<build type="doxygen-entry-point" value="group_pds"/>
+		<build type="header-file" value="inc/pdsDataServer.h"/>
+		<build type="header-file" value="inc/pdsMemIds.h"/>
+		<build type="header-file" value="inc/wl/wlPdsBindings.h"/>
+		<build type="header-file" value="inc/wl/wlPdsMemIds.h"/>
+		<build type="header-file" value="inc/wl/wlPdsSecurity.h"/>
+		<build type="header-file" value="inc/wl/wlPdsTaskManager.h"/>
+		<build type="header-file" value="inc/wl/wlPdsTypes.h"/>
+		<build type="header-file" value="inc/wl/wlPdsTypesConverter.h"/>
 
-    <build type="c-source" value="src/nopds/fakePds.c"/>
-    <device-support value="samr21"/>
-    <device-support value="samr30"/>
-    
+		<build type="c-source" value="src/nopds/fakePds.c"/>
+		<info type="gui-flag" value="hidden"/>
+		<device-support-alias value="miwi_support"/>
     </module>
     <select-by-device id="thirdparty.wireless.miwi.services.pds.linker_scripts" caption="Linker scripts for IAR and GCC toolchain with PDS Enabled">
 		<module type="build-specific" caption="Linker script for SAMR21E16A" id="thirdparty.wireless.miwi.services.pds.linker_scripts#atsamr21e16a">

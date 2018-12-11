@@ -202,6 +202,24 @@
 		</module>
 	</select-by-device>
 
+	<select-by-device id="common.utils.utf8" caption="UTF-8 support (Common API)">
+		<info type="description" value="summary">
+		Driver for global enabling of UTF-8 font support.
+		</info>
+		<module type="driver" id="common.utils.utf8#sam" caption="UTF-8 support - SAM implementation">
+			<info type="description" value="summary">
+			Driver for global enabling of UTF-8 font support.
+			</info>
+			<device-support value="sam4" />
+			<device-support value="samv71" />
+			<build type="include-path" value="." />
+			<build type="header-file" value="utf8/utf8.h" />
+			<build type="c-source" value="utf8/utf8.c"/>
+			<require idref="thirdparty.os.freertos.version"/>			
+			<build type="doxygen-entry-point" value="utf8_group"/>
+		</module>
+	</select-by-device>
+	
 	<select-by-device id="common.utils.unit_test" caption="Unit test framework">
 		<info type="description" value="summary">
 		Core functions for the unit test framework.

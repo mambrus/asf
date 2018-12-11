@@ -25,8 +25,6 @@
 	<device-support value="atmega2564rfr2"/>
 	<device-support value="atmega128rfa1"/>
 	<device-support value="atxmega256a3bu"/>
-	<device-support value="samd20"/>
-	<device-support value="samd21"/>
 	-->
 	<device-support value="samr21"/>
 	<device-support value="samr30"/>
@@ -34,7 +32,6 @@
 	<device-support value="sam4e"/>
 	<device-support value="sam4s"/>	
 	<device-support value="sam4l"/>
-	<device-support value="saml21"/>
 	-->
 </device-alias-map>
 
@@ -42,13 +39,10 @@
 	<!--
 	<device-support value="atxmega256a3u"/>
 	<device-support value="atxmega256a3bu"/>
-	<device-support value="samd20"/>
-	<device-support value="samd21"/>
 	-->
 	<device-support value="samr21"/>
 	<device-support value="samr30"/>
 	<!--
-	<device-support value="saml21"/>
 	<device-support value="sam4l"/>
 	<device-support value="sam4e"/>
 	<device-support value="sam4s"/>

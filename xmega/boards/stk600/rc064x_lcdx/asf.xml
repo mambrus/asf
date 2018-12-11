@@ -20,7 +20,7 @@
 		</module>
 	</select-by-config>
 
-	<board id="board.stk600-rc064x_lcdx.atxmega128b3" vendor="Atmel" caption="STK600">
+	<board id="board.stk600-rc064x_lcdx.atxmega128b3" vendor="Atmel" caption="STK600 LCD">
 		<build type="define" name="BOARD" value="STK600_RC064X_LCDX"/>
 		<build type="module-config" subtype="required-header-file" value="conf_board.h"/>
 		<build type="module-config" subtype="path" value="board_config"/>
@@ -35,7 +35,7 @@
 		<device-support value="atxmega128b3"/>
 	</board>
 
-	<board id="board.stk600-rc064x_lcdx.atxmega64b3" vendor="Atmel" caption="STK600">
+	<board id="board.stk600-rc064x_lcdx.atxmega64b3" vendor="Atmel" caption="STK600 LCD">
 		<build type="define" name="BOARD" value="STK600_RC064X_LCDX"/>
 		<build type="module-config" subtype="required-header-file" value="conf_board.h"/>
 		<build type="module-config" subtype="path" value="board_config"/>
