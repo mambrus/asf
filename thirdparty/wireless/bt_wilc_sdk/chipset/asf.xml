@@ -1,0 +1,17 @@
+<asf xmlversion="1.0">
+   	<module type="meta" id="thirdparty.wireless.bt_wilc_sdk.chipset" caption="Chipset WILC3000">
+		<!-- Summary Description -->
+		<info type="description" value="summary">
+		</info>
+		
+		<!-- Source File -->
+	    <build type="c-source"      value="atwilc3000/btstack_chipset_atwilc3000.c"/>
+				
+		<!-- Header File -->
+		<build type="include-path"  value="atwilc3000/"/>
+		<build type="include-path"  value="../../../../common/components/wifi/wilc/driver/include/"/>
+		<build type="header-file"   value="atwilc3000/btstack_chipset_atwilc3000.h"/>
+		<build type="header-file"   value="../../../../common/components/wifi/wilc/driver/include/ble_firmware_3000.h"/>
+		<build type="header-file"   value="../../../../common/components/wifi/wilc/driver/include/ble_firmware_3000_noRTC.h"/>
+	</module>
+</asf>

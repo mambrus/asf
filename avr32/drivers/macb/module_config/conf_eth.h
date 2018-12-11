@@ -61,7 +61,7 @@ to use an MII interface. */
 /*! Clock definition */
 #define ETHERNET_CONF_SYSTEM_CLOCK         48000000
 
-/*! this MAC address is an Atmel Corporation example */
+/*! this MAC address is an Microchip Technology Inc example */
 //! @{
 #define ETHERNET_CONF_ETHADDR0    0x00
 #define ETHERNET_CONF_ETHADDR1    0x04

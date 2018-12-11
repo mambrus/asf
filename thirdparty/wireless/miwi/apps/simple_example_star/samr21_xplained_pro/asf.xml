@@ -1,7 +1,7 @@
 <asf xmlversion="1.0">
 	<project caption="MiWi Star Simple Example Application - SAM R21 Xplained Pro" id="thirdparty.wireless.miwi.apps.simple_example_star.samr21_xplained_pro" force-caption="true" force-description="true">
 		<info type="description" value="summary">
-		The Simple Example P2P application implements a simple P2P application
+		Simple Example Star application implements a typical Star network with first node to start being PAN Coordinator and the other devices joins to this device to form Star network, with configuration to send broadcast/unicast data to nodes.
 		</info>
 		<build type="include-path" value="."/>
 
@@ -13,8 +13,10 @@
 		<build type="header-file" value="conf_trx_access.h"/>
 		<build type="header-file" value="conf_spi.h"/>
 		<build type="header-file" value="conf_ssd1306.h"/>
-		<build type="header-file" value="conf_sysfont.h"/>		
+		<build type="header-file" value="conf_spinctrl.h"/>
+		<build type="header-file" value="conf_sysfont.h"/>
 		<build type="header-file" value="conf_nvm.h"/>
+		<build type="header-file" value="conf_rtc.h"/>
 
 		<config name="config.thirdparty.wireless.miwi.source" value="miwi_star"/>
 		<config name="config.thirdparty.wireless.miwi.source.mimac.phy.ext" value="at86rf233"/>
@@ -26,6 +28,7 @@
 	    <config name="common2.services.gfx_mono.display" value="ug_2832hsweg04"/>
 		<require idref="common2.services.gfx_mono"/>
 		<require idref="common2.services.gfx_mono.font"/>
+		<require idref="common2.services.gfx_mono.spinctrl"/>
 		<require idref="board.samr21_xplained_pro"/>
 
 		<require idref="thirdparty.wireless.miwi.services.lcd"/>

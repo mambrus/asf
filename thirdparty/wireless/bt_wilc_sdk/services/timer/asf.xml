@@ -1,0 +1,20 @@
+<asf xmlversion="1.0">
+	<module type="service" caption="HAL TIMER" id="thirdparty.wireless.bt_wilc_sdk.services.timer">
+		
+		<!-- Summary Description -->
+		<info type="description" value="summary">
+			HAL Layer For Timer
+		</info>
+		
+		<info type="gui-flag" value="hidden" />
+		
+		<!-- Source File -->
+		<build type="c-source" value="hal_timer.c"/>
+			
+		<!-- Device support -->
+		<device-support value="atsamv71q21b"/>
+		
+	</module>
+</asf>
+
+

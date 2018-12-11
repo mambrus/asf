@@ -1,0 +1,20 @@
+<asf xmlversion="1.0">
+	<module type="service" caption="HAL LED" id="thirdparty.wireless.bt_wilc_sdk.services.led">
+		
+		<!-- Summary Description -->
+		<info type="description" value="summary">
+			HAL Layer For LED 
+		</info>
+		
+		<info type="gui-flag" value="hidden" />
+		
+		<!-- Source File -->
+		<build type="c-source" value="hal_led.c"/>
+			
+		<!-- Device support -->
+		<device-support value="atsamv71q21b"/>
+		
+	</module>
+</asf>
+
+

@@ -5,7 +5,7 @@
  * \brief Definition of a small Atmel logo.
  *
  *
- * author               Atmel Corporation: http://www.atmel.com \n
+ * author               Microchip Technology Inc: http://www.microchip.com \n
  *
  * Copyright (c) 2014-2018 Microchip Technology Inc. and its subsidiaries.
  *

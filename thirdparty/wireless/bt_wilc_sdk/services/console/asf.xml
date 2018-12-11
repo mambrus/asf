@@ -1,0 +1,28 @@
+<asf xmlversion="1.0">
+	<module type="service" caption="console service" id="thirdparty.wireless.bt_wilc_sdk.services.console">
+		
+		<!-- Summary Description -->
+		<info type="description" value="summary">
+			Console Driver
+		</info>
+		
+		<info type="gui-flag" value="hidden" />
+		
+		<!-- Header File -->
+		<build type="include-path" value="."/>
+		<build type="header-file" value="console_serial.h"/>
+				
+		<!-- Source File -->
+		<build type="c-source" value="console_serial.c"/>
+			
+		<!-- Required modules -->
+		<require idref="common.utils.stdio.stdio_serial"/>
+		
+				
+		<!-- Device support -->
+		<device-support value="atsamv71q21b"/>
+		
+	</module>
+</asf>
+
+

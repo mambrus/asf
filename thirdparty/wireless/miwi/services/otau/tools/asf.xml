@@ -1,0 +1,12 @@
+<asf xmlversion="1.0">
+	<module type="meta" id="thirdparty.wireless.miwi.services.otau.tools"   caption="Tools Over-The-Air Upgrade Module">
+		<info type="description" value="summary">
+		</info>
+		<info type="gui-flag" value="move-to-root"/>
+		<build type="distribute" subtype="user-file" value="Bootloader_SAMR21XPro_Serial_ImageSwap_38400.elf"/>
+		<build type="distribute" subtype="user-file" value="Bootloader_SAMR21ZLLEK_Serial_ImageSwap_38400.elf"/>
+		<build type="distribute" subtype="user-file" value="Bootloader_PC_Tool_Setup_1.2.2.233.exe"/>
+		<build type="distribute" subtype="user-file" value="WiDBGSetup.msi"/>
+		<device-support value="sam0"/>
+	</module>
+</asf>

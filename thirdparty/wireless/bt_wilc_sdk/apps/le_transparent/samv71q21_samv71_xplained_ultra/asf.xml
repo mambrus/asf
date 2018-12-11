@@ -1,0 +1,36 @@
+<asf xmlversion="1.0">
+	<project id="thirdparty.wireless.bt_wilc_sdk.le_transparent.samv71q21_samv71_xplained_ultra" caption="LE Transparent Service Example for SAMV71 XPlained Ultra">
+		<!-- Source -->
+		<info type="description" value="summary">
+			LE Transparent Service Application.
+		</info>	
+		
+		<!-- Header File -->
+		<build type="include-path" value="."/>
+		<build type="header-file" value="conf_board.h"/>
+		<build type="header-file" value="conf_clock.h"/>
+		<build type="header-file" value="conf_uart_serial.h"/>
+		<build type="header-file" value="btstack_config.h"/>
+		<build type="header-file" value="FreeRTOSConfig.h"/>	
+		
+		<!-- Device support -->
+		<device-support value="atsamv71q21b"/>
+		
+		<!-- Required modules -->
+		<require idref="thirdparty.os.freertos.version"/>
+		<require idref="board.samv71_xplained_ultra"/>
+		<require idref="thirdparty.wireless.bt_wilc_sdk.apps.le_transparent"/>
+		
+		<info type="gui-flag" value="move-to-root"/>
+		
+		<!-- Generators -->
+		<generator value="armgcc"/>
+		<generator value="as5_arm"/>
+				
+		<!-- Config -->
+		<config name="config.thirdparty.os.freertos.version" value="8.2.3"/>
+		<config name="config.thirdparty.os.freertos-8_2_3.memory_manager" value="4_first_fit_coallesce" />
+		<config name="config.compiler.armgcc.create_aux" value="no"/>
+		<config name="config.compiler.as5_arm.create_aux" value="no"/>
+	</project>
+</asf>

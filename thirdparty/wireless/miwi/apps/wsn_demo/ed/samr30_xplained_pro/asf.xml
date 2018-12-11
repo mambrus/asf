@@ -13,6 +13,9 @@
 		<build type="header-file" value="conf_trx_access.h"/>
 		<build type="header-file" value="conf_spi.h"/>
 		<build type="header-file" value="conf_nvm.h"/>
+		<build type="header-file" value="conf_sleepmgr.h"/>
+		<build type="header-file" value="conf_rtc.h"/>
+		<build type="define" name="ENABLE_SLEEP_FEATURE" value =""/>
 
 		<config name="config.thirdparty.wireless.miwi.source" value="miwi_mesh"/>
 		<config name="config.thirdparty.wireless.miwi.source.miwi_mesh.lib" value="ed"/>
@@ -20,12 +23,12 @@
 		<config name="config.sam0.drivers.sercom.spi" value="polled"/>
 		<config name="config.sam0.drivers.sercom.usart" value="callback"/>
 		<config name="config.sam0.drivers.sercom.i2c.master" value="polled"/>
-		<config name="config.thirdparty.wireless.miwi.source.sys" value="timer"/>
 		<require idref="sam0.drivers.sercom.i2c.master"/>
 		<require idref="thirdparty.wireless.services.edbg_eui"/>
 		<require idref="board.samr30_xplained_pro"/>
 
 		<require idref="thirdparty.wireless.miwi.apps.wsn_demo"/>
+		<require idref="thirdparty.wireless.common_services.sleep_mgr"/>
 
 		<config name="config.compiler.armgcc.optimization" value="high" />
 

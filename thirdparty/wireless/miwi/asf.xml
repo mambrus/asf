@@ -21,9 +21,10 @@
 		</info>
 		<info type="gui-flag" value="move-to-root"/>
 		<device-support-alias value="miwi_support"/>
-		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.0_Migration_guide.pdf"/>
-		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.0_Quick_Start_Guide.pdf"/>
-		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.0_Release_Notes.pdf"/>
+		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.1_Developer_Guide.pdf"/>
+		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.1_Migration_Guide.pdf"/>
+		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.1_Quick_Start_Guide.pdf"/>
+		<build type="distribute" subtype="user-file" value="docs/MiWi™_V6.1_Release_Notes.pdf"/>
 	</module>
    <select-by-config id="config.thirdparty.wireless.miwi.source" name="config.thirdparty.wireless.miwi.source" caption="Stack Configuration" default="miwi_p2p">
         <module type="component" id="config.thirdparty.wireless.miwi.source#miwi_p2p"     caption="P2P support enable">

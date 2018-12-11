@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<project caption="MiWi Star Simple Example Application - SAMR21 ZLL-EK" id="thirdparty.wireless.miwi.apps.simple_example_star.samr21_ek" force-caption="true" force-description="true">
+	<project caption="MiWi Star Simple Example Application - SAMR21ZLL-EK" id="thirdparty.wireless.miwi.apps.simple_example_star.samr21_ek" force-caption="true" force-description="true">
 		<info type="description" value="summary">
 		Simple Example Star application implements a typical Star network with first node to start being PAN Coordinator and the other devices joins to this device to form Star network, with configuration to send broadcast/unicast data to nodes.
 		</info>
@@ -16,6 +16,7 @@
 		<build type="header-file" value="conf_spinctrl.h"/>
 		<build type="header-file" value="conf_sysfont.h"/>
 		<build type="header-file" value="conf_nvm.h"/>
+		<build type="header-file" value="conf_rtc.h"/>
 
 		<config name="config.thirdparty.wireless.miwi.source" value="miwi_star"/>
 		<config name="config.thirdparty.wireless.miwi.source.mimac.phy.ext" value="at86rf233"/>

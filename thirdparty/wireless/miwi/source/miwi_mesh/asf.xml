@@ -66,10 +66,14 @@
         <info type="gui-flag" value="hidden"/>
 		<build type="c-source"      value="miwi_mesh_app.c"/>
 		<build type="header-file"   value="miwi_mesh_app.h"/>
+		<build type="c-source"      value="miwi_mesh_pds.c"/>
 		<build type="include-path"  value="."/>
 		
 		<require idref="thirdparty.wireless.miwi.include"/>
 		<require idref="thirdparty.wireless.miwi.source.stb"/>
+		<require idref="thirdparty.wireless.miwi.services.pds"/>
+		<require idref="thirdparty.wireless.miwi.services.otau"/>
+		
 		<require idref="config.thirdparty.wireless.miwi.source.miwi_mesh.lib"/>
 		<build type="doxygen-entry-point" value="group_miwi_mesh"/>
 		<device-support-alias value="miwi_support"/>

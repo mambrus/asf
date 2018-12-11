@@ -110,7 +110,7 @@
  * <HR>
  * \section contactinfo Contact Information
  * For further information, visit
- * <A href="http://www.atmel.com/products/avr/">Atmel AVR</A>.\n
+ * <A href="https://www.microchip.com/design-centers/32-bit">Atmel AVR</A>.\n
  */
 /*
  * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>

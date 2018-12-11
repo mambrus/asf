@@ -4,7 +4,6 @@
 		SAMB11 PIO component definitions.
 		</info>
 		<build type="header-file" value="samb11g18a.h"/>
-		<build type="header-file" value="btlc1000wlcsp.h"/>
 		<build type="header-file" value="samb11zr.h"/>
 		<info type="gui-flag" value="hidden"/>
 		<device-support value="samb11"/>

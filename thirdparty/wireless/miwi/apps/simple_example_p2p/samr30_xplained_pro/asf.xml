@@ -13,8 +13,10 @@
 		<build type="header-file" value="conf_trx_access.h"/>
 		<build type="header-file" value="conf_spi.h"/>
 		<build type="header-file" value="conf_ssd1306.h"/>
+		<build type="header-file" value="conf_spinctrl.h"/>
 		<build type="header-file" value="conf_sysfont.h"/>		
 		<build type="header-file" value="conf_nvm.h"/>
+		<build type="header-file" value="conf_rtc.h"/>
 
 		<config name="config.thirdparty.wireless.miwi.source" value="miwi_p2p"/>
 		<config name="config.thirdparty.wireless.miwi.source.mimac.phy.ext" value="at86rf212b"/>
@@ -26,6 +28,7 @@
 	    <config name="common2.services.gfx_mono.display" value="ug_2832hsweg04"/>
 		<require idref="common2.services.gfx_mono"/>
 		<require idref="common2.services.gfx_mono.font"/>
+		<require idref="common2.services.gfx_mono.spinctrl"/>
 		<require idref="board.samr30_xplained_pro"/>
 
 		<require idref="thirdparty.wireless.miwi.services.lcd"/>

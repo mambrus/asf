@@ -67,7 +67,7 @@
  *
  * \section contactinfo Contact Information
  * For further information, please visit
- * <a href="http://www.atmel.com/">atmel.com</a>.\n
+ * <a href="http://www.microchip.com/">atmel.com</a>.\n
  */
 /*
  * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>

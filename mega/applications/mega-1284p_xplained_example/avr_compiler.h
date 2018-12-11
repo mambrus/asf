@@ -8,7 +8,7 @@
  *      For comprehensive code documentation, supported compilers, compiler
  *      settings and supported devices see readme.html
  *
- *      Atmel Corporation: http://www.atmel.com \n
+ *      Microchip Technology Inc: http://www.microchip.com \n
  *
  * $Revision: 613 $
  * $Date: 2006-04-07 14:40:07 +0200 (fr, 07 apr 2006) $  \n

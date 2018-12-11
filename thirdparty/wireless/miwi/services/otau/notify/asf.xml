@@ -1,0 +1,14 @@
+<asf xmlversion="1.0">
+	<module type="meta" id="thirdparty.wireless.miwi.services.otau.notify" caption="OTAU Notify Module">
+		<info type="description" value="summary">
+		</info>
+		<build type="c-source"      value="server_notify.c"/>
+		<build type="header-file"   value="server_notify.h"/>
+		<build type="c-source"      value="client_notify.c"/>
+		<build type="header-file"   value="client_notify.h"/>
+		<build type="header-file"   value="otau_notify.h"/>
+		<build type="include-path"  value="."/>
+		<device-support value="sam0"/>
+		<build type="doxygen-entry-point" value="group_otau_notify"/>
+	</module>
+</asf>

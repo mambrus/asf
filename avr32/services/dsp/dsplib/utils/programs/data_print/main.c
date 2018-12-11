@@ -72,6 +72,8 @@ int WINAPI WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszA
   HBRUSH hbrush;
   char szClassName[] = "c_" TITLE;
 
+  memset(&messages, 0, sizeof(MSG));
+
     // if no argument is passed to this function, return a usage message
     if (!*lpszArgument)
     {

@@ -64,7 +64,7 @@
 //! AES Start mode
 #define AES_START_MODE_MANUAL   0         // Manual mode
 #define AES_START_MODE_AUTO     1         // Auto mode
-#define AES_START_MODE_DMA      2         // DMA mode (TODO: TO REMOVE)
+#define AES_START_MODE_DMA      2         // DMA mode
 
 //! AES Cryptographic key size
 #define AES_KEY_SIZE_128        0         // 128bit
@@ -79,7 +79,7 @@
 #define AES_CTR_MODE            4         // Counter mode
 
 //! AES URAD Type
-#define AES_URAT_INPUTWRITE_DMA     0     // Input Data Register written during the data processing in DMA mode(TODO: TO REMOVE)
+#define AES_URAT_INPUTWRITE_DMA     0     // Input Data Register written during the data processing in DMA mode
 #define AES_URAT_OUTPUTREAD_PROCESS 1     // Output Data Register read during the data processing
 #define AES_URAT_MRWRITE_PROCESS    2     // Mode Register written during the data processing
 #define AES_URAT_OUTPUTREAD_SUBKEY  3     // Output Data Register read during the sub-keys generation

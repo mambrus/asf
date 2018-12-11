@@ -1,5 +1,5 @@
 /*******************************************************************************
-*   Atmel Corporation:  http://www.atmel.com
+*   Microchip Technology Inc:  http://www.microchip.com
 *   Support: https://www.microchip.com/support/
 ******************************************************************************/
 /**

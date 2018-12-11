@@ -1,0 +1,33 @@
+<asf xmlversion="1.0">
+	<project caption="MiWi P2P Simple Example Application - SAM R30 Module Xplained Pro" id="thirdparty.wireless.miwi.apps.simple_example_p2p.samr30_module_xplained_pro" force-caption="true" force-description="true">
+		<info type="description" value="summary">
+		Simple Example P2P application implements a typical Peer to Peer demo application with configuration to send broadcast/unicast data to nodes.
+		</info>
+		<build type="include-path" value="."/>
+
+		<build type="header-file" value="conf_board.h"/>
+		<build type="header-file" value="conf_clocks.h"/>
+		<build type="header-file" value="conf_extint.h"/>
+		<build type="header-file" value="conf_hw_timer.h"/>
+		<build type="header-file" value="conf_sio2host.h"/>
+		<build type="header-file" value="conf_trx_access.h"/>
+		<build type="header-file" value="conf_spi.h"/>
+		<build type="header-file" value="conf_nvm.h"/>
+		<build type="header-file" value="conf_rtc.h"/>
+
+		<config name="config.thirdparty.wireless.miwi.source" value="miwi_p2p"/>
+		<config name="config.thirdparty.wireless.miwi.source.mimac.phy.ext" value="at86rf212b"/>
+		<config name="config.sam0.drivers.sercom.spi" value="polled"/>
+		<config name="config.sam0.drivers.sercom.usart" value="callback"/>
+		<require idref="board.samr30_module_xplained_pro"/>
+
+		<require idref="thirdparty.wireless.miwi.apps.simple_example_p2p"/>
+
+		<config name="config.compiler.armgcc.optimization" value="high" />
+
+		<generator value="armgcc" />
+		<generator value="as5_arm" />
+		<generator value="doxygen"/>
+		<device-support value="atsamr30e18a"/>
+	</project>
+</asf>

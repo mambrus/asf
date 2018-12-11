@@ -84,7 +84,7 @@
 *
 * \section contactinfo Contact Info
 * For more info about Atmel AVR32 visit
-* <A href="http://www.atmel.com/products/AVR32/" >Atmel AVR32</A>\n
+* <A href="http://www.microchip.com/design-centers/32-bit /" >Atmel AVR32</A>\n
 * Support and FAQ: https://www.microchip.com/support/
 */
 /*

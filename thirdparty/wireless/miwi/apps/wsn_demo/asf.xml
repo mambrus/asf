@@ -6,9 +6,7 @@
 		The MiWi based WSNDemo application implements a typical wireless sensor network scenario, in which one central node collects the data from a network of sensors and passes this data over a serial connection for further processing. In the case of the WSNDemo this processing is performed by the WSNMonitor PC application
 		</info>
 
-		<build type="define" name="MIWI_MESH_TOPOLOGY_SIMULATION_MODE" value =""/>
 		<build type="c-source" value="main.c"/>
-
 		<build type="c-source" value="wsndemo.c"/>
 		<build type="c-source" value="commands.c"/>
 		<build type="header-file"   value="miwi_config.h"/>

@@ -69,7 +69,7 @@
  *
  * \section contactinfo Contact Information
  * For further information, visit
- * <A href="http://www.atmel.com/products/AVR32/">Atmel 32-bit AVR Microcontrollers</A>.\n
+ * <A href="http://www.microchip.com/design-centers/32-bit /">Atmel 32-bit AVR Microcontrollers</A>.\n
  * Support and FAQ: https://www.microchip.com/support/
  *
  */

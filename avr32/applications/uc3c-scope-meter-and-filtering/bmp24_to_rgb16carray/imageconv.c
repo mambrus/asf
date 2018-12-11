@@ -51,7 +51,7 @@ int main(void)
                 " * - Supported devices:  All AVR32 devices can be used.\r\n"
                 " * - AppNote:\r\n"
                 " *\r\n"
-                " * \author               Atmel Corporation: http://www.atmel.com \\n\r\n"
+                " * \author               Microchip Technology Inc: http://www.microchip.com \\n\r\n"
                 " *                       Support and FAQ: https://www.microchip.com/support/\r\n"
                 " *\r\n"
                 " ******************************************************************************/\r\n"

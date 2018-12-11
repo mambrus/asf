@@ -80,8 +80,8 @@
  *
  * \section contactinfo Contact Information
  * For further information, visit
- * <A href="http://www.atmel.com/AVR32">Atmel AVR32</A>.\n
- * <A href="http://www.asf.atmel.com">Atmel ASF</A>.\n
+ * <A href="http://www.microchip.com/design-centers/32-bit">Atmel AVR32</A>.\n
+ * <A href="http://www.microchip.com/asf">Microchip ASF</A>.\n
  * Support and FAQ: https://www.microchip.com/support/
 */
 /*

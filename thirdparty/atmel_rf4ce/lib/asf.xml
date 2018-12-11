@@ -4,7 +4,7 @@
 			The pre-compiled ZRC (ZigBee Remote Control Profile based on RF4CE nwk layer) libraries for ATMega128RFA1 based devices.
 			The ZRC profile implements the Remote control functionalities like pairing with Target (like TV, STB) and data exchanges between controller and target.
 			ZRC profile uses the RF4CE nwk layer and IEEE 802.15.4 MAC layer as the base layers.
-			For more information on the RF4CE Libraries, check http://www.atmel.com/tools/RF4CONTROL-ZIGBEERF4CE.aspx
+			For more information on the RF4CE Libraries, check http://www.microchip.com/tools/RF4CONTROL-ZIGBEERF4CE.aspx
 			</info>
 			<info type="keyword" value="technology">
 				<keyword value="Wireless" />
@@ -15,7 +15,7 @@
 			The pre-compiled ZRC (ZigBee Remote Control Profile based on RF4CE nwk layer) libraries for ATMega128RFA1 based devices.
 			The ZRC profile implements the Remote control functionalities like pairing with Target (like TV, STB) and data exchanges between controller and target.
 			ZRC profile uses the RF4CE nwk layer and IEEE 802.15.4 MAC layer as the base layers.
-			For more information on the RF4CE Libraries, check http://www.atmel.com/tools/RF4CONTROL-ZIGBEERF4CE.aspx
+			For more information on the RF4CE Libraries, check http://www.microchip.com/tools/RF4CONTROL-ZIGBEERF4CE.aspx
 			</info>
 			<info type="keyword" value="technology">
 				<keyword value="Wireless" />
@@ -30,7 +30,7 @@
 			The transceiver is interfaced using the Transceiver Abstraction Layer (TAL).
 			The ZRC profile implements the Remote control functionalities like pairing with Target (like TV, STB) and data exchanges between controller and target.
 			ZRC profile uses the RF4CE nwk layer and IEEE 802.15.4 MAC layer as the base layers.
-			For more information on the RF4CE Libraries, check http://www.atmel.com/tools/RF4CONTROL-ZIGBEERF4CE.aspx
+			For more information on the RF4CE Libraries, check http://www.microchip.com/tools/RF4CONTROL-ZIGBEERF4CE.aspx
 			</info>
 			<info type="keyword" value="technology">
 				<keyword value="Wireless" />
@@ -58,7 +58,7 @@
 			The transceiver is interfaced using the Transceiver Abstraction Layer (TAL).
 			The ZRC profile implements the Remote control functionalities like pairing with Target (like TV, STB) and data exchanges between controller and target.
 			ZRC profile uses the RF4CE nwk layer and IEEE 802.15.4 MAC layer as the base layers.
-			For more information on the RF4CE Libraries, check http://www.atmel.com/tools/RF4CONTROL-ZIGBEERF4CE.aspx
+			For more information on the RF4CE Libraries, check http://www.microchip.com/tools/RF4CONTROL-ZIGBEERF4CE.aspx
 			</info>
 			<info type="keyword" value="technology">
 				<keyword value="Wireless" />

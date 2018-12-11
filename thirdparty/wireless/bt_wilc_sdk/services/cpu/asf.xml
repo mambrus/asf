@@ -1,0 +1,20 @@
+<asf xmlversion="1.0">
+	<module type="service" caption="HAL CPU" id="thirdparty.wireless.bt_wilc_sdk.services.cpu">
+		
+		<!-- Summary Description -->
+		<info type="description" value="summary">
+			HAL Layer For CPU 
+		</info>
+		
+		<info type="gui-flag" value="hidden" />
+		
+		<!-- Source File -->
+		<build type="c-source" value="hal_cpu.c"/>
+			
+		<!-- Device support -->
+		<device-support value="atsamv71q21b"/>
+		
+	</module>
+</asf>
+
+

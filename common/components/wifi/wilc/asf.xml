@@ -63,6 +63,7 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
@@ -81,8 +82,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -148,6 +147,7 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
@@ -166,8 +166,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>            
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -230,6 +228,7 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
@@ -248,8 +247,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -307,6 +304,7 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
@@ -325,8 +323,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -390,6 +386,7 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
@@ -408,8 +405,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -475,6 +470,7 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
 			<build type="header-file" value="driver/source/m2m_hif.h"/>
@@ -493,8 +489,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -604,10 +598,13 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<!--build type="header-file" value="driver/include/bt_firmware_3000.h"/-->
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
+			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware.h"/>
+			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware_no_rtc.h"/>						
 			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
 			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
@@ -628,8 +625,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -691,10 +686,13 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<!--build type="header-file" value="driver/include/bt_firmware_3000.h"/-->
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
+			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware.h"/>
+			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware_no_rtc.h"/>						
 			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
 			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
@@ -715,8 +713,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -787,10 +783,13 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<!--build type="header-file" value="driver/include/bt_firmware_3000.h"/-->
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
+			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware.h"/>
+			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware_no_rtc.h"/>						
 			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
 			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
@@ -811,8 +810,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>
@@ -878,10 +875,13 @@
 			<build type="header-file" value="driver/include/m2m_periph.h"/>
 			<build type="header-file" value="driver/include/m2m_types.h"/>
 			<build type="header-file" value="driver/include/m2m_wifi.h"/>
+			<build type="header-file" value="driver/include/CertOut.h"/>
 			<!--build type="header-file" value="driver/include/bt_firmware_3000.h"/-->
 			<build type="header-file" value="driver/include/ble_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_3000.h"/>
 			<build type="header-file" value="driver/include/wifi_firmware_1000b.h"/>			
+			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware.h"/>
+			<build type="header-file" value="driver/include/wilc3000_ble_burst_firmware_no_rtc.h"/>						
 			<!--build type="c-source" value="driver/source/m2m_coex.c"/-->
 			<!--build type="header-file" value="driver/include/m2m_coex.h"/-->
 			<build type="c-source" value="driver/source/m2m_hif.c"/>
@@ -902,8 +902,6 @@
 			<build type="c-source" value="driver/source/spi_flash.c"/>
 			<build type="c-source" value="driver/source/nmi2c.c"/>
 			<build type="header-file" value="driver/source/nmi2c.h"/>
-			<build type="c-source" value="driver/source/nmuart.c"/>
-			<build type="header-file" value="driver/source/nmuart.h"/>
 
 			<build type="c-source" value="drv_hash/PMK.c"/>
 			<build type="header-file" value="drv_hash/crypto.h"/>

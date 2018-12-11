@@ -1,0 +1,19 @@
+<asf xmlversion="1.0">
+	<module type="meta" id="thirdparty.wireless.bt_wilc_sdk.platform" caption="FreeRTOS">
+		<info type="description" value="summary">
+		</info>
+		
+		<!-- RTOS Supported Source File -->
+		<build type="c-source"      value="freertos/btstack_run_loop_freertos.c"/>
+		<build type="c-source"      value="freertos/btstack_uart_block_freertos.c"/>
+		<build type="include-path"  value="freertos/"/>
+		<build type="header-file"   value="freertos/btstack_run_loop_freertos.h"/>
+		<build type="header-file"   value="freertos/hal_cpu.h"/>
+		<build type="header-file"   value="freertos/hal_led.h"/>
+		<build type="header-file"   value="freertos/hal_stdin.h"/>
+		<build type="header-file"   value="freertos/hal_tick.h"/>
+		<build type="header-file"   value="freertos/hal_time_ms.h"/>
+		<build type="header-file"   value="freertos/hal_uart_dma.h"/>
+		
+	</module>
+</asf>

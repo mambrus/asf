@@ -8,37 +8,15 @@
 		<build type="header-file"   value="mimem.h"/>
 		<build type="c-source"      value="miqueue.c"/>
 		<build type="header-file"   value="miqueue.h"/>
+		<build type="c-source"      value="sysTimer.c"/>
+		<build type="header-file"   value="sysTimer.h"/>
 		<build type="include-path"  value="."/>
 		<require idref="thirdparty.wireless.services.trx_access"/>
 		<require idref="thirdparty.wireless.common_services.common_hw_timer"/>
         <require idref="thirdparty.wireless.common_services.sal"/>
-		<require idref="config.thirdparty.wireless.miwi.source.sys"/>
 		<build type="doxygen-entry-point" value="group_miwi_sys"/>
 		<device-support-alias value="miwi_support"/>
 	</module>
-
-
-   <select-by-config id="config.thirdparty.wireless.miwi.source.sys" name="config.thirdparty.wireless.miwi.source.sys" caption="Sys Configuration" default="ticks">
-        <module type="meta" id="config.thirdparty.wireless.miwi.source.sys#ticks"     caption="Ticks">
-            <info type="description" value="summary">
-
-            </info>
-            <info type="gui-flag" value="hidden"/>
-			<build type="c-source"      value="symbol.c"/>
-			<build type="header-file"   value="symbol.h"/>
-			<device-support-alias value="miwi_support"/>
-        </module>
-        <module type="meta" id="config.thirdparty.wireless.miwi.source.sys#timer"     caption="Timer">
-            <info type="description" value="summary">
-
-            </info>
-            <info type="gui-flag" value="hidden"/>
-			<build type="c-source"      value="sysTimer.c"/>
-			<build type="header-file"   value="sysTimer.h"/>
-			<device-support-alias value="miwi_support"/>
-        </module>
-	</select-by-config>
-
 
 <device-alias-map name="miwi_support">
 	<!--

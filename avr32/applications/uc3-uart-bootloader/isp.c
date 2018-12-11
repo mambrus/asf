@@ -37,7 +37,7 @@
  * \section intro Introduction
  * This is the documentation for the data structures, functions, variables,
  * defines, enums, and typedefs for the UART DFU bootloader.\n
- * Refer to http://www.atmel.com/dyn/resources/prod_documents/docxxxx.pdf
+ * Refer to http://www.microchip.com/dyn/resources/prod_documents/docxxxx.pdf
  *
  * \section files Main Files
  * - isp.c: the main file of the UART DFU ISP;
@@ -52,7 +52,7 @@
  *
  * \section contactinfo Contact Information
  * For further information, visit
- * <A href="http://www.atmel.com/products/AVR32/">Atmel AVR32</A>.\n
+ * <A href="http://www.microchip.com/design-centers/32-bit /">Atmel AVR32</A>.\n
  */
 /*
  * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>

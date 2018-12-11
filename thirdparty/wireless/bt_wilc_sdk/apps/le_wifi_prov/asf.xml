@@ -1,0 +1,37 @@
+<asf xmlversion="1.0">
+	<module type="application" caption="Le Wifi Provisioning Service Application" id="thirdparty.wireless.bt_wilc_sdk.apps.le_wifi_prov">
+		<!-- Summary Description -->
+		<info type="description" value="summary">
+			Le Wifi Provisioning Service Application for Wilc3000
+		</info>
+		
+		<!-- Header File -->
+		<build type="include-path" value="."/>
+		<build type="header-file" value="le_prov.h"/>
+		<build type="header-file" value="le_prov_db.h"/>
+		<build type="header-file" value="wifi_prov.h"/>
+				
+		<!-- Source File -->
+		<build type="c-source" value="main.c"/>
+		<build type="c-source" value="le_prov.c"/>
+		<build type="c-source" value="wifi_prov.c"/>
+		
+		<!-- Required modules for BLE -->
+		<require idref="thirdparty.wireless.bt_wilc_sdk.bt_src"/>	
+		<require idref="thirdparty.wireless.bt_wilc_sdk.platform"/>	
+		<require idref="thirdparty.wireless.bt_wilc_sdk.chipset"/>
+		<require idref="thirdparty.wireless.bt_wilc_sdk.services.console"/>
+		<require idref="thirdparty.wireless.bt_wilc_sdk.services.uart"/>
+		<require idref="thirdparty.wireless.bt_wilc_sdk.services.timer"/>
+		
+		<!-- Required modules for wifi -->
+		<require idref="common.components.wifi.wilc3000"/>
+		<require idref="common.services.basic.clock"/>
+		<require idref="common.utils.osprintf"/>
+					
+		<!-- Device support -->
+		<device-support value="atsamv71q21b"/>
+		
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

@@ -36,7 +36,7 @@
  * demo is explained in the getting started
  * of the bluetooth extension board (ATEXTBT).
  * <b>Operating mode: </b>
- * - Refer to the <A href="http://www.atmel.com/atextbt">ATEXTBT</b></A>
+ * - Refer to the <A href="http://www.microchip.com/developmenttools/productdetails/thw1008">ATEXTBT</b></A>
  * \section files Main Files
  * - main.c: Main File
  * - appEngine_t2bf_atmel.c: The application engine for the t2BF platform
@@ -54,18 +54,18 @@
  *
  * \section Connection Information
  * To connect EXTBT to UC3C_EK, EVK1104, EVK1105, please refer to :
- * http://www.atmel.com/dyn/resources/prod_documents/doc32153.pdf.
+ * http://ww1.microchip.com/downloads/en/AppNotes/doc32153.pdf.
  *
  * \section Known Issues
  * The connection Bluetooth may be failed if the connection is initiated from
  * the board. The state changes to "connected" too early even if the
  * connection is not completed on the PC. If the connection is initiated by
  * the PC, the connection will succeed in all cases. Please refer to
- * http://www.atmel.com/dyn/resources/prod_documents/doc32153.pdf.
+ * http://ww1.microchip.com/downloads/en/AppNotes/doc32153.pdf.
  *
  * \section contactinfo Contact Information
  * For further information, visit
- * <A href="http://www.atmel.com/avr">Atmel AVR</A>.\n
+ * <A href="http://www.microchip.com/design-centers/8-bit">Atmel AVR</A>.\n
  */
 /*
 *******************************************************************************

@@ -140,13 +140,16 @@ eSMTPCurrentStateType eSMTPCurrentState = eSMTPIdle;
 portCHAR cTempBuffer[200];
 
 //! mail recipient
-portCHAR cMailTo[40];
+#define C_MAIL_TO_STRING_SIZE 40
+portCHAR cMailTo[C_MAIL_TO_STRING_SIZE];
 
 //! mail sender
-portCHAR cMailFrom[40];
+#define C_MAIL_FROM_STRING_SIZE 40
+portCHAR cMailFrom[C_MAIL_FROM_STRING_SIZE];
 
 //! Server Name
-portCHAR cServerName[16];
+#define C_SERVER_NAME_STRING_SIZE 16
+portCHAR cServerName[C_SERVER_NAME_STRING_SIZE];
 
 //! SMTP port
 static unsigned int uiSMTPPort;
@@ -544,6 +547,7 @@ eExecStatus e_smtpclient_cmd_set_config( eModId xModId, signed short FsNavId,
                                      signed portCHAR **ppcStringReply )
 {
 #if (SMTP_USED == 1)
+
   if (config_file_set_value(SMTP_CONFIG_FILE, ac, av) != 0)
   {
     *ppcStringReply = (signed portCHAR *)SHELL_ERRMSG_CONFIGERROR;
@@ -560,21 +564,21 @@ eExecStatus e_smtpclient_cmd_set_config( eModId xModId, signed short FsNavId,
   else if (!strcmp((char *)av[0] , "mailto"))
   {
     cMailTo[0]='\0';
-    strncat(cMailTo, (char *)av[1], Min(sizeof(cMailTo),strlen((char *)av[1])));
+    strncat(cMailTo, (char *)av[1], Min(C_MAIL_TO_STRING_SIZE, strlen((char *)av[1])));
     *ppcStringReply = (signed portCHAR *)SHELL_MSG_CONFIG_SET;
     return( SHELL_EXECSTATUS_OK_NO_FREE );
   }
   else if (!strcmp((char *)av[0] , "mailfrom"))
   {
     cMailFrom[0]='\0';
-    strncat(cMailFrom, (char *)av[1], Min(sizeof(cMailFrom),strlen((char *)av[1])));
+    strncat(cMailFrom, (char *)av[1], Min(C_MAIL_FROM_STRING_SIZE ,strlen((char *)av[1])));
     *ppcStringReply = (signed portCHAR *)SHELL_MSG_CONFIG_SET;
     return( SHELL_EXECSTATUS_OK_NO_FREE );
   }
   else if (!strcmp((char *)av[0] , "server"))
   {
     cServerName[0]='\0';
-    strncat(cServerName, (char *)av[1], Min(sizeof(cServerName),strlen((char *)av[1])));
+    strncat(cServerName, (char *)av[1], Min(C_SERVER_NAME_STRING_SIZE, strlen((char *)av[1])));
     *ppcStringReply = (signed portCHAR *)SHELL_MSG_CONFIG_SET;
     return( SHELL_EXECSTATUS_OK_NO_FREE );
   }

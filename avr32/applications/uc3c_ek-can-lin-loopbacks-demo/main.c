@@ -47,7 +47,7 @@
  * - lin_task.c: LIN Task Management;
  * - controller.c: Qtouch Controller Management;
  * - gui.c: GUI Display Management;
- * - <A href="http://www.atmel.com/dyn/resources/prod_documents/doc32137.pdf"
+ * - <A href="http://ww1.microchip.com/downloads/en/appnotes/doc32137.pdf"
  *   style="text-decoration:none"><b>doc32137.pdf</b></A>: AVR32907 UC3C-EK
  *   Getting Started file - how to setup and run this application;
  *
@@ -72,7 +72,7 @@
  *
  * \section contactinfo Contact Information
  * For further information, visit
- * <A href="http://www.atmel.com/avr">Atmel AVR</A>.\n
+ * <A href="http://www.microchip.com/design-centers/8-bit">Atmel AVR</A>.\n
  */
 /*
  * Support and FAQ: visit <a href="https://www.microchip.com/support/">Microchip Support</a>

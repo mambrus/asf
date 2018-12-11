@@ -1,0 +1,22 @@
+<asf xmlversion="1.0">
+	<module type="service" caption="HAL UART" id="thirdparty.wireless.bt_wilc_sdk.services.uart">
+		
+		<!-- Summary Description -->
+		<info type="description" value="summary">
+			HAL Layer For UART
+		</info>
+		
+		<info type="gui-flag" value="hidden" />
+		
+		<!-- Source File -->
+		<build type="c-source" value="hal_uart.c"/>
+		
+		<require idref="board.samv71_xplained_ultra"/>
+			
+		<!-- Device support -->
+		<device-support value="atsamv71q21b"/>
+		
+	</module>
+</asf>
+
+

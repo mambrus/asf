@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<project caption="MiWi P2P Simple Example Application - SAMR21 ZLL-EK" id="thirdparty.wireless.miwi.apps.simple_example_p2p.samr21_ek" force-caption="true" force-description="true">
+	<project caption="MiWi P2P Simple Example Application - SAMR21ZLL-EK" id="thirdparty.wireless.miwi.apps.simple_example_p2p.samr21_ek" force-caption="true" force-description="true">
 		<info type="description" value="summary">
 		Simple Example P2P application implements a typical Peer to Peer demo application with configuration to send broadcast/unicast data to nodes.
 		</info>
@@ -16,6 +16,7 @@
 		<build type="header-file" value="conf_spinctrl.h"/>
 		<build type="header-file" value="conf_sysfont.h"/>
 		<build type="header-file" value="conf_nvm.h"/>
+		<build type="header-file" value="conf_rtc.h"/>
 
 		<config name="config.thirdparty.wireless.miwi.source" value="miwi_p2p"/>
 		<config name="config.thirdparty.wireless.miwi.source.mimac.phy.ext" value="at86rf233"/>

@@ -10,7 +10,7 @@
  * - Supported devices:  ATxmega128a1.
  * - AppNote:
  *
- * \author               Atmel Corporation: http://www.atmel.com \n
+ * \author               Microchip Technology Inc: http://www.microchip.com \n
  *                       Support and FAQ: https://www.microchip.com/support/
  *
  ******************************************************************************/

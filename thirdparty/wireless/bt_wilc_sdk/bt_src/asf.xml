@@ -1,0 +1,168 @@
+<asf xmlversion="1.0">
+   	<module type="meta" id="thirdparty.wireless.bt_wilc_sdk.bt_src" caption="COMPONENT - BT_STACK">
+		<info type="description" value="summary">
+		</info>
+		
+	    <build type="c-source"      value="ble/gatt-service/battery_service_server.c"/>
+	    <build type="c-source"      value="ble/gatt-service/device_information_service_server.c"/>
+	    <build type="c-source"      value="ble/gatt-service/hids_device.c"/>
+		
+		<build type="include-path"  value="ble/gatt-service/"/>
+		<build type="header-file"   value="ble/gatt-service/battery_service_server.h"/>
+		<build type="header-file"   value="ble/gatt-service/device_information_service_server.h"/>
+		<build type="header-file"   value="ble/gatt-service/hids_device.h"/>
+		
+		<build type="c-source"      value="ble/ancs_client.c"/>
+	    <build type="c-source"      value="ble/att_db.c"/>
+		<build type="c-source"      value="ble/att_db_util.c"/>
+		<build type="c-source"      value="ble/att_dispatch.c"/>
+		<build type="c-source"      value="ble/att_server.c"/>
+		<build type="c-source"      value="ble/gatt_client.c"/>
+		<build type="c-source"      value="ble/le_device_db_memory.c"/>
+		<!-- <build type="c-source"      value="ble/le_device_db_tlv.c"/> -->
+		<build type="c-source"      value="ble/sm.c"/>
+		
+		<build type="include-path"  value="ble/"/>
+		<build type="header-file"   value="ble/ancs_client.h"/>
+		<build type="header-file"   value="ble/att_db.h"/>
+		<build type="header-file"   value="ble/att_db_util.h"/>
+		<build type="header-file"   value="ble/att_dispatch.h"/>
+		<build type="header-file"   value="ble/att_server.h"/>
+		<build type="header-file"   value="ble/core.h"/>
+		<build type="header-file"   value="ble/gatt_client.h"/>
+		<build type="header-file"   value="ble/le_device_db.h"/>
+		<!-- <build type="header-file"   value="ble/le_device_db_tlv.h"/> -->
+		<build type="header-file"   value="ble/sm.h"/>
+		
+		<build type="c-source"      value="classic/btstack_link_key_db_memory.c"/>
+		
+		<!-- <build type="c-source"      value="classic/a2dp_sink.c"/>
+	    <build type="c-source"      value="classic/a2dp_source.c"/>
+		<build type="c-source"      value="classic/avdtp.c"/>
+		<build type="c-source"      value="classic/avdtp_acceptor.c"/>
+		<build type="c-source"      value="classic/avdtp_initiator.c"/>
+		<build type="c-source"      value="classic/avdtp_sink.c"/>
+		<build type="c-source"      value="classic/avdtp_source.c"/>
+		<build type="c-source"      value="classic/avdtp_util.c"/>
+		<build type="c-source"      value="classic/avrcp.c"/>
+		<build type="c-source"      value="classic/avrcp_controller.c"/>
+	    <build type="c-source"      value="classic/avrcp_target.c"/>
+		<build type="c-source"      value="classic/bnep.c"/>  
+		<build type="c-source"      value="classic/btstack_cvsd_plc.c"/>
+		<build type="c-source"      value="classic/btstack_link_key_db_memory.c"/>
+		<build type="c-source"      value="classic/btstack_link_key_db_static.c"/>
+		<build type="c-source"      value="classic/btstack_link_key_db_tlv.c"/>
+		<build type="c-source"      value="classic/btstack_sbc_bludroid.c"/> 
+		<build type="c-source"      value="classic/btstack_sbc_plc.c"/>
+		<build type="c-source"      value="classic/device_id_server.c"/>
+		<build type="c-source"      value="classic/goep_client.c"/>
+		<build type="c-source"      value="classic/hfp.c"/>
+		<build type="c-source"      value="classic/hfp_ag.c"/>
+		<build type="c-source"      value="classic/hfp_gsm_model.c"/>
+		<build type="c-source"      value="classic/hfp_hf.c"/>
+		<build type="c-source"      value="classic/hfp_msbc.c"/>
+		<build type="c-source"      value="classic/hid_device.c"/>
+		<build type="c-source"      value="classic/hsp_ag.c"/>
+		<build type="c-source"      value="classic/hsp_hs.c"/>
+		<build type="c-source"      value="classic/obex_iterator.c"/>
+		<build type="c-source"      value="classic/pan.c"/>
+		<build type="c-source"      value="classic/pbap_client.c"/>
+		<build type="c-source"      value="classic/rfcomm.c"/>
+		<build type="c-source"      value="classic/sdp_client.c"/>
+		<build type="c-source"      value="classic/sdp_client_rfcomm.c"/>
+		<build type="c-source"      value="classic/sdp_server.c"/>
+		<build type="c-source"      value="classic/sdp_util.c"/>
+		<build type="c-source"      value="classic/spp_server.c"/>   --> 
+		
+		<build type="include-path"  value="classic/"/>
+		<build type="header-file"   value="classic/a2dp_sink.h"/>
+		<build type="header-file"   value="classic/a2dp_source.h"/>
+		<build type="header-file"   value="classic/avdtp.h"/>
+		<build type="header-file"   value="classic/avdtp_acceptor.h"/>
+		<build type="header-file"   value="classic/avdtp_initiator.h"/>
+		<build type="header-file"   value="classic/avdtp_sink.h"/>
+		<build type="header-file"   value="classic/avdtp_source.h"/>
+		<build type="header-file"   value="classic/avdtp_util.h"/>
+		<build type="header-file"   value="classic/avrcp.h"/>
+		<build type="header-file"   value="classic/avrcp_controller.h"/>		
+		<build type="header-file"   value="classic/avrcp_target.h"/>
+		<build type="header-file"   value="classic/bnep.h"/> 
+		<!-- <build type="header-file"   value="classic/btstack_cvsd_plc.h"/> -->
+		<build type="header-file"   value="classic/btstack_link_key_db.h"/>
+		<build type="header-file"   value="classic/btstack_link_key_db_memory.h"/>
+		<!-- <build type="header-file"   value="classic/btstack_link_key_db_static.h"/> -->
+		<!-- <build type="header-file"   value="classic/btstack_link_key_db_tlv.h"/> -->
+		<build type="header-file"   value="classic/btstack_sbc.h"/>
+		<build type="header-file"   value="classic/btstack_sbc_plc.h"/>
+		<build type="header-file"   value="classic/core.h"/>		
+		<build type="header-file"   value="classic/device_id_server.h"/>
+		<!-- <build type="header-file"   value="classic/goep_client.h"/> -->
+		
+		<build type="header-file"   value="classic/hfp.h"/>
+		<build type="header-file"   value="classic/hfp_ag.h"/>
+		<build type="header-file"   value="classic/hfp_gsm_model.h"/>
+		<build type="header-file"   value="classic/hfp_hf.h"/>
+		<!-- <build type="header-file"   value="classic/hfp_msbc.h"/> -->
+		<build type="header-file"   value="classic/hid_device.h"/>
+		<build type="header-file"   value="classic/hsp_ag.h"/>
+		<build type="header-file"   value="classic/hsp_hs.h"/>		
+		<!-- <build type="header-file"   value="classic/obex.h"/> -->
+		<!-- <build type="header-file"   value="classic/obex_iterator.h"/> -->
+		<build type="header-file"   value="classic/pan.h"/>
+		<!-- <build type="header-file"   value="classic/pbap_client.h"/> -->
+		<build type="header-file"   value="classic/rfcomm.h"/>
+		<!-- <build type="header-file"   value="classic/sbc_decoder.h"/> -->
+		<build type="header-file"   value="classic/sdp_client.h"/>
+		<build type="header-file"   value="classic/sdp_client_rfcomm.h"/>
+		<build type="header-file"   value="classic/sdp_server.h"/>
+		<build type="header-file"   value="classic/sdp_util.h"/>
+		<build type="header-file"   value="classic/spp_server.h"/>  
+				
+		<build type="c-source"      value="ad_parser.c"/>
+	    <build type="c-source"      value="btstack_linked_list.c"/>
+		<build type="c-source"      value="btstack_memory.c"/>
+		<build type="c-source"      value="btstack_memory_pool.c"/>
+		<build type="c-source"      value="btstack_ring_buffer.c"/>
+		<build type="c-source"      value="btstack_run_loop.c"/>
+		<build type="c-source"      value="btstack_slip.c"/>
+		<build type="c-source"      value="btstack_util.c"/>
+		<build type="c-source"      value="hci.c"/>
+		<build type="c-source"      value="hci_cmd.c"/>
+	    <build type="c-source"      value="hci_dump.c"/>
+		<build type="c-source"      value="hci_transport_h4.c"/>
+		<build type="c-source"      value="hci_transport_h5.c"/>
+		<build type="c-source"      value="l2cap.c"/>
+		<build type="c-source"      value="l2cap_signaling.c"/>
+		
+		<build type="include-path"  value="."/>
+		<build type="header-file"   value="ad_parser.h"/>
+		<build type="header-file"   value="bluetooth.h"/>
+		<build type="header-file"   value="bluetooth_company_id.h"/>
+		<build type="header-file"   value="bluetooth_data_types.h"/>
+		<build type="header-file"   value="bluetooth_gatt.h"/>
+		<build type="header-file"   value="bluetooth_sdp.h"/>
+		<build type="header-file"   value="btstack.h"/>
+		<build type="header-file"   value="btstack_chipset.h"/>
+		<build type="header-file"   value="btstack_control.h"/>
+		<build type="header-file"   value="btstack_debug.h"/>		
+		<build type="header-file"   value="btstack_defines.h"/>
+		<build type="header-file"   value="btstack_event.h"/>
+		<build type="header-file"   value="btstack_linked_list.h"/>
+		<build type="header-file"   value="btstack_memory.h"/>
+		<build type="header-file"   value="btstack_memory_pool.h"/>
+		<build type="header-file"   value="btstack_ring_buffer.h"/>
+		<build type="header-file"   value="btstack_run_loop.h"/>
+		<build type="header-file"   value="btstack_slip.h"/>
+		<build type="header-file"   value="btstack_stdin.h"/>
+		<build type="header-file"   value="btstack_tlv.h"/>		
+		<build type="header-file"   value="btstack_uart_block.h"/>
+		<build type="header-file"   value="btstack_util.h"/>
+		<build type="header-file"   value="gap.h"/>
+		<build type="header-file"   value="hci.h"/>
+		<build type="header-file"   value="hci_cmd.h"/>
+		<build type="header-file"   value="hci_dump.h"/>
+		<build type="header-file"   value="hci_transport.h"/>
+		<build type="header-file"   value="l2cap.h"/>
+		<build type="header-file"   value="l2cap_signaling.h"/>
+	</module>
+</asf>

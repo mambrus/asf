@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<project caption="MiWi Mesh PanCoordinator - WSN Demo Application - SAMR21 ZLL-EK" id="thirdparty.wireless.miwi.apps.wsn_demo.panc.samr21_ek" force-caption="true" force-description="true">
+	<project caption="MiWi Mesh PanCoordinator - WSN Demo Application - SAMR21ZLL-EK" id="thirdparty.wireless.miwi.apps.wsn_demo.panc.samr21_ek" force-caption="true" force-description="true">
 		<info type="description" value="summary">
 		The MiWi based WSNDemo application implements a typical wireless sensor network scenario, in which one central node collects the data from a network of sensors and passes this data over a serial connection for further processing. In the case of the WSNDemo this processing is performed by the WSNMonitor PC application.
 		</info>
@@ -19,7 +19,6 @@
 		<config name="config.thirdparty.wireless.miwi.source.mimac.phy.ext" value="at86rf233"/>
 		<config name="config.sam0.drivers.sercom.spi" value="polled"/>
 		<config name="config.sam0.drivers.sercom.usart" value="callback"/>
-		<config name="config.thirdparty.wireless.miwi.source.sys" value="timer"/>
 		<require idref="board.samr21zll_ek"/>
 
 		<require idref="thirdparty.wireless.miwi.apps.wsn_demo"/>

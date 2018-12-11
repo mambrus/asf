@@ -1,0 +1,29 @@
+<asf xmlversion="1.0">
+	<module type="application" caption="Le Counter Application" id="thirdparty.wireless.bt_wilc_sdk.apps.le_counter">
+		<!-- Summary Description -->
+		<info type="description" value="summary">
+			LE Counter Application for Wilc3000
+		</info>
+		
+		<!-- Header File -->
+		<build type="include-path" value="."/>
+		<build type="header-file" value="le_counter.h"/>
+				
+		<!-- Source File -->
+		<build type="c-source" value="main.c"/>
+		<build type="c-source" value="le_counter.c"/>
+		
+		<!-- Required modules -->
+		<require idref="thirdparty.wireless.bt_wilc_sdk.bt_src"/>	
+		<require idref="thirdparty.wireless.bt_wilc_sdk.platform"/>	
+		<require idref="thirdparty.wireless.bt_wilc_sdk.chipset"/>
+		<require idref="thirdparty.wireless.bt_wilc_sdk.services.console"/>
+		<require idref="thirdparty.wireless.bt_wilc_sdk.services.uart"/>
+		<require idref="thirdparty.wireless.bt_wilc_sdk.services.timer"/>
+					
+		<!-- Device support -->
+		<device-support value="atsamv71q21b"/>
+		
+		<info type="gui-flag" value="move-to-root"/>
+	</module>
+</asf>

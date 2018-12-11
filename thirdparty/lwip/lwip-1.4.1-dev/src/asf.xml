@@ -39,6 +39,7 @@
 		<build type="c-source" value="api/pppapi.c"/>
 		<build type="c-source" value="api/sockets.c"/>
 		<build type="c-source" value="api/tcpip.c"/>
+		<build type="c-source" value="api/ping.c"/>		
 		<build type="c-source" value="core/def.c"/>
 		<build type="c-source" value="core/dhcp.c"/>
 		<build type="c-source" value="core/dns.c"/>
@@ -182,6 +183,7 @@
 		<build type="header-file" value="include/lwip/tcp_impl.h"/>
 		<build type="header-file" value="include/lwip/timers.h"/>
 		<build type="header-file" value="include/lwip/udp.h"/>
+		<build type="header-file" value="include/lwip/ping.h"/>
 		<build type="header-file" value="include/netif/etharp.h"/>
 		<build type="header-file" value="include/netif/slipif.h"/>
 		<build type="header-file" value="include/posix/netdb.h"/>

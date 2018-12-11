@@ -23,7 +23,7 @@
  *      For comprehensive code documentation, supported compilers, compiler
  *      settings and supported devices see readme.html
  *
- *      Atmel Corporation: http://www.atmel.com \n
+ *      Microchip Technology Inc: http://www.microchip.com \n
  *
  * $Revision: 1569 $
  * $Date: 2008-04-22 13:03:43 +0200 (Tue, 22 Apr 2008) $  \n

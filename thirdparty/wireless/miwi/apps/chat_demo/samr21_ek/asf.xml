@@ -1,5 +1,5 @@
 <asf xmlversion="1.0">
-	<project caption="MiWi P2P Chat Demo Application - SAMR21 ZLL-EK" id="thirdparty.wireless.miwi.apps.chat_demo.samr21_ek" force-caption="true" force-description="true">
+	<project caption="MiWi P2P Chat Demo Application - SAMR21ZLL-EK" id="thirdparty.wireless.miwi.apps.chat_demo.samr21_ek" force-caption="true" force-description="true">
 		<info type="description" value="summary">
 		The Chat Demo application provides chat between two nodes through the serial interface on Terminal application.
 		</info>		

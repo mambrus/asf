@@ -7,7 +7,7 @@
  * - Supported devices:  All AVR32 with TWIM controller.
  * - AppNote:
  *
- * \author               Atmel Corporation: http://www.atmel.com \n
+ * \author               Microchip Technology Inc: http://www.microchip.com \n
 /*****************************************************************************
  *
  * \file
@@ -76,7 +76,7 @@
    *
    * \section contactinfo Contact Information
    * For further information, visit
-   * <A href="http://www.atmel.com/products/AVR32/">Atmel AVR32</A>.\n
+   * <A href="http://www.microchip.com/design-centers/32-bit /">Atmel AVR32</A>.\n
    * Support and FAQ: https://www.microchip.com/support/
  */
 /*
