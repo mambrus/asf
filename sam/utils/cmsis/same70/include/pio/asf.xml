@@ -12,6 +12,15 @@
 		<build type="header-file" value="same70q19.h"/>
 		<build type="header-file" value="same70q20.h"/>
 		<build type="header-file" value="same70q21.h"/>
+		<build type="header-file" value="same70j19b.h"/>
+		<build type="header-file" value="same70j20b.h"/>
+		<build type="header-file" value="same70j21b.h"/>
+		<build type="header-file" value="same70n19b.h"/>
+		<build type="header-file" value="same70n20b.h"/>
+		<build type="header-file" value="same70n21b.h"/>
+		<build type="header-file" value="same70q19b.h"/>
+		<build type="header-file" value="same70q20b.h"/>
+		<build type="header-file" value="same70q21b.h"/>
 		<device-support value="same70"/>
 		<info type="gui-flag" value="hidden"/>
 	</module>

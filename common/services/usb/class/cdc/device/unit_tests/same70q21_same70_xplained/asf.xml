@@ -15,6 +15,6 @@
 		<generator value="as5_arm"/>
 		<config name="config.compiler.iarewarm.dlib" value="full"/>
 		<config name="config.compiler.armgcc.create_aux" value="no"/>
-		<device-support value="atsame70q21"/>
+		<device-support value="atsame70q21b"/>
 	</project>
 </asf>

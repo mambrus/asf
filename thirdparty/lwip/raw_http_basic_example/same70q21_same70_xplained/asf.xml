@@ -24,6 +24,6 @@
 		<toolchain-config name="armgcc.linker.miscellaneous.LinkerFlags" value="-Xlinker --defsym=STACK_SIZE=0x400" toolchain="armgcc"/>
 		<config name="config.compiler.iarewarm.sys_stack_size" value="0x400"/>
 		<config name="config.compiler.iarewarm.heap_size" value="0"/>
-		<device-support value="atsame70q21"/>
+		<device-support value="atsame70q21b"/>
 	</project>
 </asf>

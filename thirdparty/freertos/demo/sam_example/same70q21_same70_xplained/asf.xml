@@ -8,9 +8,9 @@
 		<build type="header-file" value="FreeRTOSConfig.h"/>
 		<require idref="common.services.freertos.sam_example"/>
 		<require idref="board.same70_xplained"/>
-		<config name="config.thirdparty.os.freertos.version" value="8.2.3"/>
+		<config name="config.thirdparty.os.freertos.version" value="10.0.0"/>
 		<config name="config.board.same70_xplained.led" value="yes"/>
-		<config name="config.thirdparty.os.freertos-8_2_3.memory_manager" value="3_use_libc_malloc_free" />
+		<config name="config.thirdparty.os.freertos-10_0_0.memory_manager" value="3_use_libc_malloc_free" />
 		<generator value="iarewarm"/>
 		<generator value="armgcc"/>
 		<generator value="as5_arm"/>
@@ -18,6 +18,6 @@
 		<config name="config.compiler.iarewarm.heap_size" value="0x1800"/>
 		<config name="config.compiler.armgcc.optimization" value="high"/>
 		<generator value="doxygen"/>
-		<device-support value="atsame70q21"/>
+		<device-support value="atsame70q21b"/>
 	</project>
 </asf>

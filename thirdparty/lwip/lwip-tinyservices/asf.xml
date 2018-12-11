@@ -3,7 +3,7 @@
 		<info type="description" value="summary">
 			Minimal DNS/DHCP services implementation for lwIP network stack.
 		</info>
-		<module type="service" id="thirdparty.lwip.tinyservices#0" caption="Tiny DNS/DHCP Services for lwIP - SAM4S/SAMG53/SAMG55 implementation">
+		<module type="service" id="thirdparty.lwip.tinyservices#0" caption="Tiny DNS/DHCP Services for lwIP - SAM4S/SAMG53/SAMG55/SAME70/SAMV71 implementation">
 			<build type="include-path" value="."/>
 			<build type="c-source" value="tinydhcpserver.c"/>
 			<build type="c-source" value="tinyservices.c"/>
@@ -18,6 +18,7 @@
 			<device-support value="samg53"/>
 			<device-support value="samg55"/>
 			<device-support value="samv71"/>
+			<device-support value="same70"/>
 			<require idref="thirdparty.lwip.141-dev"/>
 
 			<generator value="doxygen-module" default-mcu="unspecified-sam4s"/>

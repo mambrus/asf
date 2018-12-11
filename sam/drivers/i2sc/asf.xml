@@ -13,8 +13,8 @@
 		<device-support value="samg55"/>
 		<device-support-alias value="samv71b"/>
 		<device-support-alias value="samv70b"/>
-		<device-support value="sams70"/>
-		<device-support value="same70"/>
+		<device-support-alias value="sams70b"/>
+		<device-support-alias value="same70b"/>
 		<require idref="sam.utils"/>
 		<require idref="common.services.basic.clock"/>
 		<require idref="common.services.basic.sleepmgr"/>

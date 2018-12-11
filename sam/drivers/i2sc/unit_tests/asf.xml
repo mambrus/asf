@@ -27,8 +27,8 @@
 			<build type="include-path" value="."/>
 			<device-support-alias value="samv71b"/>
 			<device-support-alias value="samv70b"/>
-			<device-support value="sams70"/>
-			<device-support value="same70"/>
+			<device-support-alias value="sams70b"/>
+			<device-support-alias value="same70b"/>
 			<require idref="sam.drivers.i2sc"/>
 			<require idref="sam.drivers.xdmac"/>
 			<require idref="common.services.delay"/>

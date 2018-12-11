@@ -24,7 +24,7 @@
 
 	<board id="board.same70_xplained" vendor="Atmel" caption="SAME70-XPLD">
 		<build type="define" name="BOARD" value="SAME70_XPLAINED"/>
-		<build type="define" name="__SAME70Q21__" value=""/>
+		<build type="define" name="__SAME70Q21B__" value=""/>
 		<build type="header-file" value="same70_xplained.h"/>
 		<build type="include-path" value="."/>
 		<build type="include-path" value=".."/>

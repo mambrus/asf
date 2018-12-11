@@ -11,6 +11,6 @@
 		<require idref="board.same70_xplained"/>
 		<config name="config.board.same70_xplained.led" value="yes"/>
 		<config name="config.compiler.armgcc.create_aux" value="no"/>
-		<device-support value="atsame70q21"/>
+		<device-support value="atsame70q21b"/>
 	</project>
 </asf>

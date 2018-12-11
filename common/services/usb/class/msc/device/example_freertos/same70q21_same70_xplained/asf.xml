@@ -22,6 +22,6 @@
 		<config name="config.compiler.armgcc.create_aux" value="no"/>
 		<config name="config.compiler.iarewarm.heap_size" value="0x4000"/>
 		<config name="config.compiler.armgcc.optimization" value="high"/>
-		<device-support value="atsame70q21"/>
+		<device-support value="atsame70q21b"/>
 	</project>
 </asf>

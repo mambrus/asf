@@ -15,7 +15,7 @@
 		<build type="header-file" value="conf_spi_master.h"/>
 
 		<!-- Device support -->
-		<device-support value="atsame70q21"/>
+		<device-support value="atsame70q21b"/>
 
 		<!-- Required modules -->
 		<require idref="common.components.wifi.winc1500.ap_scan_example"/>

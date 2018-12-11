@@ -18,6 +18,28 @@
 		<device-support value="atsamv71q20b"/>
 		<device-support value="atsamv71q21b"/>
 	</device-alias-map>
+	<device-alias-map name="same70b">
+		<device-support value="atsame70j19b"/>
+		<device-support value="atsame70j20b"/>
+		<device-support value="atsame70j21b"/>
+		<device-support value="atsame70n19b"/>
+		<device-support value="atsame70n20b"/>
+		<device-support value="atsame70n21b"/>
+		<device-support value="atsame70q19b"/>
+		<device-support value="atsame70q20b"/>
+		<device-support value="atsame70q21b"/>
+	</device-alias-map>
+	<device-alias-map name="sams70b">
+		<device-support value="atsams70j19b"/>
+		<device-support value="atsams70j20b"/>
+		<device-support value="atsams70j21b"/>
+		<device-support value="atsams70n19b"/>
+		<device-support value="atsams70n20b"/>
+		<device-support value="atsams70n21b"/>
+		<device-support value="atsams70q19b"/>
+		<device-support value="atsams70q20b"/>
+		<device-support value="atsams70q21b"/>
+	</device-alias-map>
 	<device-alias-map name="sam0_unlimited">
 		<device-support value="samd20"/>
 		<device-support value="samd21"/>

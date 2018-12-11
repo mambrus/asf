@@ -46,5 +46,13 @@
 			<require idref="thirdparty.os.freertos-8_2_3"/>
 			<generator value="doxygen-module" default-mcu="unspecified-samv71"/>
 		</module>
+		<module type="service" id="thirdparty.os.freertos.version#10.0.0" caption="FreeRTOS - Kernel 10.0.0">
+			<device-support value="same70"/>
+			<device-support value="sams70"/>
+			<device-support value="samv70"/>
+			<device-support value="samv71"/>
+			<require idref="thirdparty.os.freertos-10_0_0"/>
+			<generator value="doxygen-module" default-mcu="unspecified-samv71"/>
+		</module>
 	</select-by-config>
 </asf>

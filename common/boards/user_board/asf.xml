@@ -626,108 +626,108 @@
 	<board id="board.user_board.same70j19" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70j19"/>
+		<device-support value="atsame70j19b"/>
 	</board>
 
 	<board id="board.user_board.same70j20" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70j20"/>
+		<device-support value="atsame70j20b"/>
 	</board>
 
 	<board id="board.user_board.same70j21" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70j21"/>
+		<device-support value="atsame70j21b"/>
 	</board>
 
 	<board id="board.user_board.same70n19" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70n19"/>
+		<device-support value="atsame70n19b"/>
 	</board>
 
 	<board id="board.user_board.same70n20" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70n20"/>
+		<device-support value="atsame70n20b"/>
 	</board>
 
 	<board id="board.user_board.same70n21" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70n21"/>
+		<device-support value="atsame70n21b"/>
 	</board>
 
 	<board id="board.user_board.same70q19" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70q19"/>
+		<device-support value="atsame70q19b"/>
 	</board>
 	
 	<board id="board.user_board.same70q20" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70q20"/>
+		<device-support value="atsame70q20b"/>
 	</board>
 	
 	<board id="board.user_board.same70q21" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsame70q21"/>
+		<device-support value="atsame70q21b"/>
 	</board>
 	
 	<board id="board.user_board.sams70j19" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70j19"/>
+		<device-support value="atsams70j19b"/>
 	</board>
 
 	<board id="board.user_board.sams70j20" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70j20"/>
+		<device-support value="atsams70j20b"/>
 	</board>
 
 	<board id="board.user_board.sams70j21" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70j21"/>
+		<device-support value="atsams70j21b"/>
 	</board>
 
 	<board id="board.user_board.sams70n19" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70n19"/>
+		<device-support value="atsams70n19b"/>
 	</board>
 
 	<board id="board.user_board.sams70n20" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70n20"/>
+		<device-support value="atsams70n20b"/>
 	</board>
 
 	<board id="board.user_board.sams70n21" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70n21"/>
+		<device-support value="atsams70n21b"/>
 	</board>
 
 	<board id="board.user_board.sams70q19" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70q19"/>
+		<device-support value="atsams70q19b"/>
 	</board>
 	
 	<board id="board.user_board.sams70q20" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70q20"/>
+		<device-support value="atsams70q20b"/>
 	</board>
 	
 	<board id="board.user_board.sams70q21" caption="User Board template">
 		<require idref="common.boards.user_board.common"/>
 		<require idref="sam.utils.linker_scripts"/>
-		<device-support value="atsams70q21"/>
+		<device-support value="atsams70q21b"/>
 	</board>
 </asf>

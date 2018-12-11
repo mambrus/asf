@@ -1,6 +1,6 @@
 <asf xmlversion="1.0">
 	<project id="common.applications.user_application.same70_xplained" caption="SAME70 Xplained template project" type="template">
-		<device-support value="atsame70q21"/>
+		<device-support value="atsame70q21b"/>
 		<require idref="common.applications.user_application"/>
 		<require idref="board.same70_xplained"/>
 		<info type="gui-flag" value="move-to-root"/>
