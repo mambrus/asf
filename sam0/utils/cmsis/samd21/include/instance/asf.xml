@@ -11,15 +11,18 @@
 		<build type="header-file" value="dsu.h"/>
 		<build type="header-file" value="eic.h"/>
 		<build type="header-file" value="evsys.h"/>
+		<build type="header-file" value="evsys_variant_d.h"/>
 		<build type="header-file" value="gclk.h"/>
 		<build type="header-file" value="i2s.h"/>
 		<build type="header-file" value="mtb.h"/>
 		<build type="header-file" value="nvmctrl.h"/>
+		<build type="header-file" value="nvmctrl_variant_d.h"/>
 		<build type="header-file" value="pac0.h"/>
 		<build type="header-file" value="pac1.h"/>
 		<build type="header-file" value="pac2.h"/>
 		<build type="header-file" value="pm.h"/>
 		<build type="header-file" value="port.h"/>
+		<build type="header-file" value="port_variant_d.h"/>
 		<build type="header-file" value="rtc.h"/>
 		<build type="header-file" value="sbmatrix.h"/>
 		<build type="header-file" value="sercom0.h"/>
@@ -37,6 +40,7 @@
 		<build type="header-file" value="tcc0.h"/>
 		<build type="header-file" value="tcc1.h"/>
 		<build type="header-file" value="tcc2.h"/>
+		<build type="header-file" value="tcc3.h"/>
 		<build type="header-file" value="usb.h"/>
 		<build type="header-file" value="wdt.h"/>
 		<info type="gui-flag" value="hidden"/>
