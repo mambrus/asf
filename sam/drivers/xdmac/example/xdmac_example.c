@@ -164,6 +164,9 @@ void XDMAC_transfer(void) {
     //
     xdmac_enable_interrupt(XDMAC, DMA_CH_USART1_CH);
     xdmac_channel_enable_interrupt(XDMAC, DMA_CH_USART1_CH, XDMAC_CIE_BIE);			// End of Block interrupt is enabled
+#ifdef CONF_BOARD_ENABLE_CACHE
+	SCB_CleanDCache();
+#endif
     XDMAC->XDMAC_GE = (XDMAC_GE_EN0);
     while((XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS));
 }
@@ -174,6 +177,10 @@ void XDMAC_Handler(void) {
     (void) dma_status;
     NVIC_ClearPendingIRQ(XDMAC_IRQn);
     NVIC_DisableIRQ(XDMAC_IRQn);
+
+#ifdef CONF_BOARD_ENABLE_CACHE
+	SCB_InvalidateDCache();
+#endif
 }
 //
 void TC1_Handler (void) {
