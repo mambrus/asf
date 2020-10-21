@@ -66,6 +66,7 @@ CSRCS = \
        sam/drivers/uart/uart.c                            \
        sam/drivers/usart/usart.c                          \
        sam/drivers/xdmac/example/xdmac_example.c          \
+       sam/drivers/xdmac/example/manchester.c             \
        sam/drivers/xdmac/xdmac.c                          \
        sam/utils/cmsis/same70/source/templates/gcc/startup_same70.c \
        sam/utils/cmsis/same70/source/templates/system_same70.c \

@@ -87,15 +87,7 @@
 #include <conf_board.h>
 #include <conf_clock.h>
 #include <string.h>
-
-/** Micro-block length for single transfer  */
-#define OSCCLK      12e6
-#define PLLACLK     (OSCCLK * 50)
-#define HCLK        (PLLACLK / 2)
-#define MCK         (HCLK / 2)
-#define PCK6_DIV    6
-#define PCK6        (MCK / PCK6_DIV)
-#define F_TIMER     1e3
+#include "manchester.h"
 
 /** XDMA channel used in this example. */
 #define DMA_CH_USART1_CH    0
@@ -107,16 +99,13 @@
 /* DMA transfer done flag. */
 volatile uint32_t g_xfer_done = 0;
 
-/* Buffer to be sent over serial port */
-volatile char output_string[100];
-/* Other variables to go into output_string */
-volatile float a = 1.02342353;
-volatile float b = 0.7874378934;
-volatile float c = 0.2342343;
-/* XDMAC variables */
-volatile int cubc = 50;
-volatile int cbc = 2;
-volatile int counter = 0;
+/* Tick counter */
+volatile unsigned counter;
+
+/* Ethernet data puffers */
+#define MTU 1518
+#define MIP_USART_TX_BUFFER_LENGTH MTU
+static uint16_t g_mipTxBuffer[MIP_USART_TX_BUFFER_LENGTH / 2];
 
 void XDMAC_setup(void);
 void XDMAC_transfer(void);
@@ -183,15 +172,15 @@ void XDMAC_setup(void)
 void XDMAC_transfer(void)
 {
 /*    USART1->US_THR = 80; */
-    sprintf((char *)output_string,
-            "\x1B[2J\x1B[H %2i\n\rVt = %6.4f \n\rP = %6.4f \n\rQ = %6.4f \n\r",
-            counter, a, b, c);
+
     /* Clear any pending interrupts for this channel */
     uint32_t xdmaint = XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS;
     (void)xdmaint;              /* Warning silence */
 
     /*uint32_t num_samples = strlen(output_string); */
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CSA = (uint32_t)&output_string[0];    /* Source address is TX buffer */
+    /* Source address is TX buffer */
+    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CSA =
+        (uint32_t)(uintptr_t) & g_mipTxBuffer[0];
 
     /* Clear a bunch of registers we need to clear before enabling DMA */
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CNDC = 0;
@@ -200,7 +189,7 @@ void XDMAC_transfer(void)
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDUS = 0;
 
     /* Set microblock size to be the size requested */
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CUBC = 50;
+    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CUBC = MTU;
     /* Single microblock at a time */
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CBC = 0;
 
@@ -233,14 +222,6 @@ void TC1_Handler(void)
     XDMAC_transfer();
     /* Changing some variables so we can see a result on the serial terminal */
     counter++;
-    if (counter < 10)
-        c = 0.1;
-    if (counter > 10)
-        c = 0.2;
-    if (counter > 20)
-        c = 0.3;
-    if (counter > 30)
-        c = 0.4;
 }
 
 void timer_setup(void)
@@ -287,6 +268,19 @@ int main(void)
     PRINTF("\n\r-- XDMAC Example --\n\r");
     PRINTF("-- %s\n\r", BOARD_NAME);
     PRINTF("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
+
+    /* Manchester encode test-block with known pattern */
+    for (uint16_t i = 0, k = 0; i < ((MIP_USART_TX_BUFFER_LENGTH / 2) - 1);
+         i++, k = k % 256) {
+        g_mipTxBuffer[i] = manchester_encode(k);
+        k++;
+    }
+    g_mipTxBuffer[0] = manchester_encode('M');
+    g_mipTxBuffer[1] = manchester_encode('i');
+    g_mipTxBuffer[2] = manchester_encode('l');
+    g_mipTxBuffer[3] = manchester_encode('d');
+    g_mipTxBuffer[4] = manchester_encode('e');
+    g_mipTxBuffer[5] = manchester_encode('f');
 
     /* Initialize and enable DMA controller */
     pmc_enable_periph_clk(ID_XDMAC);
