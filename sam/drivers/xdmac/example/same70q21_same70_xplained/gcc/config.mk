@@ -72,7 +72,7 @@ CSRCS = \
        sam/utils/syscalls/gcc/syscalls.c
 
 # List of assembler source files.
-ASSRCS = 
+ASSRCS =
 
 # List of include paths.
 INC_PATH = \
@@ -106,12 +106,12 @@ INC_PATH = \
 
 # Additional search paths for libraries.
 LIB_PATH =  \
-       thirdparty/CMSIS/Lib/GCC                          
+       thirdparty/CMSIS/Lib/GCC
 
 # List of libraries to use during linking.
 LIBS =  \
        arm_cortexM7lfsp_math_softfp                       \
-       m                                                 
+       m
 
 # Path relative to top level directory pointing to a linker script.
 LINKER_SCRIPT_FLASH = sam/utils/linker_scripts/same70/same70q21/gcc/flash.ld
@@ -126,24 +126,24 @@ PROJECT_TYPE        = all
 
 # Additional options for debugging. By default the common Makefile.in will
 # add -g3.
-DBGFLAGS = 
+DBGFLAGS =
 
 # Application optimization used during compilation and linking:
 # -O0, -O1, -O2, -O3 or -Os
-OPTIMIZATION = -O1
+OPTIMIZATION = -O0
 
 # Extra flags to use when archiving.
-ARFLAGS = 
+ARFLAGS =
 
 # Extra flags to use when assembling.
 ASFLAGS =  \
        -mfloat-abi=softfp                                 \
-       -mfpu=fpv5-sp-d16                                 
+       -mfpu=fpv5-sp-d16
 
 # Extra flags to use when compiling.
 CFLAGS =  \
        -mfloat-abi=softfp                                 \
-       -mfpu=fpv5-sp-d16                                 
+       -mfpu=fpv5-sp-d16
 
 # Extra flags to use when preprocessing.
 #
@@ -165,5 +165,5 @@ CPPFLAGS = \
 LDFLAGS = \
 
 # Pre- and post-build commands
-PREBUILD_CMD = 
-POSTBUILD_CMD = 
+PREBUILD_CMD =
+POSTBUILD_CMD =
