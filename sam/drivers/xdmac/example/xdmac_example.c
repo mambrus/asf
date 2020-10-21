@@ -98,7 +98,7 @@
 #define DMA_CH_USART1_TX    9
 
 /** XDMA channel configuration. */
-static xdmac_channel_config_t xdmac_channel_cfg;
+//static xdmac_channel_config_t xdmac_channel_cfg;
 
 /* DMA transfer done flag. */
 volatile uint32_t g_xfer_done = 0;
@@ -113,6 +113,11 @@ volatile float c = 0.2342343;
 volatile int cubc = 50;
 volatile int cbc = 2;
 volatile int counter = 0;
+
+void XDMAC_setup(void);
+void XDMAC_transfer(void);
+void timer_setup(void);
+void interrupt_setup(void);
 
 /**
  * \brief Configure the console UART.
@@ -147,12 +152,13 @@ void XDMAC_setup(void) {
         XDMAC_CC_PERID(DMA_CH_USART1_TX));
     XDMAC->XDMAC_GE |= 1 << DMA_CH_USART1_CH;										//enable TX channel
 }
-//
+
 void XDMAC_transfer(void) {
 //    USART1->US_THR = 80;
-    sprintf(output_string, "\x1B[2J\x1B[H %2i\n\rVt = %6.4f \n\rP = %6.4f \n\rQ = %6.4f \n\r", counter, a, b, c);
+    sprintf((char*)output_string, "\x1B[2J\x1B[H %2i\n\rVt = %6.4f \n\rP = %6.4f \n\rQ = %6.4f \n\r", counter, a, b, c);
     uint32_t xdmaint = XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS;				// Clear any pending interrupts for this channel
-    uint32_t num_samples = strlen(output_string);
+    (void)xdmaint; // Compiler beieves this is unnecessary, but read above is needed.
+    //uint32_t num_samples = strlen(output_string);
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CSA = (uint32_t) &output_string[0];      // Source address is TX buffer
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CNDC = 0;								// Clear a bunch of registers we need to clear before enabling DMA
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDS_MSP = 0;
