@@ -77,6 +77,10 @@
  *     -- Compiled: xxx xx xxxx xx:xx:xx --
  *
  *     > Test OK. \endcode
+ *
+ *     USART1 on SAME70Q21 is mapped on pins:
+ *          TXD1 -> PB4
+ *          RXD1 <- PA21
  */
 
 #include <asf.h>
