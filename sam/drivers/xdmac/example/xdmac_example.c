@@ -208,9 +208,6 @@ void XDMAC_Handler(void)
     if (dma_status & XDMAC_CIS_BIS) {
         g_xfer_done = 1;
     }
-#ifdef CONF_BOARD_ENABLE_CACHE
-    SCB_InvalidateDCache();
-#endif
 }
 
 void TC1_Handler(void)
@@ -282,5 +279,11 @@ int main(void)
 
     interrupt_setup();
 
-    while (1) ;
+    while (1) {
+        if (g_xfer_done) {
+#ifdef CONF_BOARD_ENABLE_CACHE
+            SCB_InvalidateDCache();
+#endif
+        }
+    };
 }
