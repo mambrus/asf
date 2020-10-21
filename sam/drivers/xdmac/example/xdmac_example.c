@@ -123,12 +123,20 @@ void XDMAC_transfer(void);
 void timer_setup(void);
 void interrupt_setup(void);
 
+/* Conditionally print using stdio. Note that packet driver is mutually
+ * exclusive via HW */
+
+#ifdef DOPRINTF
+#  define PRINTF(...) printf(__VA_ARGS__)
+#else
+#  define PRINTF(...)
+#endif
 /**
  * \brief Configure the console UART.
  */
 static void configure_console(void)
 {
-    const usart_serial_options_t uart_serial_options = {
+    static usart_serial_options_t uart_serial_options = {
         .baudrate = CONF_UART_BAUDRATE,
         .charlength = CONF_UART_CHAR_LENGTH,
         .paritytype = CONF_UART_PARITY,
@@ -137,7 +145,11 @@ static void configure_console(void)
 
     /* Configure console UART. */
     sysclk_enable_peripheral_clock(CONSOLE_UART_ID);
+#ifdef DOPRINTF
     stdio_serial_init(CONF_UART, &uart_serial_options);
+#else
+    usart_serial_init(CONF_UART, &uart_serial_options);
+#endif
 }
 
 /**
@@ -272,14 +284,14 @@ int main(void)
     timer_setup();
 
     /* Output example information */
-    printf("\n\r-- XDMAC Example --\n\r");
-    printf("-- %s\n\r", BOARD_NAME);
-    printf("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
+    PRINTF("\n\r-- XDMAC Example --\n\r");
+    PRINTF("-- %s\n\r", BOARD_NAME);
+    PRINTF("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
 
     /* Initialize and enable DMA controller */
     pmc_enable_periph_clk(ID_XDMAC);
 
-    printf("> Test OK.\n\r");
+    PRINTF("> Test OK.\n\r");
 
     interrupt_setup();
 
