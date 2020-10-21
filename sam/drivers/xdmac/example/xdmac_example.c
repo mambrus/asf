@@ -17,7 +17,7 @@
  *
  * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES,
  * WHETHER EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE,
- * INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY,
+ * INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY,,
  * AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT WILL MICROCHIP BE
  * LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
  * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE
@@ -98,18 +98,18 @@
 #define DMA_CH_USART1_TX    9
 
 /** XDMA channel configuration. */
-//static xdmac_channel_config_t xdmac_channel_cfg;
+/*static xdmac_channel_config_t xdmac_channel_cfg; */
 
 /* DMA transfer done flag. */
 volatile uint32_t g_xfer_done = 0;
-//
-// Buffer to be sent over serial port
+
+/* Buffer to be sent over serial port */
 volatile char output_string[100];
-// Other variables to go into output_string
+/* Other variables to go into output_string */
 volatile float a = 1.02342353;
 volatile float b = 0.7874378934;
 volatile float c = 0.2342343;
-// XDMAC variables
+/* XDMAC variables */
 volatile int cubc = 50;
 volatile int cbc = 2;
 volatile int counter = 0;
@@ -122,105 +122,134 @@ void interrupt_setup(void);
 /**
  * \brief Configure the console UART.
  */
-static void configure_console(void) {
-	const usart_serial_options_t uart_serial_options = {
-		.baudrate = CONF_UART_BAUDRATE,
-		.charlength = CONF_UART_CHAR_LENGTH,
-		.paritytype = CONF_UART_PARITY,
-		.stopbits = CONF_UART_STOP_BITS,
-	};
+static void configure_console(void)
+{
+    const usart_serial_options_t uart_serial_options = {
+        .baudrate = CONF_UART_BAUDRATE,
+        .charlength = CONF_UART_CHAR_LENGTH,
+        .paritytype = CONF_UART_PARITY,
+        .stopbits = CONF_UART_STOP_BITS,
+    };
 
-	/* Configure console UART. */
-	sysclk_enable_peripheral_clock(CONSOLE_UART_ID);
-	stdio_serial_init(CONF_UART, &uart_serial_options);
+    /* Configure console UART. */
+    sysclk_enable_peripheral_clock(CONSOLE_UART_ID);
+    stdio_serial_init(CONF_UART, &uart_serial_options);
 }
-//
-void XDMAC_setup(void) {
-    //
-    // USART1 TX DMA Channel
+
+/**
+ * USART1 TX DMA Channel
+ */
+void XDMAC_setup(void)
+{
+
     pmc_enable_periph_clk(ID_XDMAC);
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDA = (uint32_t) &USART1->US_THR;	    // Destination address is US_THR
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CC = (XDMAC_CC_TYPE_PER_TRAN |		// memory to peripheral transcation
-        XDMAC_CC_MBSIZE_SINGLE |                                                    // Memory burst size 1
-        XDMAC_CC_SAM_INCREMENTED_AM |                                               // Source address increment (buffer)
-        XDMAC_CC_DAM_FIXED_AM |												        // Dest address fixed (SPI TDR)
-        XDMAC_CC_DSYNC_MEM2PER |                                                    // Mem to peripheral transfer
-        XDMAC_CC_CSIZE_CHK_1 |                                                      // Chunk size 1
-        XDMAC_CC_DWIDTH_BYTE |												        // 8 bit data width
-        XDMAC_CC_SIF_AHB_IF0 |                                                      // See datasheet section 18.2.3 for system bus connections
+    /* *INDENT-OFF* */
+    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDA =
+        (uint32_t)&USART1->US_THR;      /* Destination address is US_THR */
+
+    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CC = (
+        XDMAC_CC_TYPE_PER_TRAN |        /* memory to peripheral transcation */
+        XDMAC_CC_MBSIZE_SINGLE |        /* Memory burst size 1 */
+        XDMAC_CC_SAM_INCREMENTED_AM |   /* Source address increment (buffer) */
+        XDMAC_CC_DAM_FIXED_AM |         /* Dest address fixed (SPI TDR) */
+        XDMAC_CC_DSYNC_MEM2PER |        /* Mem to peripheral transfer */
+        XDMAC_CC_CSIZE_CHK_1 |          /* Chunk size 1 */
+        XDMAC_CC_DWIDTH_BYTE |          /* 8 bit data width */
+        XDMAC_CC_SIF_AHB_IF0 |          /* See datasheet section 18.2.3 */
+                                        /* for system bus connections */
         XDMAC_CC_DIF_AHB_IF1 |
-        XDMAC_CC_PERID(DMA_CH_USART1_TX));
-    XDMAC->XDMAC_GE |= 1 << DMA_CH_USART1_CH;										//enable TX channel
+        XDMAC_CC_PERID
+        (DMA_CH_USART1_TX));
+    /* *INDENT-ON* */
+    XDMAC->XDMAC_GE |= 1 << DMA_CH_USART1_CH;   /*enable TX channel */
 }
 
-void XDMAC_transfer(void) {
-//    USART1->US_THR = 80;
-    sprintf((char*)output_string, "\x1B[2J\x1B[H %2i\n\rVt = %6.4f \n\rP = %6.4f \n\rQ = %6.4f \n\r", counter, a, b, c);
-    uint32_t xdmaint = XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS;				// Clear any pending interrupts for this channel
-    (void)xdmaint; // Compiler beieves this is unnecessary, but read above is needed.
-    //uint32_t num_samples = strlen(output_string);
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CSA = (uint32_t) &output_string[0];      // Source address is TX buffer
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CNDC = 0;								// Clear a bunch of registers we need to clear before enabling DMA
+void XDMAC_transfer(void)
+{
+/*    USART1->US_THR = 80; */
+    sprintf((char *)output_string,
+            "\x1B[2J\x1B[H %2i\n\rVt = %6.4f \n\rP = %6.4f \n\rQ = %6.4f \n\r",
+            counter, a, b, c);
+    /* Clear any pending interrupts for this channel */
+    uint32_t xdmaint = XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS;
+    (void)xdmaint;              /* Warning silence */
+
+    /*uint32_t num_samples = strlen(output_string); */
+    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CSA = (uint32_t)&output_string[0];    /* Source address is TX buffer */
+
+    /* Clear a bunch of registers we need to clear before enabling DMA */
+    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CNDC = 0;
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDS_MSP = 0;
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CSUS = 0;
     XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDUS = 0;
-    //
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CUBC = 50;					        // Set microblock size to be the size requested
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CBC = 0;						    // Single microblock at a time
-    //
+
+    /* Set microblock size to be the size requested */
+    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CUBC = 50;
+    /* Single microblock at a time */
+    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CBC = 0;
+
     xdmac_enable_interrupt(XDMAC, DMA_CH_USART1_CH);
-    xdmac_channel_enable_interrupt(XDMAC, DMA_CH_USART1_CH, XDMAC_CIE_BIE);			// End of Block interrupt is enabled
+    /* End of Block interrupt is enabled */
+    xdmac_channel_enable_interrupt(XDMAC, DMA_CH_USART1_CH, XDMAC_CIE_BIE);
 #ifdef CONF_BOARD_ENABLE_CACHE
-	SCB_CleanDCache();
+    SCB_CleanDCache();
 #endif
     XDMAC->XDMAC_GE = (XDMAC_GE_EN0);
-    while((XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS));
+    while ((XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS)) ;
 }
-//
-void XDMAC_Handler(void) {
+
+void XDMAC_Handler(void)
+{
     uint32_t dma_status;
     dma_status = xdmac_channel_get_interrupt_status(XDMAC, DMA_CH_USART1_CH);
 
     NVIC_ClearPendingIRQ(XDMAC_IRQn);
     NVIC_DisableIRQ(XDMAC_IRQn);
-	if (dma_status & XDMAC_CIS_BIS) {
-		g_xfer_done = 1;
-	}
-
+    if (dma_status & XDMAC_CIS_BIS) {
+        g_xfer_done = 1;
+    }
 #ifdef CONF_BOARD_ENABLE_CACHE
-	SCB_InvalidateDCache();
+    SCB_InvalidateDCache();
 #endif
 }
-//
-void TC1_Handler (void) {
-    uint32_t TC1_status_reg = TC0->TC_CHANNEL[1].TC_SR;     // Clear flag
-    (void) TC1_status_reg;
+
+void TC1_Handler(void)
+{
+    uint32_t TC1_status_reg = TC0->TC_CHANNEL[1].TC_SR; /* Clear flag */
+    (void)TC1_status_reg;
     XDMAC_transfer();
-    // Changing some variables so we can see a result on the serial terminal
+    /* Changing some variables so we can see a result on the serial terminal */
     counter++;
-    if (counter < 10) c = 0.1;
-    if (counter > 10) c = 0.2;
-    if (counter > 20) c = 0.3;
-    if (counter > 30) c = 0.4;
+    if (counter < 10)
+        c = 0.1;
+    if (counter > 10)
+        c = 0.2;
+    if (counter > 20)
+        c = 0.3;
+    if (counter > 30)
+        c = 0.4;
 }
-//
-void timer_setup(void) {
-    //
-    // TC1 to trigger XDMAC to transmit sine waves
-    PMC->PMC_PCER0 |= (1 << ID_TC1);								// Enable clock to TC1 (TC0, Ch1)
+
+void timer_setup(void)
+{
+    /* TC1 to trigger XDMAC to transmit sine waves */
+    PMC->PMC_PCER0 |= (1 << ID_TC1);    /* Enable clock to TC1 (TC0, Ch1) */
     TC0->TC_CHANNEL[1].TC_CCR = (TC_CCR_SWTRG | TC_CCR_CLKEN);
-    // This timer is clocked from SLCK and half timer value for 1 Hz refresh
+
+    /* This timer is clocked from SLCK and half timer value for 1 Hz refresh */
     TC0->TC_CHANNEL[1].TC_CMR = (TC_CMR_ACPC(1) | TC_CMR_ACPA(2) | TC_CMR_WAVE
-        | TC_CMR_WAVSEL(2) | TC_CMR_EEVT(3) | TC_CMR_TCCLKS_TIMER_CLOCK5);
+                                 | TC_CMR_WAVSEL(2) | TC_CMR_EEVT(3) |
+                                 TC_CMR_TCCLKS_TIMER_CLOCK5);
     TC0->TC_CHANNEL[1].TC_RA = 0x0001;
     TC0->TC_CHANNEL[1].TC_RB = 0x0002;
     TC0->TC_CHANNEL[1].TC_RC = 0xFFFF;
     TC0->TC_CHANNEL[1].TC_IER = TC_IER_CPCS;
-    //
+
     TC0->TC_BCR = 1;
 }
-//
-void interrupt_setup(void) {
+
+void interrupt_setup(void)
+{
     Disable_global_interrupt();
     NVIC_ClearPendingIRQ(TC1_IRQn);
     NVIC_EnableIRQ(TC1_IRQn);
@@ -228,29 +257,30 @@ void interrupt_setup(void) {
     NVIC_EnableIRQ(XDMAC_IRQn);
     Enable_global_interrupt();
 }
-//
-int main(void) {
-	/* Initialize the system */
-	sysclk_init();
-	board_init();
 
-	/* Configure console on USART1 */
-	configure_console();
-    //
+int main(void)
+{
+    /* Initialize the system */
+    sysclk_init();
+    board_init();
+
+    /* Configure console on USART1 */
+    configure_console();
+
     XDMAC_setup();
     timer_setup();
-    //
-	/* Output example information */
-	printf("\n\r-- XDMAC Example --\n\r");
-	printf("-- %s\n\r", BOARD_NAME);
-	printf("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
-    //
-	/* Initialize and enable DMA controller */
-	pmc_enable_periph_clk(ID_XDMAC);
-    //
-	printf("> Test OK.\n\r");
-    //
+
+    /* Output example information */
+    printf("\n\r-- XDMAC Example --\n\r");
+    printf("-- %s\n\r", BOARD_NAME);
+    printf("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
+
+    /* Initialize and enable DMA controller */
+    pmc_enable_periph_clk(ID_XDMAC);
+
+    printf("> Test OK.\n\r");
+
     interrupt_setup();
-    //
-	while (1);
+
+    while (1) ;
 }
