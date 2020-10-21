@@ -174,9 +174,12 @@ void XDMAC_transfer(void) {
 void XDMAC_Handler(void) {
     uint32_t dma_status;
     dma_status = xdmac_channel_get_interrupt_status(XDMAC, DMA_CH_USART1_CH);
-    (void) dma_status;
+
     NVIC_ClearPendingIRQ(XDMAC_IRQn);
     NVIC_DisableIRQ(XDMAC_IRQn);
+	if (dma_status & XDMAC_CIS_BIS) {
+		g_xfer_done = 1;
+	}
 
 #ifdef CONF_BOARD_ENABLE_CACHE
 	SCB_InvalidateDCache();
