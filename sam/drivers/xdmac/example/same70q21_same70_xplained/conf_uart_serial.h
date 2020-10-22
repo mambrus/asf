@@ -38,21 +38,21 @@
 #define CONF_USART_SERIAL_H_INCLUDED
 
 /** UART Interface */
-#define CONF_UART            USART2
-#define CONF_UART_ID         ID_USART2
-#define CONF_PERID_UART_TX   XDMAC_CHANNEL_HWID_USART2_TX
+#define CONF_UART            UART0
+#define CONF_UART_ID         ID_UART0
+#define CONF_PERID_UART_TX   XDMAC_CHANNEL_HWID_UART0_TX
 
 /* Actual pins are mapped in sam/boards/same70_xplained/same70_xplained.h
  * in the following manner:
  *
-#define USART2_RXD_GPIO   PIO_PA21_IDX
-#define USART2_TXD_GPIO   PIO_PB4_IDX
+#define UART0_RXD_GPIO   PIO_PA21_IDX
+#define UART0_TXD_GPIO   PIO_PB4_IDX
 */
 
-#define CONF_UART_RXD_GPIO   USART2_RXD_GPIO
-#define CONF_UART_RXD_FLAGS  USART2_RXD_FLAGS
-#define CONF_UART_TXD_GPIO   USART2_TXD_GPIO
-#define CONF_UART_TXD_FLAGS  USART2_TXD_FLAGS
+#define CONF_UART_RXD_GPIO   UART0_RXD_GPIO
+#define CONF_UART_RXD_FLAGS  UART0_RXD_FLAGS
+#define CONF_UART_TXD_GPIO   UART0_TXD_GPIO
+#define CONF_UART_TXD_FLAGS  UART0_TXD_FLAGS
 
  /** Baudrate setting */
 #define CONF_UART_BAUDRATE   (5000000UL)
