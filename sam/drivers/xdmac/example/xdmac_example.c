@@ -83,6 +83,11 @@
  *          RXD1 <- PA21
  */
 
+#define USART2_RXD_GPIO   PIO_PD15_IDX
+#define USART2_TXD_GPIO   PIO_PD16_IDX
+#define USART2_RXD_FLAGS  IOPORT_MODE_MUX_B
+#define USART2_TXD_FLAGS  IOPORT_MODE_MUX_B
+
 #include <asf.h>
 #include <conf_board.h>
 #include <conf_clock.h>
@@ -155,7 +160,7 @@ void interrupt_setup(void);
 /* Conditionally print using stdio. Note that packet driver is mutually
  * exclusive via HW */
 
-#define USE_PRINTF
+//#define USE_PRINTF
 #ifdef USE_PRINTF
 #  define PRINTF(...) printf(__VA_ARGS__)
 #else
@@ -171,7 +176,7 @@ static void configure_console(void)
 #ifndef CONF_BOARD_UART_CONSOLE
 	ioport_set_pin_peripheral_mode(CONF_UART_RXD_GPIO, CONF_UART_RXD_FLAGS);
     /* See sam/utils/cmsis/same70/include/component/matrix.h */
-	MATRIX->CCFG_SYSIO |= CCFG_SYSIO_SYSIO4;
+	MATRIX->CCFG_SYSIO |= CCFG_SYSIO_SYSIO4; /* (CCFG_SYSIO) PB4 or TDI Assignment */
 	ioport_set_pin_peripheral_mode(CONF_UART_TXD_GPIO, CONF_UART_TXD_FLAGS);
 #endif //CONF_BOARD_UART_CONSOLE
 
@@ -200,7 +205,7 @@ void XDMAC_setup(void)
     pmc_enable_periph_clk(ID_XDMAC);
     /* *INDENT-OFF* */
     XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CDA =
-        (uint32_t)&USART1->US_THR;      /* Destination address is US_THR */
+        (uint32_t)&CONF_UART->US_THR;      /* Destination address is US_THR */
 
     XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CC = (
         XDMAC_CC_TYPE_PER_TRAN |        /* memory to peripheral transcation */
