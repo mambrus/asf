@@ -133,7 +133,7 @@ static void configure_console(void)
     };
 
     /* Configure console UART. */
-    sysclk_enable_peripheral_clock(CONSOLE_UART_ID);
+    sysclk_enable_peripheral_clock(CONF_UART_ID);
 #ifdef DOPRINTF
     stdio_serial_init(CONF_UART, &uart_serial_options);
 #else
@@ -258,7 +258,7 @@ int main(void)
     sysclk_init();
     board_init();
 
-    /* Configure console on USART1 */
+    /* Configure console on intended serial device */
     configure_console();
 
     XDMAC_setup();

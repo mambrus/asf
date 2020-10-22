@@ -38,7 +38,8 @@
 #define CONF_USART_SERIAL_H_INCLUDED
 
 /** UART Interface */
-#define CONF_UART            CONSOLE_UART
+#define CONF_UART            USART1
+#define CONF_UART_ID         ID_USART1
 /** Baudrate setting */
 #define CONF_UART_BAUDRATE   (5000000UL)
 /** Character length setting */
