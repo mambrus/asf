@@ -41,6 +41,6 @@
 //#define CONF_BOARD_ENABLE_CACHE
 
 /** Enable Com Port. */
-#define CONF_BOARD_UART_CONSOLE
+//#define CONF_BOARD_UART_CONSOLE
 
 #endif /* CONF_BOARD_H_INCLUDED */

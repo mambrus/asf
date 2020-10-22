@@ -89,6 +89,47 @@
 #include <string.h>
 #include "manchester.h"
 
+/**
+ * \brief Set peripheral mode for IOPORT pins.
+ * It will configure port mode and disable pin mode (but enable peripheral).
+ * \param port IOPORT port to configure
+ * \param masks IOPORT pin masks to configure
+ * \param mode Mode masks to configure for the specified pin (\ref ioport_modes)
+ */
+#define ioport_set_port_peripheral_mode(port, masks, mode) \
+	do {\
+		ioport_set_port_mode(port, masks, mode);\
+		ioport_disable_port(port, masks);\
+	} while (0)
+
+/**
+ * \brief Set peripheral mode for one single IOPORT pin.
+ * It will configure port mode and disable pin mode (but enable peripheral).
+ * \param pin IOPORT pin to configure
+ * \param mode Mode masks to configure for the specified pin (\ref ioport_modes)
+ */
+#define ioport_set_pin_peripheral_mode(pin, mode) \
+	do {\
+		ioport_set_pin_mode(pin, mode);\
+		ioport_disable_pin(pin);\
+	} while (0)
+
+/**
+ * \brief Set input mode for one single IOPORT pin.
+ * It will configure port mode and disable pin mode (but enable peripheral).
+ * \param pin IOPORT pin to configure
+ * \param mode Mode masks to configure for the specified pin (\ref ioport_modes)
+ * \param sense Sense for interrupt detection (\ref ioport_sense)
+ */
+#define ioport_set_pin_input_mode(pin, mode, sense) \
+	do {\
+		ioport_set_pin_dir(pin, IOPORT_DIR_INPUT);\
+		ioport_set_pin_mode(pin, mode);\
+		ioport_set_pin_sense_mode(pin, sense);\
+	} while (0)
+
+
+
 /** XDMA channel used in this example. */
 #define CONF_XDMAC_CH    0
 
@@ -114,16 +155,26 @@ void interrupt_setup(void);
 /* Conditionally print using stdio. Note that packet driver is mutually
  * exclusive via HW */
 
-#ifdef DOPRINTF
+#define USE_PRINTF
+#ifdef USE_PRINTF
 #  define PRINTF(...) printf(__VA_ARGS__)
 #else
 #  define PRINTF(...)
 #endif
+
 /**
  * \brief Configure the console UART.
  */
 static void configure_console(void)
 {
+    /* If defined, this is done in board_init in init.c */
+#ifndef CONF_BOARD_UART_CONSOLE
+	ioport_set_pin_peripheral_mode(CONF_UART_RXD_GPIO, CONF_UART_RXD_FLAGS);
+    /* See sam/utils/cmsis/same70/include/component/matrix.h */
+	MATRIX->CCFG_SYSIO |= CCFG_SYSIO_SYSIO4;
+	ioport_set_pin_peripheral_mode(CONF_UART_TXD_GPIO, CONF_UART_TXD_FLAGS);
+#endif //CONF_BOARD_UART_CONSOLE
+
     static usart_serial_options_t uart_serial_options = {
         .baudrate = CONF_UART_BAUDRATE,
         .charlength = CONF_UART_CHAR_LENGTH,
@@ -133,7 +184,7 @@ static void configure_console(void)
 
     /* Configure console UART. */
     sysclk_enable_peripheral_clock(CONF_UART_ID);
-#ifdef DOPRINTF
+#ifdef USE_PRINTF
     stdio_serial_init(CONF_UART, &uart_serial_options);
 #else
     usart_serial_init(CONF_UART, &uart_serial_options);
@@ -260,13 +311,17 @@ int main(void)
     /* Configure console on intended serial device */
     configure_console();
 
+    /* Output example information */
+#ifdef USE_PRINTF
+    while (1) {
+        PRINTF("\n\r-- XDMAC Example --\n\r");
+        PRINTF("-- %s\n\r", BOARD_NAME);
+        PRINTF("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
+    }
+#endif //USE_PRINTF
+
     XDMAC_setup();
     timer_setup();
-
-    /* Output example information */
-    PRINTF("\n\r-- XDMAC Example --\n\r");
-    PRINTF("-- %s\n\r", BOARD_NAME);
-    PRINTF("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
 
     /* Manchester encode test-block with known pattern */
     for (uint16_t i = 0, k = 0; i < ((MIP_USART_TX_BUFFER_LENGTH / 2) - 1);
