@@ -40,6 +40,8 @@
 /** UART Interface */
 #define CONF_UART            USART1
 #define CONF_UART_ID         ID_USART1
+#define CONF_PERID_UART_TX   XDMAC_CHANNEL_HWID_USART1_TX
+
 /** Baudrate setting */
 #define CONF_UART_BAUDRATE   (5000000UL)
 /** Character length setting */

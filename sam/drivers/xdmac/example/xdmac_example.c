@@ -90,8 +90,7 @@
 #include "manchester.h"
 
 /** XDMA channel used in this example. */
-#define DMA_CH_USART1_CH    0
-#define DMA_CH_USART1_TX    9
+#define CONF_XDMAC_CH    0
 
 /** XDMA channel configuration. */
 /*static xdmac_channel_config_t xdmac_channel_cfg; */
@@ -149,10 +148,10 @@ void XDMAC_setup(void)
 
     pmc_enable_periph_clk(ID_XDMAC);
     /* *INDENT-OFF* */
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDA =
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CDA =
         (uint32_t)&USART1->US_THR;      /* Destination address is US_THR */
 
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CC = (
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CC = (
         XDMAC_CC_TYPE_PER_TRAN |        /* memory to peripheral transcation */
         XDMAC_CC_MBSIZE_SINGLE |        /* Memory burst size 1 */
         XDMAC_CC_SAM_INCREMENTED_AM |   /* Source address increment (buffer) */
@@ -164,9 +163,9 @@ void XDMAC_setup(void)
                                         /* for system bus connections */
         XDMAC_CC_DIF_AHB_IF1 |
         XDMAC_CC_PERID
-        (DMA_CH_USART1_TX));
+        (CONF_PERID_UART_TX));
     /* *INDENT-ON* */
-    XDMAC->XDMAC_GE |= 1 << DMA_CH_USART1_CH;   /*enable TX channel */
+    XDMAC->XDMAC_GE |= 1 << CONF_XDMAC_CH;   /*enable TX channel */
 }
 
 void XDMAC_transfer(void)
@@ -174,39 +173,39 @@ void XDMAC_transfer(void)
 /*    USART1->US_THR = 80; */
 
     /* Clear any pending interrupts for this channel */
-    uint32_t xdmaint = XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS;
+    uint32_t xdmaint = XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CIS;
     (void)xdmaint;              /* Warning silence */
 
     /*uint32_t num_samples = strlen(output_string); */
     /* Source address is TX buffer */
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CSA =
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CSA =
         (uint32_t)(uintptr_t) & g_mipTxBuffer[0];
 
     /* Clear a bunch of registers we need to clear before enabling DMA */
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CNDC = 0;
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDS_MSP = 0;
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CSUS = 0;
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CDUS = 0;
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CNDC = 0;
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CDS_MSP = 0;
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CSUS = 0;
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CDUS = 0;
 
     /* Set microblock size to be the size requested */
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CUBC = MTU;
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CUBC = MTU;
     /* Single microblock at a time */
-    XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CBC = 0;
+    XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CBC = 0;
 
-    xdmac_enable_interrupt(XDMAC, DMA_CH_USART1_CH);
+    xdmac_enable_interrupt(XDMAC, CONF_XDMAC_CH);
     /* End of Block interrupt is enabled */
-    xdmac_channel_enable_interrupt(XDMAC, DMA_CH_USART1_CH, XDMAC_CIE_BIE);
+    xdmac_channel_enable_interrupt(XDMAC, CONF_XDMAC_CH, XDMAC_CIE_BIE);
 #ifdef CONF_BOARD_ENABLE_CACHE
     SCB_CleanDCache();
 #endif
     XDMAC->XDMAC_GE = (XDMAC_GE_EN0);
-    while ((XDMAC->XDMAC_CHID[DMA_CH_USART1_CH].XDMAC_CIS)) ;
+    while ((XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CIS)) ;
 }
 
 void XDMAC_Handler(void)
 {
     uint32_t dma_status;
-    dma_status = xdmac_channel_get_interrupt_status(XDMAC, DMA_CH_USART1_CH);
+    dma_status = xdmac_channel_get_interrupt_status(XDMAC, CONF_XDMAC_CH);
 
     NVIC_ClearPendingIRQ(XDMAC_IRQn);
     NVIC_DisableIRQ(XDMAC_IRQn);
