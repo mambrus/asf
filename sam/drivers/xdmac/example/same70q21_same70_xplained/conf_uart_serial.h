@@ -38,9 +38,9 @@
 #define CONF_USART_SERIAL_H_INCLUDED
 
 /** UART Interface */
-#define CONF_UART            UART0
-#define CONF_UART_ID         ID_UART0
-#define CONF_PERID_UART_TX   XDMAC_CHANNEL_HWID_UART0_TX
+#define CONF_UART            UART1
+#define CONF_UART_ID         ID_UART1
+#define CONF_PERID_UART_TX   XDMAC_CHANNEL_HWID_UART1_TX
 
 /* Actual pins are mapped in sam/boards/same70_xplained/same70_xplained.h
  * in the following manner:
@@ -49,10 +49,17 @@
 #define UART0_TXD_GPIO   PIO_PB4_IDX
 */
 
-#define CONF_UART_RXD_GPIO   UART0_RXD_GPIO
-#define CONF_UART_RXD_FLAGS  UART0_RXD_FLAGS
-#define CONF_UART_TXD_GPIO   UART0_TXD_GPIO
-#define CONF_UART_TXD_FLAGS  UART0_TXD_FLAGS
+#define CONF_UART_RXD_GPIO   UART1_RXD_GPIO
+#define CONF_UART_RXD_FLAGS  UART1_RXD_FLAGS
+#define CONF_UART_TXD_GPIO   UART1_TXD_GPIO
+#define CONF_UART_TXD_FLAGS  UART1_TXD_FLAGS
+
+/* Any or both defines below can be omitted if corresponding pin doesn't have
+ * an alternative. If any of pins has, it's mandatury to set them or
+ * copilation error occurs to serve as a double-check for system designer
+ * */
+#define UART1_TXD_ALT_1
+//#define UART1_RXD_ALT_1
 
  /** Baudrate setting */
 #define CONF_UART_BAUDRATE   (5000000UL)

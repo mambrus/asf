@@ -11,16 +11,8 @@
 
 //#define USE_PRINTF
 
-#define USART2_RXD_GPIO   PIO_PD15_IDX
-#define USART2_TXD_GPIO   PIO_PD16_IDX
-#define USART2_RXD_FLAGS  IOPORT_MODE_MUX_B
-#define USART2_TXD_FLAGS  IOPORT_MODE_MUX_B
-
-#define UART0_RXD_GPIO   PIO_PA9_IDX
-#define UART0_TXD_GPIO   PIO_PA10_IDX
-#define UART0_RXD_FLAGS  IOPORT_MODE_MUX_A
-#define UART0_TXD_FLAGS  IOPORT_MODE_MUX_A
-
+#include <conf_uart_serial.h>
+#include "uxart_pins.h"
 #include <asf.h>
 #include <conf_board.h>
 #include <conf_clock.h>
