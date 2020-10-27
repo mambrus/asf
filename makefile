@@ -15,7 +15,7 @@ export VERBOSE
 endif
 
 all:
-	make -C ${BUILD}
+	bear make -C ${BUILD}
 
 clean:
 	make -C ${BUILD} clean
