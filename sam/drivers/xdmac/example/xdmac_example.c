@@ -20,6 +20,8 @@
 #include "manchester.h"
 #include "mdp_xdmac.h"
 
+mdp_Xdmac_t *mdp_Xdmac = (mdp_Xdmac_t *) XDMAC;
+
 /**
  * \brief Set peripheral mode for IOPORT pins.
  * It will configure port mode and disable pin mode (but enable peripheral).
@@ -59,8 +61,6 @@
 		ioport_set_pin_sense_mode(pin, sense);\
 	} while (0)
 
-
-
 /** XDMA channel used in this example. */
 #define CONF_XDMAC_CH    0
 
@@ -69,6 +69,13 @@
 
 /* DMA transfer done flag. */
 volatile uint32_t g_xfer_done = 0;
+volatile uint32_t g_xdmac_Block = 0;
+volatile uint32_t g_xdmac_Linked_List = 0;
+volatile uint32_t g_xdmac_Disable = 0;
+volatile uint32_t g_xdmac_Flush = 0;
+volatile uint32_t g_xdmac_Read_Bus_Error = 0;
+volatile uint32_t g_xdmac_Write_Bus_Error = 0;
+volatile uint32_t g_xdmac_Request_Overflow_Error = 0;
 
 /* Tick counter */
 volatile unsigned counter;
@@ -99,11 +106,11 @@ static void configure_console(void)
 {
     /* If defined, this is done in board_init in init.c */
 #ifndef CONF_BOARD_UART_CONSOLE
-	ioport_set_pin_peripheral_mode(CONF_UART_RXD_GPIO, CONF_UART_RXD_FLAGS);
+    ioport_set_pin_peripheral_mode(CONF_UART_RXD_GPIO, CONF_UART_RXD_FLAGS);
     /* See sam/utils/cmsis/same70/include/component/matrix.h */
-	MATRIX->CCFG_SYSIO |= CCFG_SYSIO_SYSIO4; /* (CCFG_SYSIO) PB4 or TDI Assignment */
-	ioport_set_pin_peripheral_mode(CONF_UART_TXD_GPIO, CONF_UART_TXD_FLAGS);
-#endif //CONF_BOARD_UART_CONSOLE
+    MATRIX->CCFG_SYSIO |= CCFG_SYSIO_SYSIO4;    /* (CCFG_SYSIO) PB4 or TDI Assignment */
+    ioport_set_pin_peripheral_mode(CONF_UART_TXD_GPIO, CONF_UART_TXD_FLAGS);
+#endif                          //CONF_BOARD_UART_CONSOLE
 
     static usart_serial_options_t uart_serial_options = {
         .baudrate = CONF_UART_BAUDRATE,
@@ -117,7 +124,7 @@ static void configure_console(void)
 #ifdef USE_PRINTF
     stdio_serial_init(CONF_UART, &uart_serial_options);
 #else
-    usart_serial_init((Usart *)CONF_UART, &uart_serial_options);
+    usart_serial_init((Usart *) CONF_UART, &uart_serial_options);
 #endif
 }
 
@@ -146,7 +153,7 @@ void XDMAC_setup(void)
         XDMAC_CC_PERID
         (CONF_PERID_UART_TX));
     /* *INDENT-ON* */
-    XDMAC->XDMAC_GE |= 1 << CONF_XDMAC_CH;   /*enable TX channel */
+    XDMAC->XDMAC_GE |= 1 << CONF_XDMAC_CH;  /*enable TX channel */
 }
 
 void XDMAC_transfer(void)
@@ -156,6 +163,8 @@ void XDMAC_transfer(void)
     /* Clear any pending interrupts for this channel */
     uint32_t xdmaint = XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CIS;
     (void)xdmaint;              /* Warning silence */
+
+    g_xfer_done = 0;
 
     /*uint32_t num_samples = strlen(output_string); */
     /* Source address is TX buffer */
@@ -185,13 +194,37 @@ void XDMAC_transfer(void)
 
 void XDMAC_Handler(void)
 {
-    uint32_t dma_status;
-    dma_status = xdmac_channel_get_interrupt_status(XDMAC, CONF_XDMAC_CH);
+    mdp_XdmacIntr_t dma_status = mdp_Xdmac->chid[CONF_XDMAC_CH].CIS;
 
     NVIC_ClearPendingIRQ(XDMAC_IRQn);
     NVIC_DisableIRQ(XDMAC_IRQn);
-    if (dma_status & XDMAC_CIS_BIS) {
+
+    if (*(uint32_t *)&dma_status) {
         g_xfer_done = 1;
+    }
+    if (dma_status.Block) {
+        g_xdmac_Block++;
+    }
+    if (dma_status.Block) {
+        g_xdmac_Block++;
+    }
+    if (dma_status.Linked_List) {
+        g_xdmac_Linked_List++;
+    }
+    if (dma_status.Disable) {
+        g_xdmac_Disable++;
+    }
+    if (dma_status.Flush) {
+        g_xdmac_Flush++;
+    }
+    if (dma_status.Read_Bus_Error) {
+        g_xdmac_Read_Bus_Error++;
+    }
+    if (dma_status.Write_Bus_Error) {
+        g_xdmac_Write_Bus_Error++;
+    }
+    if (dma_status.Request_Overflow_Error) {
+        g_xdmac_Request_Overflow_Error++;
     }
 }
 
@@ -249,7 +282,7 @@ int main(void)
         PRINTF("-- %s\n\r", BOARD_NAME);
         PRINTF("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
     }
-#endif //USE_PRINTF
+#endif                          //USE_PRINTF
 
     XDMAC_setup();
     timer_setup();
