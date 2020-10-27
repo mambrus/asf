@@ -233,6 +233,7 @@ void interrupt_setup(void)
 
 int main(void)
 {
+    int xfer_done_cntr = 0;
     /* Initialize the system */
     sysclk_init();
     board_init();
@@ -277,6 +278,7 @@ int main(void)
 #ifdef CONF_BOARD_ENABLE_CACHE
             SCB_InvalidateDCache();
 #endif
+            xfer_done_cntr++;
         }
     };
 }
