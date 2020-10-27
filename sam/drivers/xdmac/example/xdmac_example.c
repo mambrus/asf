@@ -68,7 +68,8 @@ mdp_Xdmac_t *mdp_Xdmac = (mdp_Xdmac_t *) XDMAC;
 /*static xdmac_channel_config_t xdmac_channel_cfg; */
 
 /* DMA transfer done flag. */
-volatile uint32_t g_xfer_done = 0;
+volatile uint32_t g_xdmac_events = 0;
+volatile uint32_t g_xdmac_irq_fired = 0;
 volatile uint32_t g_xdmac_Block = 0;
 volatile uint32_t g_xdmac_Linked_List = 0;
 volatile uint32_t g_xdmac_Disable = 0;
@@ -158,13 +159,11 @@ void XDMAC_setup(void)
 
 void XDMAC_transfer(void)
 {
-/*    USART1->US_THR = 80; */
-
     /* Clear any pending interrupts for this channel */
     uint32_t xdmaint = XDMAC->XDMAC_CHID[CONF_XDMAC_CH].XDMAC_CIS;
     (void)xdmaint;              /* Warning silence */
 
-    g_xfer_done = 0;
+    //g_xdmac_irq_fired = 0;
 
     /*uint32_t num_samples = strlen(output_string); */
     /* Source address is TX buffer */
@@ -197,10 +196,10 @@ void XDMAC_Handler(void)
     mdp_XdmacIntr_t dma_status = mdp_Xdmac->chid[CONF_XDMAC_CH].CIS;
 
     NVIC_ClearPendingIRQ(XDMAC_IRQn);
-    NVIC_DisableIRQ(XDMAC_IRQn);
+    //NVIC_DisableIRQ(XDMAC_IRQn);
 
     if (*(uint32_t *)&dma_status) {
-        g_xfer_done = 1;
+        g_xdmac_events = 1;
     }
     if (dma_status.Block) {
         g_xdmac_Block++;
@@ -226,6 +225,8 @@ void XDMAC_Handler(void)
     if (dma_status.E_Req_Ovfl) {
         g_xdmac_Request_Overflow_Error++;
     }
+    g_xdmac_irq_fired = 1;
+    XDMAC_transfer();
 }
 
 void TC1_Handler(void)
@@ -267,7 +268,7 @@ void interrupt_setup(void)
 
 int main(void)
 {
-    int xfer_done_cntr = 0;
+    static uint32_t xdmac_irq_cntr = 0;
     /* Initialize the system */
     sysclk_init();
     board_init();
@@ -285,7 +286,7 @@ int main(void)
 #endif                          //USE_PRINTF
 
     XDMAC_setup();
-    timer_setup();
+    //timer_setup();
 
     /* Manchester encode test-block with known pattern */
     for (uint16_t i = 0, k = 0; i < ((MIP_USART_TX_BUFFER_LENGTH / 2) - 1);
@@ -306,13 +307,29 @@ int main(void)
     PRINTF("> Test OK.\n\r");
 
     interrupt_setup();
+    XDMAC_transfer();
 
     while (1) {
-        if (g_xfer_done) {
+        if (g_xdmac_irq_fired) {
 #ifdef CONF_BOARD_ENABLE_CACHE
             SCB_InvalidateDCache();
 #endif
-            xfer_done_cntr++;
+            g_xdmac_irq_fired = 0;
+            xdmac_irq_cntr++;
+            if (xdmac_irq_cntr > 1000) {
+                xdmac_irq_cntr--;
+                xdmac_irq_cntr = 0;
+                PRINTF("%8lu : %8lu %8lu %lu %lu %lu %lu %lu\n",
+                       xdmac_irq_cntr,
+                       g_xdmac_Block,
+                       g_xdmac_Linked_List,
+                       g_xdmac_Disable,
+                       g_xdmac_Flush,
+                       g_xdmac_Read_Bus_Error,
+                       g_xdmac_Write_Bus_Error, g_xdmac_Request_Overflow_Error);
+
+            }
+
         }
     };
 }
