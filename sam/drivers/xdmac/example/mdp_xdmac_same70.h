@@ -14,17 +14,17 @@ typedef struct {
     uint32_t Linked_List:1;     /* End of */
     uint32_t Disable:1;         /* End of */
     uint32_t Flush:1;           /* End of */
-    uint32_t Read_Bus_Error:1;
-    uint32_t Write_Bus_Error:1;
-    uint32_t Request_Overflow_Error:1;
+    uint32_t E_Read_Bus:1;      /* Error */
+    uint32_t E_Write_Bus:1;     /* Error */
+    uint32_t E_Req_Ovfl:1;      /* Error */
     uint32_t _padding:25;
 } mdp_XdmacIntr_t;
 
-typedef struct {
-    mdp_XdmacIntr_t CIE;        /* Channel interrupt Enable */
-    mdp_XdmacIntr_t CID;        /* Channel interrupt Disable */
-    mdp_XdmacIntr_t CIM;        /* Channel interrupt Mask */
-    mdp_XdmacIntr_t CIS;        /* Channel interrupt Status */
+typedef struct {                /* v~~[R=read only, W=write only] */
+    mdp_XdmacIntr_t CIE;        /* W Channel interrupt Enable */
+    mdp_XdmacIntr_t CID;        /* W Channel interrupt Disable */
+    mdp_XdmacIntr_t CIM;        /* R Channel interrupt Mask */
+    mdp_XdmacIntr_t CIS;        /* R Channel interrupt Status */
 
     uint32_t CSA;
     uint32_t CDA;

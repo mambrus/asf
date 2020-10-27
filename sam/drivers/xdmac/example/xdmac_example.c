@@ -217,13 +217,13 @@ void XDMAC_Handler(void)
     if (dma_status.Flush) {
         g_xdmac_Flush++;
     }
-    if (dma_status.Read_Bus_Error) {
+    if (dma_status.E_Read_Bus) {
         g_xdmac_Read_Bus_Error++;
     }
-    if (dma_status.Write_Bus_Error) {
+    if (dma_status.E_Write_Bus) {
         g_xdmac_Write_Bus_Error++;
     }
-    if (dma_status.Request_Overflow_Error) {
+    if (dma_status.E_Req_Ovfl) {
         g_xdmac_Request_Overflow_Error++;
     }
 }
