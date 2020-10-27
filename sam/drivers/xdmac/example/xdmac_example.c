@@ -18,6 +18,7 @@
 #include <conf_clock.h>
 #include <string.h>
 #include "manchester.h"
+#include "mdp_xdmac.h"
 
 /**
  * \brief Set peripheral mode for IOPORT pins.
