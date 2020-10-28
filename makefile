@@ -1,4 +1,4 @@
-.PHONY: all clean flash info start stop debug
+.PHONY: all clean flash info start stop debug cscope
 
 BASE ?= sam/drivers/xdmac/example
 BOARD_DIR := same70q21_same70_xplained/gcc
@@ -14,11 +14,35 @@ export VERBOSE
 .SILENT :
 endif
 
-all:
+all: cscope.out
 	bear make -C ${BUILD}
+
+# Use ack and pattens defined in .ackrc as filters as double-inverted
+# matches are much easier to define as follows:
+
+#--ignore-directory=is:sams70
+#--ignore-directory=is:samv70
+#--ignore-directory=is:samv71
+#--ignore-directory=is:avr32
+#--ignore-directory=is:mega
+#--ignore-directory=is:xmega
+#--ignore-directory=match:sam[^e].*
+#--ignore-directory=match:at(x)?mega.*
+#--ignore-directory=match:at32.*
+#--ignore-directory=match:(x)?mega.*
+
+cscope.files:
+	ack --cc -f > cscope.files
+
+cscope.out: cscope.files
+	cscope -b -q -k
+
+cscope: cscope.out
 
 clean:
 	make -C ${BUILD} clean
+	-rm cscope.out
+	-rm cscope.files
 
 start:
 	ocdctrl.sh gdbserver start
